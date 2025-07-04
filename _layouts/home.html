@@ -1,0 +1,152 @@
+---
+layout: default
+
+---
+<style>
+/*SPACER AND INSPOS */
+.inspo-section {
+  display: flex;
+  flex-direction: column;
+  padding-top: 270px;
+  padding-bottom: 100px;
+  align-items: center;
+
+}
+
+.inspo-container {
+  width: 50px;
+  max-width: 940px;
+  position: relative;
+  left: 70px;
+}
+
+.inspo-container h3 {
+  text-decoration: none;
+}
+
+/* === Oyster section ===== */
+#oyster-section {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 325px;
+  padding-left: 50px;
+}
+#oyster-wrapper {
+  cursor: pointer;
+}
+#pearl-wrapper.active {
+  display: block;
+
+}
+#pearl-wrapper {
+  position: relative;
+  bottom: 76px;
+  left: 70px;
+  display: none;
+
+}
+
+#open-oyster {
+  display: block;
+}
+
+/* ELIOT EPIGRAPH */
+#eliot-quote {
+    text-align: right;
+    position: absolute;
+    right: 20%;
+    top: 7%;
+    padding-right: 2px;
+    color: lightgray;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+</style>
+
+
+
+
+    <div class = "main-content" >
+        <p id="eliot-quote"> <i>Where is the wisdom we have lost in knowledge? <br>
+                            Where is the knowledge we have lost in information?</i> <br>
+                            - TS Eliot
+                            </p>
+        <div class = "intro-section">
+            {{ content }}
+        </div>
+
+<!--FEATURED LIST-->
+        <div id="writing-section">
+            <h3>Pinned Pieces</h3>
+        </div>
+        <div class="recent-posts">
+            {% for post in site.posts limit:4 %}
+                <a href="{{ post.url | relative_url }}" class="post-item-link">
+                <div class="post-item">
+                    <div class="post-left">
+                    <h3>{{ post.title }}</h3>
+                    <div class="category">{{ post.categories[0] }}</div>
+                    </div>
+
+                    <div class="post-image">
+                    {% if post.image %}
+                        <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+                    {% else %}
+                        <img src="/img/default-thumb.jpg" alt="Default image">
+                    {% endif %}
+                    </div>
+
+                    <div class="post-right">
+                    <p>{{ post.excerpt }}</p>
+                    </div>
+                </div>
+                </a>
+            {% endfor %}
+        </div>
+<!--END FEATURES LIST-->
+
+        <nav class="theme-bar">
+            <a href="#">Art</a>
+            <a href="#">Culture</a>
+            <a href="#">Design</a>
+            <a href="#">Literature</a>
+            <a href="#">Music</a>            
+            <a href="#">Philosophy</a>
+            <a href="#">Religion</a>
+            <a href="#">Nonsense</a>
+        </nav>
+
+        <!--SPACING AND PICS-->
+        <div class ="inspo-section">
+            <div class = "inspo-container" onclick="on()" > <!--WORK ON MAKING OVERLAY-->
+                <img src="/assets/img/inspo-woman.png" />
+                <p>Inspirations</p>
+                </div>
+
+    <!--Trying to make the pinwheel-->
+        </div>
+
+        <!--Spacer-->
+        <div class="spacer-fortypx"></div>
+
+        <!--OYSTER BUTTON-->
+        <div id = "oyster-section">
+            <div id = "oyster-wrapper" onclick="pearlFunction()" >
+                <img src = "/assets/img/oyster-larger.svg"/>
+                <p id = "open-oyster">Open oyster</p>
+            </div>
+            
+            <a href ="#" ><div id = "pearl-wrapper" >
+                <img src="/assets/img/pearls-1.svg" /> </div> </a>
+        </div>
+    </div>
+
+    <script>
+        function pearlFunction() {
+            let pearl = document.getElementById("pearl-wrapper")
+            let p = document.getElementById("open-oyster")
+            if (pearl.style.display === "none" ) {
+                pearl.style.display = "block", p.style.display = "none";
+            } else {
+                pearl.style.display = "none", p.style.display = "block";
+            } }
+    </script>

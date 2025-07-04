@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const links = document.querySelectorAll('a[href^="http"]');
+    links.forEach(link => {
+      if (!link.href.includes(window.location.hostname)) {
+        link.setAttribute("target", "_blank");
+        link.setAttribute("rel", "noopener noreferrer");
+        link.classList.add("external-link");
+      }
+    });
+  });
+  </script>
+
+  <body>
+    <div class = "top-spacer"></div>
+
+  <!-- RIGHT SIDEBAR -->
+    <div class="right-sidebar">
+      <p id="lastModified"></p> 
+      <div class="spacer-right"></div>
+      
+      {% assign all_tags = site.tags | sort %}
+      <div class="node-box">
+        <div class="node-list">
+          <h2 class="node-heading">Nodes</h2> 
+            {% for tag in all_tags %}
+              {% assign tag_name = tag[0] %}
+                <a href="{{ '/tags/' | append: tag_name | relative_url }}" class="tag">
+                  {{ tag_name }} ({{ tag[1].size }})
+                </a>
+            {% endfor %}
+        </div>
+      </div>
+
+      
+
+  <!--     
+        <div class="node-box">
+        <h2 class="node-heading">Nodes</h2>
+        <div class="node-list">
+            {% assign tags = "Consciousness,Nature,Silence,Creativity,Solitude,God/s,Science & Mapmaking,Nondual & Neutral,Attachment and Delusion,Beauty,Dreams,Contemplation,On poetry,On writing,Time,Mysticism,Attention,Education,Paradox,Ritual,Technology" | split: "," %}
+            {% for tag in tags %}
+            <a href="#" class="tag">{{ tag }}</a>
+            {% endfor %}
+        </div>
+        </div> -->
+  </div>
+
+  <!-- LEFT SIDEBAR -->
+    <div class="left-sidebar">
+        <div class="spacer-left"></div>
+        <div class="logo-space">
+        <div id="logo-title-wrapper">
+            <a href= "{{ '/' | relative url }}" > <img src="{{ '/assets/img/name-stamp.png' | relative_url }}" alt="Logo of my site">
+            <div class="title-space">
+            <h2 class="site-title">The Pocketbook of</h2>
+            <h2>Ailani Sato-Lim</h2></a>
+            </div>
+        </div> </a>
+        </div>
+        <nav class="navbar">
+          {% for item in site.data.navigation %}
+            <a href="{{ item.url | relative_url }}"
+            class="{% if current_url == item.url %}active{% endif %}">
+            {{ item.title }}</a>
+          {% endfor %}
+        </nav>
+        <div class="tab-wrapper">
+        <a href="#"><img src="{{ '/assets/img/index-tab1.svg' | relative_url }}"></a>
+        </div>
+
+
+
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+        {{ content }}
+    </div>
+
+    <section class="end-spacer"></section>
+
+  <script>
+    document.getElementById("lastModified").textContent =
+      "Last Updated: " + document.lastModified;
+  </script>
+</body>
+</html>

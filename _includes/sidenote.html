@@ -1,0 +1,13 @@
+<span class="sidenote-wrapper">
+  <a href="#sn-bottom-{{ include.id }}" class="sidenote-number" id="sn-top-{{ include.id }}"><sup>{{ include.id }}</sup></a>
+  <span class="sidenote">{{ include.text }}</span>
+</span>
+
+<!-- Store footnote reference in a capture block -->
+{% capture note_entry %}
+<li id="sn-bottom-{{ include.id }}">
+  <a href="#sn-top-{{ include.id }}"><sup>{{ include.id }}</sup></a> {{ include.text }}
+</li>
+{% endcapture %}
+{% assign footnotes = site.data.footnotes | default: "" %}
+{% assign site.data.footnotes = footnotes | append: note_entry %}

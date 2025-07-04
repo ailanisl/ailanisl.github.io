@@ -1,0 +1,765 @@
+/* DEFAULT TYPOGRAPHY*/
+html, body {
+  height: 100%;
+  font-family: system-ui, sans-serif;  /*"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",'Helvetica', 'Arial', sans-serif;*/
+  font-size: 14px;
+}
+h2 {
+  font-weight: normal;
+  font-size: 20px;
+}
+
+/*CAPTION*/
+h5 {
+  font-weight: normal;
+  font-size: 1rem;
+  color: gray;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-bottom: 3rem;
+}
+
+p {
+  margin-bottom: 10px;
+  line-height: 1.2;
+  font-size: 16px;
+
+}
+p a {
+  color:#5C7423;
+  text-decoration: none;
+  background-color: #F7F0F0;
+}
+
+a {
+  text-decoration: underline;
+  color: #6B5191;
+}
+
+.internal-link {
+  color: #444;
+  text-decoration: underline;
+  background-color: transparent;
+}
+.internal-link:hover {
+  color: #5C7423;
+  background-color: #F7F0F0;
+  text-decoration: none;
+}
+
+.external-link {
+  text-decoration: underline;
+}
+.external-link a{
+  color: #444;
+}
+
+.back-button {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: black;
+    line-height: 3rem;
+}
+.back-button:hover {
+    color: lightgray;
+}
+
+
+/* ----------------------------------POST STYLING--------------------------*/
+.head-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 530px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 4rem;
+  margin-top: 50px;
+}
+
+
+.post-content {
+  font-family:system-ui, sans-serif; 
+  font-size: 1rem;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 530px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3 {
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.post-content p {
+  margin-bottom: 1 rem;
+  line-height: 1.6;
+
+
+}
+
+.post-content a {
+  color:#5C7423;
+  text-decoration: none;
+  background-color: #F7F0F0;
+
+}
+.post-content a:hover{
+  text-decoration: underline;
+}
+.post-content blockquote {
+  border-left: 4px solid #EDF0E6;
+  margin-left: 2rem;
+  margin-right: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  color: #656565;
+  background-color: #f2f5eb49;
+  font-size: 1rem;
+  
+}
+
+.post-content ul,
+.post-content ol {
+  /*margin: 1rem 0;;*/
+  padding-left: 3rem;
+  margin-bottom: 1rem;  /* spacing between items */
+  line-height: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.post-content img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%; /* responsive */
+  height: auto;
+  border-radius: 6px;
+}
+
+/* =========== SIDE NOTES ===================================== */
+/* Wrapper to position the sidenote */
+.sidenote-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Number that user hovers over */
+.sidenote-number {
+  cursor: pointer;
+  font-size: 0.8em;
+  color: gray;
+  border-bottom: 1px dotted;
+}
+
+/* The sidenote content */
+.sidenote {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-left: 5em;
+  width: 250px;
+  background: #f9f9f9;
+  border-left: 3px solid #ccc;
+  border-bottom: 3px solid #ccc;
+  border-radius: 6px;
+  padding: 0.6em;
+  font-size: 0.9em;
+  line-height: 1.4;
+  color: #333;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Show sidenote on hover */
+.sidenote-wrapper:hover .sidenote {
+  display: block;
+}
+
+/* Mobile: override to always show inline or hide entirely */
+@media screen and (max-width: 768px) {
+  .sidenote {
+    position: static;
+    display: block;
+    width: auto;
+    margin-left: 0;
+    margin-top: 0.5em;
+    border-left: none;
+    box-shadow: none;
+    background: none;
+    padding: 0.3em 0;
+    color: grey;
+  }
+}
+
+/* -- FOOTNOTE STYLING---- [Didn't work, come back if you have time] */
+.sidenote-bottom-list {
+  font-size: 0.9em;
+  margin-top: 2em;
+  border-top: 1px solid #ccc;
+  padding-top: 1em;
+  color: #555;
+}
+
+.sidenote-bottom-list sup {
+  font-size: 0.75em;
+}
+
+
+
+/* ============================== PERSONA PAGE ==============================*/
+.content-wrapper {
+  max-width: 540px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+
+}
+
+#bio-image {
+  width: 240px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+#bio-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+
+/* ----------------------------------DEFAULT THEME--------------------------*/
+
+
+
+/* =======================    RIGHT SIDEBAR   ==============================*/
+#lastModified {
+  position: relative;
+  left:10px;
+  top: 15px;
+  color: #dfdfdf;
+  font-size: 14px;
+  background-color: rgba(255, 255, 255, 0.992);
+  z-index: 2;
+}
+
+.node-box {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  position: fixed;
+  bottom: 7%;
+}
+.node-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+
+.tag  {
+  background-color: #e5d6d69e;
+  border-radius: 16px;
+  padding: 4px 8px;
+  font-size: 14px;
+  text-decoration: none;
+  color:#333;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+}
+
+.tag:hover {
+  background-color: #E5D6D6;
+}
+
+.spacer-right {
+  height: 800px;
+}
+
+.node-box {
+  padding-left: 27px;
+  padding-right: 27px;
+}
+
+.right-sidebar {
+  height:100%;
+  width: 20%;
+  background-color: white;
+  /*min-width: 250px;*/
+  max-width: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: auto;
+  border-left: 1px solid lightgray;
+/*To slide out*/
+  transition: transform 0.4s ease;
+  z-index: 100;
+}
+
+/* Left sidebar stuff */
+.left-sidebar {
+  height:100%;
+  width: 20%;
+  background-color: white;
+ /* min-width: 250px;*/
+  max-width: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: auto;
+  border-right: 1px solid lightgray;
+
+}
+.logo-space {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 100px;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.916), transparent);
+  width: 100%;
+  position: fixed;
+  left: -90px;
+
+
+}
+.title-space {
+  background-color: rgba(255, 255, 255, 0.85);
+}
+#logo-title-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#logo-title-wrapper a {
+  text-decoration: none;
+  color: black;
+}
+
+.site-title {
+  white-space: nowrap;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  padding-top: 200px;
+  padding-right: 15px;
+}
+
+.navbar a {
+  text-align: right;
+  color: black;
+  font-size: 20px;
+  text-decoration: none;
+  padding-bottom: 18px;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #F04633;
+}
+
+.navbar a.active {
+  color: #F04633;
+}
+
+.tab-wrapper {
+  padding-top: 100px;
+  display: flex;
+  justify-content: end;
+  position: relative;
+  left: 2px;
+  padding-right: -4px;
+
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========================HOME: Main Content =========================================*/
+.main-content {
+  max-width: 530px;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 2; /* IDK Check if this is ok */
+  transition: margin-right 0.4s ease;
+
+
+}
+
+.top-spacer {
+  height: 100px;
+}
+.intro-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  max-width: 500px; 
+  margin-bottom: 70px;
+  margin-top: 150px;
+}
+
+/* FEATURES LIST */
+#writing-section {
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+.recent-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  max-width: 460px;
+
+  border-top: 1px solid #d3d3d3;
+  border-bottom: 1px solid lightgray;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.post-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 40px;
+  width: 460px;
+  /*transition: background-color 0.3s;*/
+
+}
+
+.post-item-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-item-link:hover .post-item {
+  background-color: rgba(211, 211, 211, 0.15); /* light gray on hover */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.post-left {
+  text-align: right;
+  flex: 1;
+  padding-right: 30px;
+}
+
+.post-left h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold ;
+}
+
+/* TRUNCATED EXCERPT OF POST */
+.post-right p {
+  margin: 0;
+  font-size: 14px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Max lines */
+  -webkit-box-orient: vertical;
+    
+/* Optional: for forward compatibility (not widely supported yet) */
+  line-clamp: 2;
+  box-orient: vertical;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.category {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: grey;
+}
+
+.post-image {
+  width: 20px;
+  height: 70px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.post-image img {
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+  display: block;
+}
+
+.post-right {
+  flex: 1;
+  padding-left: 30px;
+
+}
+
+.post-right p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.theme-bar {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 20%;
+  top: 45%;
+  gap: 35px;
+
+}
+
+.theme-bar a {
+  text-align: right;
+  color: black;
+  font-size: 16px;
+  text-decoration: none;
+  padding-right: 12px;
+
+  background-color: white;
+  transition: transform 0.4s ease;
+
+}
+
+.theme-bar a:hover {
+  color: #F04633;
+}
+
+
+.end-spacer {
+  height: 30%;
+}
+
+/* ===================================================== RESPONSIVENESS ====== Shrink or hide sidebars on smaller screens */
+@media (max-width: 1024px) {
+  .theme-bar, #lastModified, #eliot-quote {
+    display: none; /* Hide sidebars */ 
+  }
+  .right-sidebar {
+    transform: translateX(100%);
+    pointer-events: none; /* Optional: prevent interaction while offscreen */
+  }
+  .main-content, .post-content, .content-wrapper, .head-wrapper {
+    flex: 1;
+    margin-left: 20%;
+    margin-right: 10px;
+
+  }
+
+  }
+
+
+@media screen and (max-width:640px) {
+  .navbar a {
+    font-size: 14px;
+  }
+  #oyster-section {
+    padding-left: 0px;
+    justify-content: left;
+  }
+  #pearl-wrapper {
+    left: -20px;
+    bottom: 0px;
+    transform: rotate(25deg);
+  }
+  .post-item {
+    width: auto;
+  }
+}
+
+
+
+/* ==================== PERUSALS PAGE ==================== */
+
+/* ----------------- carousel styling --------------- */
+.carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: 140px;
+    border-radius: 20px;
+    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    margin: auto;
+}
+
+.card-wrapper {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    flex-direction: row;
+    gap: 1.5rem;
+    padding: 1rem 2rem;
+    scrollbar-width: none;
+}
+
+.card-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.card-item {
+    flex: 0 0 auto;
+    width: 120px;
+    height: 120px;
+    padding: 1.75rem;
+
+    background-color: #edf0e66a;
+    border-radius: 10px;
+    border-right: 2px solid #EDF0E6;
+    border-bottom: 2px solid #EDF0E6; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+}
+
+.card-item img {
+  position: relative;  
+  max-width: 100%;
+  max-height: 112px;
+  object-fit: contain;
+  border-radius: 1%;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.185);
+}
+
+.card-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.carousel-section {
+    width: 500px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+
+
+
+/* --------- Arrow buttons ----------- */
+.nav {
+  color: lightgray;
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav.left {
+    left: 0.5rem;
+}
+
+.nav.right {
+    right: 0.5rem;
+}
+
+/* ------------Teacher  Grid Styling -------- */
+.teachers-section {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+}
+
+.teachers-grid {
+  display: flex;
+  flex-direction: row;
+  gap:1.2rem;
+  width: auto;
+  justify-content: space-evenly;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.col p {
+  text-align: center;
+}
+.col ul {
+  padding-left: 1rem;
+
+}
+.col ul a {
+  text-decoration: none;
+  color: black;
+  background-color: transparent;
+}
+.col ul a:hover {
+  text-decoration: underline;
+}
+
+/* -------- Reading Log Table--------*/
+
+
+#reading-log-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  position: relative;
+
+}
+
+#reading-log-table td {
+  padding: 0.2rem;
+  text-align: left;
+}
+#reading-log-table td a {
+  background-color: transparent;
+  color: black;
+}
+
+#genre-filter {
+  margin-top: 2rem;
+  padding: 0.4em;
+  border: 1px solid #E2E2E2;
+  border-radius: 6px;
+  background-color: white;
+  color: #333;
+  padding: 0.2em 0.8em;
+  font-size: 0.9rem;    
+  line-height: 1.2;      /* tighter line spacing */
+
+}
+
+

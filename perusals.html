@@ -1,0 +1,201 @@
+---
+layout: "page"
+---
+
+<style>
+
+#axes-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+</style>
+
+<section id="axes-section">
+    <p><b>Axes:</b> <i>"We ought to read only the kind of books that wound or stab us. If the book we're reading doesn't wake us up with a blow to the head, what are we reading for?...A book must be the axe for the frozen sea within us”</i>- Kafka
+    </p>
+
+
+    <section class="carousel-section" >
+        <button class="nav left" onclick="scrollCarousel(-1)">&#9664</button>
+        <div class="carousel-container">
+            
+
+            <div class="card-wrapper" id="carousel">
+                    <div class="card-item">
+                        <a href="#" class="card-link">
+                            <img src="/assets/img/books/near-lispector.jpg" alt="Near to the Wild Heart bookcover" class="card-image">                   
+                        </a>
+                    </div>
+                    <div class="card-item">
+                        <a href="#" class="card-link">
+                            <img src="/assets/img/books/book-disquiet.jpg" alt="The Book of Disquiet" class="card-image">
+                        </a>
+                    </div>
+                    <div class="card-item">
+                        <a href="#" class="card-link">
+                            <img src="/assets/img/books/light-august.jpg" alt="Light in August" class="card-image">
+                        </a>
+                    </div>
+                    <div class="card-item">
+                        <a href="#" class="card-link">
+                            <img src="/assets/img/books/deguchi.jpg" alt="What Can't Be Said" class="card-image">
+                        </a>
+                    </div>
+                    <div class="card-item">
+                        <a href="#" class="card-link">
+                            <img src="/assets/img/books/varela.jpg" alt="The Embodied Mind" class="card-image">
+                        </a>
+                    </div>
+                    <div class="card-item">
+                        <a href="#" class="card-link">
+                            <img src="/assets/img/books/varela.jpg" alt="The Embodied Mind" class="card-image">
+                        </a>
+                    </div>
+                    <div class="card-item">
+                        <a href="#" class="card-link">
+                            <img src="/assets/img/books/varela.jpg" alt="The Embodied Mind" class="card-image">
+                        </a>
+                    </div>
+            </div>
+            
+        </div>
+        <button class="nav right" onclick="scrollCarousel(1)">&#9654</button>
+    </section>
+</section>
+
+<section class="teachers-section">
+    <p>
+        <b>The poets (1), philosophers (2), and writers (3)</b>, who are my greatests teachers
+    </p>
+    <div class="teachers-grid">
+        <div class="col">
+            <p>(1)</p>
+            <ul>
+                <li>
+                    <a href="#">Wallace Stevens</a> </li>
+                <li> 
+                    <a href="">Emily Dickinson</a> </li>
+                <li> 
+                    <a href ="">Hart Crane</a> </li>
+            </ul>
+        </div>
+        <div class="col">
+            <p>(2)</p>
+            <ul>
+                <li>
+                    <a href="#">William James</a> </li>
+                <li> 
+                    <a href="">Merleau-Ponty</a> </li>
+                <li> 
+                    <a href ="">Simone Weil</a> </li>
+            </ul>
+        </div>
+        <div class="col">
+            <p>(3)</p>
+            <ul>
+                <li>
+                    <a href="#">Clarice Lispector</a> </li>
+                <li> 
+                    <a href="">Borges</a> </li>
+                <li> 
+                    <a href ="">William Faulkner</a> </li>
+            </ul>
+        </div>
+ <!--       <div class="col">
+            <p>(4)</p>
+            <ul>
+                <li>
+                    <a href="https://www.alvinlustig.com/" class="internal-link" target="_blank" rel="noopener noreferrer">Alvin Lustig</a> </li>
+                <li> 
+                    <a href="https://www.johngalldesign.com" class="internal-link" target="_blank" rel="noopener noreferrer">John Gall</a> </li>
+                <li> 
+                    <a href ="">Ikko Tanaka</a> </li>
+            </ul>
+        </div>-->
+    </div>
+
+
+</section>
+
+<section class="log-section">
+    
+    <div class="log-header">
+        <p><strong>Reading log</strong> (* = reread,  ~ = audiobook)</p>
+
+        <!--Filter by genre-->
+        <div class="filter-wrapper">
+            <label for="genre-filter">Filter by genre:</label>
+            <select id="genre-filter">
+                <option value="all">All</option>
+                {% assign genres= site.books | map: "genre" | uniq | sort %}
+                {% for genre in genres %}
+                    <option value="{{ genre }}"> {{ genre }} </option>
+                {% endfor %}
+            </select>
+            </div>
+    </div>
+
+        <!--Book table-->
+        <table id="reading-log-table">
+            <tbody>
+                {% assign sorted_books = site.books | sort: 'date_finished' | reverse %}
+                {% for book in sorted_books %}
+                <tr data-genre="{{ book.genre | downcase}}">
+                    <td><strong><a href="{{ book.url }}">{{book.title}}</a></strong></td>
+                    <td> {{ book.author }}</td>
+                    <td>{{ book.date_finished }}</td>
+                    <td>{{ book.country  }}
+                {% endfor %}        
+                </tr>
+            </tbody>
+        </table>
+
+</section>
+
+
+
+
+
+
+<script>
+    function scrollCarousel(direction) {
+        const carousel = document.getElementById('carousel');
+        const scrollAmount = 10; // adjust per item width + gap
+        carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    }
+
+    const item = document.querySelector('.card-item');
+    const gap = 20; //  CSS gap is in pixels
+    const scrollAmount = item.offsetWidth + gap;
+
+    // to hide the buttons at the end of the line 
+    const carousel = document.getElementById('carousel');
+    const leftBtn = document.querySelector('.nav.left');
+    const rightBtn = document.querySelector('.nav.right');
+    
+    function updateNavButtons() {
+        const scrollLeft = carousel.scrollLeft;
+        const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+
+        leftBtn.style.display = scrollLeft > 0 ? 'block' : 'none';
+        rightBtn.style.display = scrollLeft < maxScrollLeft ? 'block' : 'none';
+    }
+
+    function scrollCarousel(direction) {
+        const scrollAmount = carousel.clientWidth * 0.8; // adjust scroll speed as needed
+        carousel.scrollBy({
+        left: scrollAmount * direction,
+        behavior: 'smooth'
+        });
+    }
+
+    // Attach scroll and resize listeners
+    carousel.addEventListener('scroll', updateNavButtons);
+    window.addEventListener('resize', updateNavButtons);
+
+    // Run on load
+    window.addEventListener('load', updateNavButtons);
+
+
+</script>
