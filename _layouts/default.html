@@ -3,18 +3,7 @@
 
   {%- include head.html -%}
 
-  <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const links = document.querySelectorAll('a[href^="http"]');
-    links.forEach(link => {
-      if (!link.href.includes(window.location.hostname)) {
-        link.setAttribute("target", "_blank");
-        link.setAttribute("rel", "noopener noreferrer");
-        link.classList.add("external-link");
-      }
-    });
-  });
-  </script>
+
 
   <body>
     <div class = "top-spacer"></div>
@@ -88,6 +77,17 @@
   <script>
     document.getElementById("lastModified").textContent =
       "Last Updated: " + document.lastModified;
+
+    document.addEventListener("DOMContentLoaded", function() {
+    const links = document.querySelectorAll('a[href^="http"]');
+    links.forEach(link => {
+      if (!link.href.includes(window.location.hostname)) {
+        link.setAttribute("target", "_blank");
+        link.setAttribute("rel", "noopener noreferrer");
+        link.classList.add("external-link");
+      }
+    });
+  });
   </script>
 </body>
 </html>
