@@ -35,7 +35,7 @@ The basic structure of my commonplaces was simple. Entries were by date (no inde
 Here's an example of one layout in my 2023 notebook:
 
 
-<img src="/assets/img/posts/journalpic 1.png/">
+<img src="/assets/img/posts/journalpic 1.png">
 
   <h5> It may be too small to read, but that was my intention! </h5>
 
