@@ -1,0 +1,173 @@
+---
+layout: "default"
+---
+
+<style>
+    .article-footer {
+      margin-top: 3rem;
+    }
+
+    .article-subheading {
+      text-transform: uppercase;
+      color: grey;
+      letter-spacing: 2px;
+    }
+
+    .article-supplement {
+      position: relative;
+      display: block;
+      margin: auto;
+      border-radius: 6px;
+    }
+
+    .head-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+      gap: 3rem;
+    }
+
+    .article-header {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .article-image {
+      border-radius: 6px;
+      max-width: 220px;
+      max-height: auto;
+      object-fit: cover;
+    }
+
+    p ul {
+      padding-left: 20%;
+    }
+
+    @media (max-width: 914px) {
+      .main-content-wrapper, .article-footer {
+        padding-left: 20%;
+      }
+    }
+
+    .article-footer{
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+
+</style>
+
+{% assign site.data.footnotes = "" %}
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="head-wrapper">
+    <header class="article-header">
+    <!--BREADCRUMB NAVIGATION-->
+    <nav class="breadcrumbs"> 
+      <a href="{{ '/wiki-index/' | relative_url }}">Index</a>
+
+      {% if page.categories %}
+        {% for cat in page.categories %}
+         › <a href="/{{ cat | downcase | url_encode }}/">{{ cat | capitalize }}</a>
+        {% endfor %}
+      {% endif %}
+
+
+
+      <!--type-->
+      {% if page.type %}
+        › <a href="/type/{{ page.type | downcase | url_encode }}/">{{ page.type | capitalize }}</a>
+      {% endif %}
+    </nav>
+    <!--End BREADCRUMB -->
+
+    <!-- DETAILS -->
+
+    
+      <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+      <p class="post-meta">
+
+    <!--Subheading-->
+      {% if page.subheading %}
+        <div class="article-subheading" >
+          <p> {{ page.subheading }} </p>
+        </div> 
+      {% endif %}
+    <!-- Era -->
+      {% if page.era %}
+        <div class="article-country" >
+          <p> <strong>Era: </strong>{{ page.era }} </p>
+        </div> 
+      {% endif %}      
+    <!-- Country -->      
+      {% if page.country %}
+        <div class="article-country" >
+          <p> <strong>Country of Origin: </strong>{{ page.country }} </p>
+        </div> 
+      {% endif %}     
+      </header>
+
+      {% if page.image %}
+        <img src="{{ page.image }}" class="article-image" alt="image of Clarice">
+      {% endif %}
+    
+  </div>
+
+    <!--Note definition    
+        {% if page.definition %}
+        <div class="article-definition" >
+            {{ page.definition | markdownify }}
+        </div> 
+        {% endif %}-->
+
+<!--MAIN CONTENT -->
+<div class="main-content-wrapper" >
+    {{ content }}
+  </div>
+
+<!-- FOOTER DETAILS  -->
+  <div class="article-footer">
+    <!--Adding Tags-->
+      <h3>Nodes</h3>
+        {%- if page.tags -%}
+          <div class="post-tags">
+            
+          {% for tag in page.tags %}
+            <a href="{{ '/tags/' | append: tag | relative_url }}" class="tag">{{ tag }}</a>
+          {% endfor %}
+        {%- endif -%}
+        </div>
+
+        <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+          Article originally added:  {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+           {{ page.date_pub | date: date_format }}
+          <br>
+          Last updated on: {{ page.date_mod | date: date_format }}
+        </time>
+
+  </div>
+
+
+
+
+  {%- if site.disqus.shortname -%}
+    {%- include disqus_comments.html -%}
+  {%- endif -%}
+  {% if site.data.footnotes %}
+  <hr>
+  <h3>Notes</h3>
+  <ol class="sidenote-bottom-list">
+    {{ site.data.footnotes }}
+  </ol>
+  {% endif %}
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>
+
+
+
+
+
+

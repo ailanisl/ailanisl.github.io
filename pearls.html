@@ -1,0 +1,48 @@
+---
+layout: page
+---
+<style>
+  .quote-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .quote-list .quote-author {
+    background-color: transparent;
+    color: black;
+    text-decoration: underline;
+  }
+  .quote-list .quote-author:hover {
+  color: #656565;
+  } 
+
+  .quote-list a {
+    color: #656565;
+  }
+  .quote-list a:hover {
+    text-decoration: none;
+  }
+  .quote-tags {
+    margin-top: 0.75rem;
+  }
+
+
+</style>
+<ul class="quote-list">
+  {% assign sorted_quotes = site.quotes | sort: "quote" %}
+  {% for q in sorted_quotes %}
+    <li>
+      “{{ q.quote }}”  
+      <br>
+      — <a href="{{ q.url }}" class="quote-author" >{{ q.author }}</a>
+      {%- if q.tags -%}
+
+        <div class="quote-tags">
+          
+        {% for tag in q.tags %}
+          <a href="{{ '/tags/' | append: tag | relative_url }}" class="tag">{{ tag }}</a>
+        {% endfor %}
+      {%- endif -%}
+    </li>
+  {% endfor %}
+</ul>

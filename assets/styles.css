@@ -26,10 +26,15 @@ p {
 
 }
 p a {
-  color:#5C7423;
-  text-decoration: none;
-  background-color: #F7F0F0;
+  color: black;
+  text-decoration: underline;
 }
+
+p a:hover {
+  color: #656565;
+
+}
+
 
 a {
   text-decoration: underline;
@@ -259,15 +264,21 @@ a {
 
 .node-box {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 10px;
   position: fixed;
-  bottom: 7%;
+  bottom: 1%;
+
+  max-height: 30%;
 }
 .node-list {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
+  overflow-y: scroll;
+  border-top: 1px solid rgb(232, 232, 232);
+  padding-top: 1rem;
+
 }
 
 
@@ -335,6 +346,7 @@ a {
   width: 100%;
   position: fixed;
   left: -90px;
+  z-index: 1;
 
 
 }
@@ -402,9 +414,15 @@ a {
   margin-left: auto;
   margin-right: auto;
   z-index: 2; /* IDK Check if this is ok */
-  transition: margin-right 0.4s ease;
-
-
+  transition: margin-right 0.4s ease
+}
+.main-content p {
+  line-height: 1.6rem;
+}
+.main-content ul {
+  margin-left: 2rem;
+  font-size: 1.15rem;
+  margin-bottom: 0.8rem;
 }
 
 .top-spacer {
@@ -448,6 +466,8 @@ a {
   justify-content: center;
   padding-right: 40px;
   width: 460px;
+  border-radius: 6px;
+
   /*transition: background-color 0.3s;*/
 
 }
@@ -459,9 +479,14 @@ a {
 }
 
 .post-item-link:hover .post-item {
-  background-color: rgba(211, 211, 211, 0.15); /* light gray on hover */
+  /*background-color: rgba(225, 225, 225, 0.067);  light gray on hover */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
   transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.post-item-link:hover .post-image img {
+  filter: grayscale(0);
 }
 
 .post-left {
@@ -511,6 +536,8 @@ a {
   height: 100%;
   object-fit:cover;
   display: block;
+  filter: grayscale(1);
+  transition: filter 0.3s;
 }
 
 .post-right {
@@ -556,7 +583,7 @@ a {
 }
 
 /* ===================================================== RESPONSIVENESS ====== Shrink or hide sidebars on smaller screens */
-@media (max-width: 1024px) {
+@media (max-width: 914px) {
   .theme-bar, #lastModified, #eliot-quote {
     display: none; /* Hide sidebars */ 
   }
@@ -564,12 +591,21 @@ a {
     transform: translateX(100%);
     pointer-events: none; /* Optional: prevent interaction while offscreen */
   }
-  .main-content, .post-content, .content-wrapper, .head-wrapper {
+  .main-content, .post-content,  .head-wrapper {
     flex: 1;
     margin-left: 20%;
-    margin-right: 10px;
+    margin-right: 5%;
 
   }
+  .carousel-container, .carousel-wrapper {
+    position: relative;
+
+  }
+
+  .carousel-section {
+    max-width: 70%;
+  }  
+
 
   }
 
@@ -681,6 +717,7 @@ a {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 2;
 }
 
 .nav.left {
@@ -763,3 +800,20 @@ a {
 }
 
 
+/* =============================== ARTICLE STYLING ======================== */
+.breadcrumbs {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-bottom: 1em;
+  color: black;
+}
+
+.breadcrumbs a {
+  color: black;
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}

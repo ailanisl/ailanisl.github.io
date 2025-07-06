@@ -1,0 +1,66 @@
+---
+layout: page
+title: "Personal Wiki Index"
+permalink: /wiki-index/
+---
+
+<style> 
+    .article-card a {
+        background-color: transparent;
+        color: black;
+        text-decoration: underline;
+        font-weight: normal;
+    }
+
+    .article-card a:hover {
+        color: gray;
+    }
+</style>
+<!-- Grouped Content -->
+{% assign grouped_by_category = site.articles | group_by_exp: "item", "item.categories[0]" %}
+{% for category in grouped_by_category %}
+  <h2>{{ category.name | capitalize }}</h2>
+
+  {% assign sorted_items = category.items | sort: "title" %}
+  {% assign grouped_by_type = sorted_items | sort: "title" | group_by: "type" %}
+
+  {% for type_group in grouped_by_type %}
+    <h3>{{ type_group.name | capitalize }}</h3>
+
+    <div class="article-grid">
+      {% for article in type_group.items %}
+        <div class="article-card" data-tags="{{ article.tags | join: ' ' | downcase }}">
+          <h4><a href="{{ article.url }}">{{ article.title }}</a></h4>
+<!--          {% if article.excerpt %}
+            <p>{{ article.excerpt }}</p>
+          {% endif %}
+          {% if article.tags %}
+            <p class="tags">
+              {% for tag in article.tags %}
+                <span class="tag">{{ tag }}</span>
+              {% endfor %}-->
+            </p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
+{% endfor %}
+
+
+
+<!-- 🔍 Tag Filter
+<label for="tag-filter">Filter by tag:</label>
+<select id="tag-filter">
+  <option value="all">All Tags</option>
+  {% assign all_tags = "" | split: "" %}
+  {% for article in site.articles %}
+    {% for tag in article.tags %}
+      {% assign all_tags = all_tags | push: tag %}
+    {% endfor %}
+  {% endfor %}
+  {% assign all_tags = all_tags | uniq | sort %}
+  {% for tag in all_tags %}
+    <option value="{{ tag | downcase }}">{{ tag }}</option>
+  {% endfor %}
+</select> -->

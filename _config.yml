@@ -39,6 +39,14 @@ collections:
     output: true
     permalink: /books/:title/
 
+  articles: 
+    output: true
+  permalink: /:categories/:slug/
+
+  quotes:
+    output: true
+    permalink: /quotes/:slug/
+
 defaults:
   - scope:
       path: "assets/img"

@@ -6,7 +6,7 @@ categories: literature pennings
 tags: reading 
 image: /assets/img/posts/used_book_haul.jpg
 ---
-I have one nagging vice in my life – that is collecting physical books, old used paperback books especially. 
+I have one nagging vice in my life – that is collecting physical books, especially old used paperback books. The sunworn spines, the teal-painted edges, and the occasional stained drop of coffee.
 
 
  <img src="/assets/img/posts/used_book_haul.jpg">

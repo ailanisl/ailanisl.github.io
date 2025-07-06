@@ -10,8 +10,15 @@ permalink: /perusals/
     flex-direction: column;
     gap: 10px;
 }
+
+@media (max-width: 914px) {
+    .post-content {
+        padding-right: 40%;
+    }
+    }
 </style>
 
+<div class="post-content">
 <section id="axes-section">
     <p><b>Axes:</b> <i>"We ought to read only the kind of books that wound or stab us. If the book we're reading doesn't wake us up with a blow to the head, what are we reading for?...A book must be the axe for the frozen sea within us”</i>- Kafka
     </p>
@@ -24,7 +31,7 @@ permalink: /perusals/
 
             <div class="card-wrapper" id="carousel">
                     <div class="card-item">
-                        <a href="#" class="card-link">
+                        <a href="{{ '/books/near-to-the-wild-heart' | relative_url }}" class="card-link">
                             <img src="/assets/img/books/near-lispector.jpg" alt="Near to the Wild Heart bookcover" class="card-image">                   
                         </a>
                     </div>
@@ -74,7 +81,8 @@ permalink: /perusals/
             <p>(1)</p>
             <ul>
                 <li>
-                    <a href="#">Wallace Stevens</a> </li>
+                    {% assign doc = site.articles | where: 'title', 'Wallace Stevens' | first %}
+                    <a href="{{ doc.url }}">Wallace Stevens</a> </li>
                 <li> 
                     <a href="">Emily Dickinson</a> </li>
                 <li> 
@@ -96,7 +104,8 @@ permalink: /perusals/
             <p>(3)</p>
             <ul>
                 <li>
-                    <a href="#">Clarice Lispector</a> </li>
+                    {% assign doc = site.articles | where: 'title', 'Clarice Lispector' | first %}
+                    <a href="{{ doc.url }}">Clarice Lispector</a> </li>
                 <li> 
                     <a href="">Borges</a> </li>
                 <li> 
@@ -143,7 +152,14 @@ permalink: /perusals/
                 {% assign sorted_books = site.books | sort: 'date_finished' | reverse %}
                 {% for book in sorted_books %}
                 <tr data-genre="{{ book.genre | downcase}}">
-                    <td><strong><a href="{{ book.url }}">{{book.title}}</a></strong></td>
+                    <td><strong><a href="{{ book.url }}">{{book.title}}
+                    {% if book.reread %}
+                        *
+                    {% endif %}
+                    {% if book.audio %}
+                        &#9738;
+                    {% endif %}
+                    </a></strong></td>
                     <td> {{ book.author }}</td>
                     <td>{{ book.date_finished }}</td>
                     <td>{{ book.country  }}
@@ -154,7 +170,7 @@ permalink: /perusals/
 
 </section>
 
-
+</div>
 
 
 
@@ -197,6 +213,21 @@ permalink: /perusals/
 
     // Run on load
     window.addEventListener('load', updateNavButtons);
+
+    // Genre-Filtering JS
+    document.getElementById('genre-filter').addEventListener('change', function () {
+    const selected = this.value.toLowerCase();
+    const rows = document.querySelectorAll('#reading-log-table tbody tr');
+
+    rows.forEach(row => {
+        const rowGenre = row.dataset.genre;
+        if (selected === 'all' || rowGenre === selected) {
+        row.style.display = '';
+        } else {
+        row.style.display = 'none';
+        }
+    });
+    });
 
 
 </script>

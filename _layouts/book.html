@@ -19,10 +19,15 @@ layout: "default"
       <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
       <p class="post-meta">
         
-        {%- if page.author -%}
-          <p>By  <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span></p>
-        {%- endif -%}
 
+        {% assign author_page = site.articles | where: "title", page.author | first %}
+        {% if author_page %}
+          <a href="{{ author_page.url }}">{{ page.author }}</a>
+        {% else %}
+          {{ page.author }}
+        {% endif %}
+
+        
         <p><b>Country: </b> {{ page.country }} </p>
 
 

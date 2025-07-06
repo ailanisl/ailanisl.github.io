@@ -1,0 +1,33 @@
+---
+layout: default
+
+---
+<style>
+    
+</style>
+
+<p class="quote-text">
+  {{ content }}
+</p>
+
+<p class="quote-attribution">
+  — 
+  {% assign author_page = site.articles | where: "title", page.author | first %}
+  {% if author_page %}
+    <a href="{{ author_page.url }}">{{ page.author }}</a>
+  {% else %}
+    {{ page.author }}
+  {% endif %}
+
+  {% if page.source %}
+    , from 
+    <i>
+    {% assign source_page = site.books | where: "title", page.source | first %}
+    {% if source_page %}
+      <a href="{{ source_page.url }}">{{ page.source }}</a>
+    {% else %}
+      {{ page.source }}
+    {% endif %}
+    </i>
+  {% endif %}
+</p>

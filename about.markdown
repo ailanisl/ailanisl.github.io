@@ -1,10 +1,14 @@
 ---
-layout: note
+layout: page
 title: Pocketbook
 permalink: /about/
 definition:  (n.) <br> 1. A woman's purse <br> 2. A small paperback book  <br> 3. A notebook 
 tags: analog
 ---
+### Definition: (n.)
+1. A woman's purse
+2. A small paperback book
+3. A notebook
 
 *One:* This website is not a place where I discuss my financial matters. Rather, it's a __purse of things that are valuable to me__: abstractions, ideas, ephemera (these are my <a href= "{{ '/pearls/' | relative_url }}" class="internal-link">pearls</a>). 
 
