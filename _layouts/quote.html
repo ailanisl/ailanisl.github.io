@@ -3,12 +3,17 @@ layout: default
 
 ---
 <style>
-    
-</style>
 
-<p class="quote-text">
+</style>
+<div class="main-content">
+<a href="{{ '/pearls/' | relative_url }}" class="back-button">&larr; back to pearls </a>
+
+<section id="quote">
+  <br>
   {{ content }}
-</p>
+</section>
+
+
 
 <p class="quote-attribution">
   — 
@@ -20,7 +25,7 @@ layout: default
   {% endif %}
 
   {% if page.source %}
-    , from 
+   from 
     <i>
     {% assign source_page = site.books | where: "title", page.source | first %}
     {% if source_page %}
@@ -31,3 +36,4 @@ layout: default
     </i>
   {% endif %}
 </p>
+</div>

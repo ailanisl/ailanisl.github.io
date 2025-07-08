@@ -10,6 +10,10 @@ layout: "default"
     .book-footer {
         margin-top: 4rem;
     }
+
+    .book-quotes ul li {
+      padding-bottom: 1rem;
+    }
 </style>
 
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
@@ -27,7 +31,7 @@ layout: "default"
           {{ page.author }}
         {% endif %}
 
-        
+
         <p><b>Country: </b> {{ page.country }} </p>
 
 
@@ -49,6 +53,30 @@ layout: "default"
 
   <div class="post-content" itemprop="articleBody">
     {{ content }}
+
+
+    <div class="quote-section">
+      {% assign related_quotes = site.quotes | where: "source_slug", page.slug %}
+
+      {% if related_quotes.size > 0 %}
+        <section class="book-quotes">
+          <h2>Quotes from {{ page.title }}</h2>
+          <ul>
+            {% for quote in related_quotes %}
+              <li>
+                “{{ quote.quote }}”
+                {% if quote.page %}
+                  <span class="quote-page">({{ quote.page }})</span>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </section>
+      {% endif %}
+      
+    </div>
+
+
   </div>
 
   {%- if site.disqus.shortname -%}

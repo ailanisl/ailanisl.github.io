@@ -76,10 +76,10 @@ layout: "default"
 
 
 
-      <!--type-->
+      <!--type
       {% if page.type %}
         › <a href="/type/{{ page.type | downcase | url_encode }}/">{{ page.type | capitalize }}</a>
-      {% endif %}
+      {% endif %}-->
     </nav>
     <!--End BREADCRUMB -->
 
@@ -142,7 +142,7 @@ layout: "default"
 
         <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
           Article originally added:  {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-           {{ page.date_pub | date: date_format }}
+             {{ page.date_pub | date: date_format }}
           <br>
           Last updated on: {{ page.date_mod | date: date_format }}
         </time>

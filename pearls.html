@@ -1,19 +1,31 @@
 ---
 layout: page
+title: "Pearls and poems"
+permalink: /pearls/
 ---
 <style>
   .quote-list {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 3rem;
+    padding: 3rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
   }
-  .quote-list .quote-author {
+  .quote-list .quote-heading {
     background-color: transparent;
     color: black;
-    text-decoration: underline;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
-  .quote-list .quote-author:hover {
-  color: #656565;
+
+  .quote-description {
+    color: #9BA487;
+  }
+
+  .quote-list .quote-heading:hover, .quote-description:hover {
+    color: #656565;
   } 
 
   .quote-list a {
@@ -24,17 +36,31 @@ layout: page
   }
   .quote-tags {
     margin-top: 0.75rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    gap: 3px;
+    line-height: 2.2rem;
+
   }
 
+  @media (max-width: 924px){
+    .quote-list {
+      padding-right: 10%;
+    }
+  }
 
 </style>
 <ul class="quote-list">
-  {% assign sorted_quotes = site.quotes | sort: "quote" %}
+  {% assign sorted_quotes = site.quotes | sort: "date" | reverse %}
   {% for q in sorted_quotes %}
     <li>
-      “{{ q.quote }}”  
+      {% if q.heading %}
+      <a href="{{ q.url }}" class="quote-heading"> {{ q.author }} <span class="quote-description">{{ q.heading }}</span> </h2> </a>
+      {% else %}
+      <a href="{{ q.url }}" class="quote-heading"> {{ q.author }} </h2> </a>
+      {% endif %}
       <br>
-      — <a href="{{ q.url }}" class="quote-author" >{{ q.author }}</a>
+      {{ q.quote }}  
+      
       {%- if q.tags -%}
 
         <div class="quote-tags">

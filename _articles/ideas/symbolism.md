@@ -12,6 +12,7 @@ type: ideas
 categories: [literature]
 tags: [poetics]
 date_pub: 2025-07-06
+date_mod: 2025-07-06
 
 ---
 

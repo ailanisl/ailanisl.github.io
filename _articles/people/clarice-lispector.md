@@ -12,6 +12,7 @@ type: people
 categories: [literature]
 tags: [modernism, brazil, novelists]
 date_pub: 2025-07-05
+date_mod: 2025-07-06
 
 ---
 

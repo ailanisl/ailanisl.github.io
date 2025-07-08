@@ -6,7 +6,8 @@
 
 
   <body>
-    <div class = "top-spacer"></div>
+    <div class="head-wrapper">
+    <div class = "top-spacer"></div></div>
 
   <!-- RIGHT SIDEBAR -->
     <div class="right-sidebar">
@@ -67,7 +68,7 @@
         <div class="spacer-left"></div>
         <div class="logo-space">
         <div id="logo-title-wrapper">
-            <a href= "{{ '/' | relative_url }}" > <img src="{{ '/assets/img/name-stamp.png' | relative_url }}" alt="Logo of my site">
+            <a href= "{{ '/' | relative_url }}" > <img src="{{ '/assets/img/name-stamp.png' | relative_url }}" alt="Logo of my site: it is a red stamp with my name in Chinese characters">
             <div class="title-space">
             <h2 class="site-title">The Pocketbook of</h2>
             <h2>Ailani Sato-Lim</h2></a>
@@ -82,12 +83,13 @@
           {% endfor %}
         </nav>
         <div class="tab-wrapper">
-        <a href="{{ '/wiki-index/' | relative_url }}"><img src="{{ '/assets/img/index-tab1.svg' | relative_url }}"></a>
+        <a href="{{ '/wiki-index/' | relative_url }}"><img src="{{ '/assets/img/index-tab1.svg' | relative_url }}" alt="a tab that leads to the index of my personal wiki"></a>
         </div>
 
 
 
     </div>
+
 
     <!-- MAIN CONTENT -->
     <div class="main-content">

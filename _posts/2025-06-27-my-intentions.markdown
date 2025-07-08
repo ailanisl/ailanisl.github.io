@@ -3,20 +3,22 @@ layout: post
 title:  "My Intentions"
 date:   2025-06-27 21:56:02 -0700
 categories: design pennings 
-tags: meta consciousness silence science history religion spirituality
+tags: meta
 image: /assets/img/desktop.jpg
+subtitle: <p> This is my letter to the World <br> That never wrote to Me-- <p>
 ---
 
 
 >This is my letter to the World  
 >That never wrote to Me—  
 >The simple News that Nature told—  
->With tender Majesty. 
+>With tender Majesty.
 >
 >Her Message is committed  
 >To Hands I cannot see—  
 >For love of Her —  Sweet—countrymen —  
->Judge tenderly — of Me!  
+>Judge tenderly — of Me! 
+> 
 > -Emily Dickinson
 
 I never thought I would code. 

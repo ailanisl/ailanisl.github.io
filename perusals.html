@@ -1,6 +1,7 @@
 ---
 layout: page
 permalink: /perusals/
+title: "Perusals"
 ---
 
 <style>
@@ -11,11 +12,6 @@ permalink: /perusals/
     gap: 10px;
 }
 
-@media (max-width: 914px) {
-    .post-content {
-        padding-right: 40%;
-    }
-    }
 </style>
 
 <div class="post-content">
@@ -84,7 +80,8 @@ permalink: /perusals/
                     {% assign doc = site.articles | where: 'title', 'Wallace Stevens' | first %}
                     <a href="{{ doc.url }}">Wallace Stevens</a> </li>
                 <li> 
-                    <a href="">Emily Dickinson</a> </li>
+                    {% assign doc = site.articles | where: 'title', 'Emily Dickinson' | first %}
+                    <a href="{{ doc.url }}">Emily Dickinson</a> </li>
                 <li> 
                     <a href ="">Hart Crane</a> </li>
             </ul>

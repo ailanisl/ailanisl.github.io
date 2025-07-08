@@ -19,7 +19,7 @@ permalink: /wiki-index/
 <!-- Grouped Content -->
 {% assign grouped_by_category = site.articles | group_by_exp: "item", "item.categories[0]" %}
 {% for category in grouped_by_category %}
-  <h2>{{ category.name | capitalize }}</h2>
+  <h2><a href="{{ /category.name/ | relative_url }}">{{ category.name | capitalize }}</a></h2>
 
   {% assign sorted_items = category.items | sort: "title" %}
   {% assign grouped_by_type = sorted_items | sort: "title" | group_by: "type" %}
@@ -49,7 +49,7 @@ permalink: /wiki-index/
 
 
 
-<!-- 🔍 Tag Filter
+<!-- 🔍 Tag Filter-->
 <label for="tag-filter">Filter by tag:</label>
 <select id="tag-filter">
   <option value="all">All Tags</option>
@@ -63,4 +63,21 @@ permalink: /wiki-index/
   {% for tag in all_tags %}
     <option value="{{ tag | downcase }}">{{ tag }}</option>
   {% endfor %}
-</select> -->
+</select> 
+
+<script>
+  const tagFilter = document.getElementById("tag-filter");
+  tagFilter.addEventListener("change", function () {
+    const selectedTag = this.value;
+    const cards = document.querySelectorAll(".article-card");
+
+    cards.forEach(card => {
+      const tags = card.dataset.tags;
+      if (selectedTag === "all" || tags.includes(selectedTag)) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
+</script>

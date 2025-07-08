@@ -120,17 +120,17 @@ a {
   text-decoration: underline;
 }
 .post-content blockquote {
-  border-left: 4px solid #EDF0E6;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border-left: 2px solid #656565;
   margin-left: 2rem;
   margin-right: 3rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
   padding-left: 2rem;
   padding-right: 2rem;
   color: #656565;
-  background-color: #f2f5eb49;
+  /*background-color: #f2f5eb49;*/
   font-size: 1rem;
   
 }
@@ -269,7 +269,7 @@ a {
   position: fixed;
   bottom: 1%;
 
-  max-height: 30%;
+  max-height: 40%;
 }
 .node-list {
   display: flex;
@@ -410,11 +410,19 @@ a {
 
 /* ========================HOME: Main Content =========================================*/
 .main-content {
-  max-width: 530px;
+
   margin-left: auto;
   margin-right: auto;
   z-index: 2; /* IDK Check if this is ok */
-  transition: margin-right 0.4s ease
+  transition: margin-right 0.4s ease;
+  font-family: system-ui, sans-serif; 
+  font-size: 1rem;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 530px;
+
 }
 .main-content p {
   line-height: 1.6rem;
@@ -425,9 +433,7 @@ a {
   margin-bottom: 0.8rem;
 }
 
-.top-spacer {
-  height: 100px;
-}
+
 .intro-section {
   display: flex;
   flex-direction: column;
@@ -511,7 +517,7 @@ a {
   -webkit-box-orient: vertical;
     
 /* Optional: for forward compatibility (not widely supported yet) */
-  line-clamp: 2;
+  line-clamp: 1;
   box-orient: vertical;
 
   overflow: hidden;

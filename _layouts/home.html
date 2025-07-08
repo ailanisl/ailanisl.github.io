@@ -7,21 +7,29 @@ layout: default
 .inspo-section {
   display: flex;
   flex-direction: column;
-  padding-top: 270px;
+  padding-top: 140px;
   padding-bottom: 100px;
   align-items: center;
 
 }
 
 .inspo-container {
-  width: 50px;
+  width: 110px;
   max-width: 940px;
   position: relative;
   left: 70px;
+  display: flex;
 }
 
-.inspo-container h3 {
+.inspo-container a {
   text-decoration: none;
+  color: black;
+  font-size: larger;
+  text-align: center;
+}
+
+.inspo-container a:hover {
+    color: #655656;
 }
 
 /* === Oyster section ===== */
@@ -31,6 +39,10 @@ layout: default
   padding-bottom: 325px;
   padding-left: 50px;
 }
+#oyter-open:hover {
+    color: #655656;
+}
+
 #oyster-wrapper {
   cursor: pointer;
 }
@@ -59,6 +71,11 @@ layout: default
     padding-right: 2px;
     color: lightgray;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    transition: color 0.3s ease-out;
+}
+
+#eliot-quote:hover {
+    color: #9BA487;
 }
 </style>
 
@@ -94,10 +111,16 @@ layout: default
                         <img src="/img/default-thumb.jpg" alt="Default image">
                     {% endif %}
                     </div>
+                    {% if post.subtitle %}
+                    <div class="post-right">
+                        <p>{{ post.subtitle }}</p>
+                    </div>
 
+                    {% else %}
                     <div class="post-right">
                     <p>{{ post.excerpt }}</p>
                     </div>
+                    {% endif %}
                 </div>
                 </a>
             {% endfor %}
@@ -117,9 +140,9 @@ layout: default
 
         <!--SPACING AND PICS-->
         <div class ="inspo-section">
-            <div class = "inspo-container" onclick="on()" > <!--WORK ON MAKING OVERLAY-->
-                <img src="/assets/img/inspo-woman.png" />
-                <p>Inspirations</p>
+            <div class = "inspo-container" > <!--WORK ON MAKING OVERLAY-->
+                <a href=" {{ '/about' | relative_url }}"> <img  loading="lazy" src="/assets/img/inspo-woman.png" alt="my drawing of a woman that leads to the about page" />
+                About this site</a>
                 </div>
 
     <!--Trying to make the pinwheel-->
@@ -131,12 +154,12 @@ layout: default
         <!--OYSTER BUTTON-->
         <div id = "oyster-section">
             <div id = "oyster-wrapper" onclick="pearlFunction()" >
-                <img src = "/assets/img/oyster-larger.svg"/>
+                <img loading="lazy" src = "/assets/img/oyster-larger.svg" alt="My drawing of an oyster that opens to reveal pearls"/>
                 <p id = "open-oyster">Open oyster</p>
             </div>
             
-            <a href ="#" ><div id = "pearl-wrapper" >
-                <img src="/assets/img/pearls-1.svg" /> </div> </a>
+            <a href ="{{ '/pearls/' | relative_url }}" ><div id = "pearl-wrapper" >
+                <img loading="lazy" src="/assets/img/pearls-1.svg" alt="two pearls with quotes by Etel Adnan and Gordon Hempton within" /> </div> </a>
         </div>
     </div>
 

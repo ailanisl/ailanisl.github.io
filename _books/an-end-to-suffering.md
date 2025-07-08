@@ -1,6 +1,7 @@
 --- 
 layout: book
 title: "An End to Suffering"
+slug: an-end-to-suffering
 author: "Pankaj Mishra"
 date_finished: 2021-08-01
 country: "India"

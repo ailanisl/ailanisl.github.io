@@ -1,6 +1,7 @@
 --- 
 layout: book
 title: "Near to the Wild Heart"
+slug: near-to-the-wild-heart
 author: "Clarice Lispector"
 date_finished: 2022-04-24
 country: "Brazil"
