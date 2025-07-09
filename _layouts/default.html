@@ -76,15 +76,15 @@
   <!-- LEFT SIDEBAR -->
     <div class="left-sidebar">
         <div class="spacer-left"></div>
-        <div class="logo-space">
+        <div class="logo-space">      </div>
         <div id="logo-title-wrapper">
-            <a href= "{{ '/' | relative_url }}" > <img src="{{ '/assets/img/name-stamp.png' | relative_url }}" alt="Logo of my site: it is a red stamp with my name in Chinese characters">
+          <a href= "{{ '/' | relative_url }}" > <img src="{{ '/assets/img/name-stamp.png' | relative_url }}" class = "logo" alt="Logo of my site: it is a red stamp with my name in Chinese characters">
             <div class="title-space">
-            <h2 class="site-title">The Pocketbook of</h2>
-            <h2>Ailani Sato-Lim</h2></a>
-            </div>
-        </div> </a>
+              <h2 class="site-title">
+              Ailani's Pocketbook</h2></a> 
+          </div>
         </div>
+
         <nav class="navbar">
           {% for item in site.data.navigation %}
             <a href="{{ item.url | relative_url }}"

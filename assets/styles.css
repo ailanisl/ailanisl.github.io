@@ -368,15 +368,16 @@ body {
   border-right: 1px solid lightgray;
 
 }
+
 .logo-space {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
   margin-left: 100px;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.916), transparent);
+
+  background-image: linear-gradient(rgba(255, 255, 255, 0.973), transparent);
   width: 100%;
-  position: fixed;
+  position: relative;
   left: -90px;
   z-index: 1;
 
@@ -384,19 +385,33 @@ body {
 }
 .title-space {
   /*background-color: rgba(255, 255, 255, 0.85);*/
+  position: relative;
+  display: flex;
+  max-width: 5rem;
+  transition: 0.3s ease;
+
 }
 #logo-title-wrapper {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  align-items:start;
+  z-index: 3;
+  max-width: 181px;
+  position: relative;
+  left: 3rem;
+  flex-wrap: wrap;
+
 }
 #logo-title-wrapper a {
   text-decoration: none;
   color: black;
+
 }
 
 .site-title {
-  white-space: nowrap;
+  position: relative;
+  left: 1.5rem;
+
 }
 
 .navbar {
@@ -518,7 +533,7 @@ body {
 
 .post-item-link:hover .post-item {
   /*background-color: rgba(225, 225, 225, 0.067);  light gray on hover */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  width: fit-content;
 
   transition: background-color 0.3s, box-shadow 0.3s;
 }
@@ -621,7 +636,7 @@ body {
 
 /* ===================================================== RESPONSIVENESS ====== Shrink or hide sidebars on smaller screens */
 @media (max-width: 914px) {
-  .theme-bar, #lastModified, #eliot-quote {
+  .theme-bar, #lastModified, #eliot-quote, .title-space {
     display: none; /* Hide sidebars */ 
   }
   .right-sidebar {
@@ -663,6 +678,7 @@ body {
   .post-item {
     width: auto;
   }
+  
 }
 
 
