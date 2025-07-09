@@ -10,7 +10,7 @@ page: "73"
 heading: "on sentences without logic"
 
 type: prose
-tags: [illogic]
+tags: illogic
 date: 2022-02-25 11:00:00
 ---
 

@@ -1,6 +1,12 @@
 ---
 layout: default
 ---
+<style>
+
+</style>
+
+<div class="main-content-wrapper">
+
 <nav class="breadcrumbs">
   <a href="/">Home</a>
   › <span><a href="/tags/">All Nodes</a></span>
@@ -9,7 +15,7 @@ layout: default
 
 </nav>
 
-<h1>On {{ page.tag | capitalize }}</h1>
+<h1>On {{ page.title | capitalize }}</h1>
 <p>Appears in {% include tag-post-count.html tag=page.tag %} item(s).</p>
 
 
@@ -21,7 +27,8 @@ layout: default
       <li>
         {% case item.collection %}
           {% when "books" %}<small>Book</small>
-          {% when "articles" %}<small>Article</small>
+          {% when "articles" %}
+            {% if item.type %}<small>{{ item.type | capitalize }}</small>{% endif %}
           {% when "posts" %}<small>Penning</small>
           {% when "quotes" %}
             {% if item.type %}<small>{{ item.type | capitalize }}</small> 
@@ -31,7 +38,11 @@ layout: default
         <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
 
         {% assign count = count | plus: 1 %}
+        {% if item.image %}
+        <img class="tag-item-image" src=" {{ item.image | relative_url }}" alt="image of {{ item.title }}" width="100px" height="100%" fit-content="" >
+        {% endif %}
       </li>
     {% endif %}
   {% endfor %}
 </ul>
+</div>

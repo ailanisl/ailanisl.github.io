@@ -9,16 +9,28 @@ title: "Perusals"
 #axes-section {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 10px;
+}
+.main-content-wrapper {
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width: 914px) {
+    .carousel-section {
+        max-width: 330px;
+  }  
+
 }
 
 </style>
 
-<div class="post-content">
+
+<div class="main-content-wrapper">
 <section id="axes-section">
     <p><b>Axes:</b> <i>"We ought to read only the kind of books that wound or stab us. If the book we're reading doesn't wake us up with a blow to the head, what are we reading for?...A book must be the axe for the frozen sea within us”</i>- Kafka
     </p>
-
+</section>
 
     <section class="carousel-section" >
         <button class="nav left" onclick="scrollCarousel(-1)">&#9664</button>
@@ -166,7 +178,6 @@ title: "Perusals"
         </table>
 
 </section>
-
 </div>
 
 

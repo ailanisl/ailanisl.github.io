@@ -16,5 +16,3 @@ I engage in the act of tsundoku (buying more books than you can read and letting
 
 
 I know I could go to the library and borrow books or read ebooks through OverDrive without spending a dime, but I want to *possess* the books. Anyway, used books are perhaps the cheapest collectibles you can come across (the best places to go are the Friends of the Public Library, university town used bookstores, or those Free Little Libraries). 
-
-## 70s Bookcover Design

@@ -6,7 +6,7 @@ author: "J.V. Cunningham"
 author_slug: jv-cunningham
 
 type: aphorism
-tags: [death, epigram]
+tags: [death]
 date: 2022-04-08
 ---
 

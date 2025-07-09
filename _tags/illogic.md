@@ -1,5 +1,3 @@
-
-
 ---
 layout: tag
 title: "illogic"

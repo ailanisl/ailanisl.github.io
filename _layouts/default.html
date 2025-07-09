@@ -74,15 +74,12 @@
   </div>
 
   <!-- LEFT SIDEBAR -->
+
+        
+
     <div class="left-sidebar">
         <div class="logo-space">      </div>
-        <div id="logo-title-wrapper">
-          <a href= "{{ '/' | relative_url }}" > <img src="{{ '/assets/img/name-stamp.png' | relative_url }}" class = "logo" alt="Logo of my site: it is a red stamp with my name in Chinese characters">
-            <div class="title-space">
-              <h2 class="site-title">
-              <em>Ailani's Pocketbook</em></h2></a> 
-          </div>
-        </div>
+
 
 
         <nav class="navbar">
@@ -95,6 +92,7 @@
         <div class="tab-wrapper">
         <a href="{{ '/wiki-index/' | relative_url }}"><img src="{{ '/assets/img/index-tab1.svg' | relative_url }}" alt="a tab that leads to the index of my personal wiki"></a>
         </div>
+      </div>
 
 
 
@@ -106,7 +104,17 @@
             class="{% if current_url == item.url %}active{% endif %}">
             {{ item.title }}</a>
           {% endfor %}
+          <a href=" {{ '/wiki-index/' | relative_url }}">Index</a>
     </nav>
+
+    <div id="logo-title-wrapper">
+    <a href= "{{ '/' | relative_url }}" > <img src="{{ '/assets/img/name-stamp.png' | relative_url }}" class = "logo" alt="Logo of my site: it is a red stamp with my name in Chinese characters">
+      <div class="title-space">
+          <h2 class="site-title">
+          <em>Ailani's Pocketbook</em></h2></a> 
+      </div>
+  
+    </div>
 
 
     <!-- MAIN CONTENT -->

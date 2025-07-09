@@ -46,6 +46,10 @@ layout: default
 #oyster-wrapper {
   cursor: pointer;
 }
+
+#oyster-wrapper:hover img {
+  cursor: pointer;
+}
 #pearl-wrapper.active {
   display: block;
 
@@ -60,6 +64,22 @@ layout: default
 
 #open-oyster {
   display: block;
+}
+
+@media screen and (max-width: 640px){
+    #oyster-section {
+        padding-left: 0px;
+        justify-content: left;
+    }
+    #pearl-wrapper {
+        position: absolute;
+        right: 10px;
+        top: 1370px;
+        transform: rotate(25deg);
+    }
+    .post-item {
+        width: auto;
+    } 
 }
 
 /* ELIOT EPIGRAPH */
@@ -157,9 +177,10 @@ layout: default
                 <img loading="lazy" src = "/assets/img/oyster-larger.svg" alt="My drawing of an oyster that opens to reveal pearls"/>
                 <p id = "open-oyster">Open oyster</p>
             </div>
-            
-            <a href ="{{ '/pearls/' | relative_url }}" ><div id = "pearl-wrapper" >
-                <img loading="lazy" src="/assets/img/pearls-1.svg" alt="two pearls with quotes by Etel Adnan and Gordon Hempton within" /> </div> </a>
+            <div id = "pearl-wrapper" >
+            <a href ="{{ '/pearls/' | relative_url }}" >
+                <img loading="lazy" src="/assets/img/pearls-1.svg" alt="two pearls with quotes by Etel Adnan and Gordon Hempton within" />  </a>
+            </div>
         </div>
     </div>
 
