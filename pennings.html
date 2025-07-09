@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: "Pennings"
 permalink: /pennings/
 ---
@@ -26,6 +26,7 @@ permalink: /pennings/
         overflow: hidden;
         flex-shrink: 0;
         transition: width 0.3s ease-in;
+        border-radius: 1px;
     }
 
     .post-image img {
@@ -36,6 +37,7 @@ permalink: /pennings/
         filter: grayscale(1);
     }
 
+ 
     .post-item:hover .post-image {
         width: 40px;
     }
@@ -59,24 +61,39 @@ permalink: /pennings/
         box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
-
     }
     .theme-bar {
         top: 30%;
     }
-    .pennings-title {
-        margin-top: 50px;
-    } /* A bit hard-coded but easier to do this way */
 
+    .post-list .post-item-link {
+        text-decoration: none;
+        color: black;
+        display: block;
+        color: inherit;
+    }
+    .post-list .post-item-link:hover {
+    /*background-color: rgba(225, 225, 225, 0.067);  light gray on hover */
+        width: fit-content;
+        background-color: transparent;
+        color: black;
+        transition: background-color 0.3s, box-shadow 0.3s;
+    }
+
+    .post-list blockquote {
+        margin: 0px;
+        padding-right: 0;
+        margin-left: 0;
+        color: black;
+        border-left: none;
+    }
 
 
 
 </style>
 
 
-    <h1 class="pennings-title">{{ page.title | escape }}</h1>
-
-<main-content>
+<div class="main-content">
 
 
 <!--
@@ -116,4 +133,4 @@ permalink: /pennings/
         </a>
     {% endfor %}
 </div>
-</main-content>
+</div>

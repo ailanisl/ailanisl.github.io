@@ -84,6 +84,7 @@
           </div>
         </div>
 
+
         <nav class="navbar">
           {% for item in site.data.navigation %}
             <a href="{{ item.url | relative_url }}"
@@ -98,6 +99,14 @@
 
 
     </div>
+    <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation">☰</button>
+    <nav class="mini-navbar" id="mobile-nav">
+          {% for item in site.data.navigation %}
+            <a href="{{ item.url | relative_url }}"
+            class="{% if current_url == item.url %}active{% endif %}">
+            {{ item.title }}</a>
+          {% endfor %}
+    </nav>
 
 
     <!-- MAIN CONTENT -->
@@ -119,6 +128,14 @@
         link.setAttribute("rel", "noopener noreferrer");
         link.classList.add("external-link");
       }
+    });
+  });
+  document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.getElementById("hamburger-btn");
+    const mobileNav = document.getElementById("mobile-nav");
+
+    hamburger.addEventListener("click", function () {
+      mobileNav.classList.toggle("active");
     });
   });
   </script>
