@@ -4,6 +4,8 @@ title: "Pearls and poems"
 permalink: /pearls/
 ---
 <style>
+
+
   .quote-list {
     display: flex;
     flex-direction: column;
@@ -33,6 +35,7 @@ permalink: /pearls/
   }
   .quote-list a:hover {
     text-decoration: none;
+    background-color: transparent;
   }
   .quote-tags {
     margin-top: 0.75rem;
@@ -41,7 +44,22 @@ permalink: /pearls/
     line-height: 2.2rem;
 
   }
+  .quote-tags .tag  {
+    background-color: #e5d6d69e;
+    border-radius: 16px;
+    padding: 4px 8px;
+    font-size: 14px;
+    text-decoration: none;
+    color:#5c524a;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+  }
 
+  .quote-tags .tag:hover {
+    background-color: #E5D6D6;
+    color:#5c524a;
+
+  }
   @media (max-width: 924px){
     .quote-list {
       padding-right: 10%;
@@ -49,6 +67,11 @@ permalink: /pearls/
   }
 
 </style>
+
+<p>Here are adornments to my mind. <i>"And there is also in prose convulsive subtlety in which a great actor, the Word, rhythmically transforms the untouchable mystery of the Universe into its corporeal substance." - Pessoa </i>
+  
+</p>
+
 <ul class="quote-list">
   {% assign sorted_quotes = site.quotes | sort: "date" | reverse %}
   {% for q in sorted_quotes %}
@@ -66,7 +89,7 @@ permalink: /pearls/
         <div class="quote-tags">
           
         {% for tag in q.tags %}
-          <a href="{{ '/tags/' | append: tag | relative_url }}" class="tag">{{ tag }}</a>
+          <a href="{{ '/tag/' | append: tag | relative_url }}" class="tag">{{ tag }}</a>
         {% endfor %}
       {%- endif -%}
     </li>

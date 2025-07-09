@@ -76,17 +76,25 @@ But when those were finished I was at a lost as to how to convert those to HTML 
 I decided to use [Jekyll](https://jekyllrb.com) to build my site, and Github to host it (the course used Github, so I was faintly acquainted with it). Thanks to [Giraffe Academy](https://www.youtube.com/playlist?list=PLLAZ4kZ9dFpOPV5C5Ay0pHaa0RJFhcmcB) on Youtube I learned how to navigate the jungle of Jekyll. This is where I am at now, so we will see how it goes. 
 
 ## Design
-For the visual design of the website, I just knew that I didn't want the corporate design I see everywhere. I got obsessed with the old internet style, the hand-coded and ambient web, and minimalist UI.  I wanted a [low-tech site](https://solar.lowtechmagazine.com/2018/09/how-to-build-a-low-tech-website/) and to minimize my use of Javascript, so no fancy animations, no web-downloaded fonts (but that's okay because Helvetica is my favorite sans-serif). But I did want to include images (<a href="https://ditherit.com" class="external-link" target="_blank" rel="noopener noreferrer">dithered</a> and svg wherever possible), so it's an aspiring low-tech site.
+For the visual design of the website, I just knew that I didn't want the corporate design I see everywhere. I got obsessed with the old internet style, the hand-coded and ambient web, and minimalist UI.  I wanted a [low-tech site](https://solar.lowtechmagazine.com/2018/09/how-to-build-a-low-tech-website/) and to minimize my use of Javascript, so no fancy animations, no web-downloaded fonts (but that's okay because Helvetica is my favorite sans-serif). But I did want to include images (<a href="https://ditherit.com" class="external-link" target="_blank" rel="noopener noreferrer">dithered<span class="sr-only">(opens in new tab)</span>
+</a> and svg wherever possible), so it's an aspiring low-tech site.
 
 I did extensive research (i.e. web-surfing) and moodboarding to get a sense of what has been done and what is feasible. 
 
-Some I came across were through a site that holds a collection of simple, minimalist websites, called <a href="https://deadsimplesites.com" class="external-link" target="_blank" rel="noopener noreferrer">Dead Simple Sites</a>. I loved the simplicity of these ones I found: 
-  - <a href="https://macwright.com" class="external-link" target="_blank" rel="noopener noreferrer" >Tom MacWright</a>
-  - <a href="https://paulstamatiou.com" class="external-link" target="_blank" rel="noopener noreferrer">Paul Stamatiou</a>
-  - <a href="https://piperhaywood.com" class="external-link" target="_blank" rel="noopener noreferrer">Piper Haywood</a>
-  - <a href="https://matthewsmith.website/about" class="external-link" target="_blank" rel="noopener noreferrer">Matthew Smith</a>
-  - <a href="https://billwurtz.com/notebook.html" class="external-link" target="_blank" rel="noopener noreferrer">Bill Wurtz</a>
-  - <a href="https://sive.rs/nz0" class="external-link" target="_blank" rel="noopener noreferrer">Derek Sivers</a>
+Some I came across were through a site that holds a collection of simple, minimalist websites, called <a href="https://deadsimplesites.com" class="external-link" target="_blank" rel="noopener noreferrer">Dead Simple Sites<span class="sr-only">(opens in new tab)</span>
+</a>. I loved the simplicity of these ones I found: 
+  - <a href="https://macwright.com" class="external-link" target="_blank" rel="noopener noreferrer" >Tom MacWright<span class="sr-only">(opens in new tab)</span>
+</a>
+  - <a href="https://paulstamatiou.com" class="external-link" target="_blank" rel="noopener noreferrer">Paul Stamatiou<span class="sr-only">(opens in new tab)</span>
+</a>
+  - <a href="https://piperhaywood.com" class="external-link" target="_blank" rel="noopener noreferrer">Piper Haywood<span class="sr-only">(opens in new tab)</span>
+</a>
+  - <a href="https://matthewsmith.website/about" class="external-link" target="_blank" rel="noopener noreferrer">Matthew Smith<span class="sr-only">(opens in new tab)</span>
+</a>
+  - <a href="https://billwurtz.com/notebook.html" class="external-link" target="_blank" rel="noopener noreferrer">Bill Wurtz<span class="sr-only">(opens in new tab)</span>
+</a>
+  - <a href="https://sive.rs/nz0" class="external-link" target="_blank" rel="noopener noreferrer">Derek Sivers<span class="sr-only">(opens in new tab)</span>
+</a>
 
 
 These may not seem like creativity incarnate, but appearances are deceiving. When resources are limited (self-imposed scarcity or not), the air is pregrant with novelty. Black and white, simple lines, a focus on text lends to playing with space, with the shape of words, and thus making meaning in unconventional ways. 

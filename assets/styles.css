@@ -38,7 +38,11 @@ p a:hover {
 
 a {
   text-decoration: underline;
-  color: #6B5191;
+  color: black;
+}
+
+a:hover {
+  color: #656565;
 }
 
 .internal-link {
@@ -57,6 +61,19 @@ a {
 }
 .external-link a{
   color: #444;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0); /* Deprecated but still used for compatibility */
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
 }
 
 .back-button {
@@ -112,13 +129,24 @@ a {
 
 .post-content a {
   color:#5C7423;
-  text-decoration: none;
-  background-color: #F7F0F0;
+  text-decoration: underline;
 
 }
 .post-content a:hover{
-  text-decoration: underline;
+  text-decoration: none;
+  background-color: #F7F0F0;
+  color:#5C7423;
 }
+
+.post-content a[href^='http']::after {
+  content: "↗";
+  display: inline;
+  vertical-align: super;
+  font-size: 0.8rem;
+
+}
+
+
 .post-content blockquote {
   font-family: Georgia, 'Times New Roman', Times, serif;
   border-left: 2px solid #656565;
@@ -249,6 +277,13 @@ a {
 
 /* ----------------------------------DEFAULT THEME--------------------------*/
 
+body {
+  background-color: #fdfcfa;
+}
+
+.right-sidebar, .left-sidebar {
+  background-color: #f9f7f4;
+}
 
 
 /* =======================    RIGHT SIDEBAR   ==============================*/
@@ -256,9 +291,8 @@ a {
   position: relative;
   left:10px;
   top: 15px;
-  color: #dfdfdf;
+  color: #857970;
   font-size: 14px;
-  background-color: rgba(255, 255, 255, 0.992);
   z-index: 2;
 }
 
@@ -288,7 +322,7 @@ a {
   padding: 4px 8px;
   font-size: 14px;
   text-decoration: none;
-  color:#333;
+  color:#5c524a;
   transition: background-color 0.3s;
   white-space: nowrap;
 }
@@ -309,7 +343,6 @@ a {
 .right-sidebar {
   height:100%;
   width: 20%;
-  background-color: white;
   /*min-width: 250px;*/
   max-width: none;
   position: fixed;
@@ -326,7 +359,6 @@ a {
 .left-sidebar {
   height:100%;
   width: 20%;
-  background-color: white;
  /* min-width: 250px;*/
   max-width: none;
   position: fixed;
@@ -351,7 +383,7 @@ a {
 
 }
 .title-space {
-  background-color: rgba(255, 255, 255, 0.85);
+  /*background-color: rgba(255, 255, 255, 0.85);*/
 }
 #logo-title-wrapper {
   display: flex;
@@ -531,8 +563,9 @@ a {
 }
 
 .post-image {
-  width: 20px;
+  width: 15px;
   height: 70px;
+  border-radius: 3px;
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -573,8 +606,6 @@ a {
   font-size: 16px;
   text-decoration: none;
   padding-right: 12px;
-
-  background-color: white;
   transition: transform 0.4s ease;
 
 }

@@ -7,7 +7,7 @@ author_slug: walt-whitman
 heading: being very Romantic
 
 type: poem
-tags: [science as mapmaking, transcendentalism, american poetry]
+tags: [science-as-mapmaking, transcendentalism, american poetry]
 date: 2022-04-14
 ---
 

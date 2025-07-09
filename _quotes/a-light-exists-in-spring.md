@@ -6,7 +6,7 @@ author: "Emily Dickinson"
 author_slug: emily-dickinson
 
 type: poem
-tags: [nature, american poetry]
+tags: [nature, science-as-mapmaking, american poetry]
 date: 2022-04-03
 ---
 

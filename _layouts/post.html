@@ -13,6 +13,7 @@ layout: default
     {% if page.collection == "posts" %}
     <a href="{{ '/pennings/' | relative_url }}" class="back-button">&larr;</a>
     
+    
 
     <header class="post-header">
       <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
@@ -28,7 +29,7 @@ layout: default
         {%- if page.tags -%}
           <div class="post-tags">
           {% for tag in page.tags %}
-            <a href="{{ '/tags/' | append: tag | relative_url }}" class="tag">{{ tag }}</a>
+            <a href="{{ '/tag/' | append: tag | relative_url }}" class="tag">{{ tag }}</a>
           {% endfor %}
         {%- endif -%}
         </div>

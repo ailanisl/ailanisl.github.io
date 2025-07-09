@@ -3,9 +3,19 @@
 
   {%- include head.html -%}
 
-
+<style>
+  .node-heading a {
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .node-heading {
+    padding-left: 1rem;
+  }
+</style>
 
   <body>
+
+
     <div class="head-wrapper">
     <div class = "top-spacer"></div></div>
 
@@ -16,7 +26,7 @@
       
       <!--{% assign all_tags = site.tags | sort %}-->
       <div class="node-box">
-        <h2 class="node-heading">Nodes</h2> <br>
+        <h2 class="node-heading"><a href="{{ '/tags/' | relative_url }}">Nodes</h2> </a>
         <div class="node-list">
           
           {% assign all_tags = "" | split: "" %}
@@ -48,7 +58,7 @@
           {% assign all_tags = all_tags | uniq | sort %}
 
           {% for tag in all_tags %}
-            <a href="/tags/{{ tag | downcase | replace: ' ', '-' }}/" class="tag">{{ tag }}</a>
+            <a href="/tag/{{ tag | downcase | replace: ' ', '-' }}/" class="tag">{{ tag }}</a>
           {% endfor %}
 
 

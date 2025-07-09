@@ -1,0 +1,37 @@
+---
+layout: default
+---
+<nav class="breadcrumbs">
+  <a href="/">Home</a>
+  › <span><a href="/tags/">All Nodes</a></span>
+
+  › <span>Node: {{ page.title | capitalize }}</span>
+
+</nav>
+
+<h1>On {{ page.tag | capitalize }}</h1>
+<p>Appears in {% include tag-post-count.html tag=page.tag %} item(s).</p>
+
+
+<ul>
+  {% assign tag_name = page.tag %}
+  {% assign all_collections = site.posts | concat: site.articles | concat: site.books | concat: site.quotes %}
+  {% for item in all_collections %}
+    {% if item.tags contains tag_name %}
+      <li>
+        {% case item.collection %}
+          {% when "books" %}<small>Book</small>
+          {% when "articles" %}<small>Article</small>
+          {% when "posts" %}<small>Penning</small>
+          {% when "quotes" %}
+            {% if item.type %}<small>{{ item.type | capitalize }}</small> 
+            {% else %}<small>Quote</small> {% endif %}
+          {% else %}<small>(in {{ item.collection }})</small>
+        {% endcase %}
+        <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+
+        {% assign count = count | plus: 1 %}
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>

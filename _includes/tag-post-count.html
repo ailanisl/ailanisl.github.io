@@ -1,0 +1,8 @@
+{% assign count = 0 %}
+{% assign collections = site.posts | concat: site.articles | concat: site.books | concat: site.quotes %}
+{% for item in collections %}
+  {% if item.tags contains include.tag %}
+    {% assign count = count | plus: 1 %}
+  {% endif %}
+{% endfor %}
+{{ count }}

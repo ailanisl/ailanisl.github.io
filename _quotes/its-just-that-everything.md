@@ -1,6 +1,6 @@
 ---
 layout: quote 
-quote: "It's just that everything I have can't be giveen. Or taken. I myself could die of thirst in my presence. Solitude is mixed with my essence."
+quote: "It's just that everything I have can't be given. Or taken. I myself could die of thirst in my presence. Solitude is mixed with my essence."
 source: "Near to the Wild Heart"
 source_slug: near-to-the-wild-heart
 author: "Clarice Lispector"

@@ -1,0 +1,32 @@
+---
+layout: none
+permalink: /tag_generator.html
+---
+
+{% comment %}
+  This will list tag .md files to copy into _tags
+{% endcomment %}
+
+{% assign all_tags = "" | split: "" %}
+{% assign all_collections = site.posts | concat: site.articles | concat: site.books | concat: site.quotes %}
+{% for item in all_collections %}
+  {% for tag in item.tags %}
+    {% unless all_tags contains tag %}
+      {% assign all_tags = all_tags | push: tag %}
+    {% endunless %}
+  {% endfor %}
+{% endfor %}
+
+{% for tag in all_tags %}
+  {% capture slug %}{{ tag | slugify }}{% endcapture %}
+  {% capture content %}
+---
+layout: tag
+title: "{{ tag }}"
+tag: "{{ tag }}"
+permalink: /tag/{{ slug }}/
+---
+  {% endcapture %}
+  <h3>_tags/{{ slug }}.md</h3>
+  <pre>{{ content | strip }}</pre>
+{% endfor %}

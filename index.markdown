@@ -12,7 +12,7 @@ list_title: "Pennings"
 ---
 
 
-Welcome to my tiny <a href="{{ '/about/' | relative_url }}" class="internal-link">pocket</a> on the web. Here, I store little <a href="{{ '/pearls/' | relative_url }}" class="internal-link">pearls</a> 
+Hello, I'm Ailani. I like to collect things in this tiny <a href="{{ '/about/' | relative_url }}" class="internal-link">pocket</a> on the web. Here, I store little <a href="{{ '/pearls/' | relative_url }}" class="internal-link">pearls</a> 
     of wisdom, my <a href="{{ '/pennings/' | relative_url }}" class="internal-link">pennings</a>, a paperback <a href="{{ '/perusals/' | relative_url }}" class="internal-link">reading</a> log, <a href="{{ '/projects/' | relative_url }}" class="internal-link">project</a> progress, 
     and other paraphernalia. (In short, a digital florilegium and <a href="{{ '/wiki-index/' | relative_url }}" class="internal-link">personal wiki)</a>. 
 
@@ -20,4 +20,4 @@ I'm interested in paradox and emptiness, the interaction between human and
     non-human intelligences, American poetry, and artistic cultures around the world. 
 
 I'm excited about the handmade, embodied, and low-tech web, 
-    and have an affinity for design that trespasses upon art. 
+    and have an affinity for design that trespasses upon art. This site is [hand-coded]({% post_url 2025-06-27-my-intentions %}).  

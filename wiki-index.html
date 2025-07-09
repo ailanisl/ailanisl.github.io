@@ -1,52 +1,44 @@
 ---
-layout: page
+layout: default
 title: "Personal Wiki Index"
 permalink: /wiki-index/
 ---
 
 <style> 
-    .article-card a {
+    .internal-link {
         background-color: transparent;
         color: black;
         text-decoration: underline;
         font-weight: normal;
     }
 
-    .article-card a:hover {
+    .internal-link:hover {
         color: gray;
+        background-color: transparent;
     }
+
+    h1 a {
+      text-decoration: none;
+    }
+
+    #tag-filter {
+      padding: 0.4em;
+      border: 1px solid #E2E2E2;
+      border-radius: 6px;
+      background-color: white;
+      color: #333;
+      padding: 0.2em 0.8em;
+      font-size: 0.9rem;    
+      line-height: 1.2;      /* tighter line spacing */
+      max-width: fit-content;
+    }
+
 </style>
-<!-- Grouped Content -->
-{% assign grouped_by_category = site.articles | group_by_exp: "item", "item.categories[0]" %}
-{% for category in grouped_by_category %}
-  <h2><a href="{{ /category.name/ | relative_url }}">{{ category.name | capitalize }}</a></h2>
 
-  {% assign sorted_items = category.items | sort: "title" %}
-  {% assign grouped_by_type = sorted_items | sort: "title" | group_by: "type" %}
 
-  {% for type_group in grouped_by_type %}
-    <h3>{{ type_group.name | capitalize }}</h3>
-
-    <div class="article-grid">
-      {% for article in type_group.items %}
-        <div class="article-card" data-tags="{{ article.tags | join: ' ' | downcase }}">
-          <h4><a href="{{ article.url }}">{{ article.title }}</a></h4>
-<!--          {% if article.excerpt %}
-            <p>{{ article.excerpt }}</p>
-          {% endif %}
-          {% if article.tags %}
-            <p class="tags">
-              {% for tag in article.tags %}
-                <span class="tag">{{ tag }}</span>
-              {% endfor %}-->
-            </p>
-          {% endif %}
-        </div>
-      {% endfor %}
-    </div>
-  {% endfor %}
-{% endfor %}
-
+<nav class="breadcrumbs">
+  <a href="/wiki-index/">Wiki Index</a>
+</nav>
 
 
 <!-- 🔍 Tag Filter-->
@@ -64,6 +56,61 @@ permalink: /wiki-index/
     <option value="{{ tag | downcase }}">{{ tag }}</option>
   {% endfor %}
 </select> 
+
+
+
+<!-- Grouped Content -->
+{% assign grouped_by_category = site.articles | group_by_exp: "item", "item.categories[0]" %}
+
+{% for category in grouped_by_category %}
+  <h1><a href="{{ /category.name/ | relative_url }}" >{{ category.name | capitalize }}</a></h1>
+
+  {% assign grouped_by_type = category.items | group_by: "type" %}
+  
+  {% for type_group in grouped_by_type %}
+    <h2>{{ type_group.name | capitalize }}</h2>
+    <div class="article-grid"></div>
+      {% for article in type_group.items %}
+        <div class="article-card" >
+          <a href="{{ article.url | relative_url }}" class="internal-link">{{ article.title }}</a>
+        </div>
+      {% endfor %}
+  {% endfor %}
+{% endfor %}
+
+<!--{% assign grouped_by_category = site.articles | group_by_exp: "item", "item.categories[0]" %}
+{% for category in grouped_by_category %}
+  <h2><a href="{{ /category.name/ | relative_url }}">{{ category.name | capitalize }}</a></h2>
+
+  {% assign sorted_items = category.items | sort: "title" %}
+  {% assign grouped_by_type = sorted_items | sort: "title" | group_by: "type" %}
+
+  {% for type_group in grouped_by_type %}
+    <h3>{{ type_group.name | capitalize }}</h3>
+
+    <div class="article-grid">
+      {% for article in type_group.items %}
+        <div class="article-card" data-tags="{{ article.tags | join: ' ' | downcase }}">
+          <h4><a href="{{ article.url }}">{{ article.title }}</a></h4>
+          {% if article.excerpt %}
+            <p>{{ article.excerpt }}</p>
+          {% endif %}
+          {% if article.tags %}
+            <p class="tags">
+              {% for tag in article.tags %}
+                <span class="tag">{{ tag }}</span>
+              {% endfor %} 
+            </p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
+{% endfor %} -->
+
+
+
+
 
 <script>
   const tagFilter = document.getElementById("tag-filter");

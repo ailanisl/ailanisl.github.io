@@ -25,6 +25,7 @@ permalink: /pennings/
         height: 100%;
         overflow: hidden;
         flex-shrink: 0;
+        transition: width 0.3s ease-in;
     }
 
     .post-image img {
@@ -34,6 +35,11 @@ permalink: /pennings/
         display: block;
         filter: grayscale(1);
     }
+
+    .post-item:hover .post-image {
+        width: 40px;
+    }
+
     .post-heading {
         display: flex;
         flex-direction: row;
