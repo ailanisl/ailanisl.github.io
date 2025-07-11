@@ -7,10 +7,10 @@ country: "Russia"
 isbn: "978-067976080"
 genre: "Magical Realism"
 category: "Fiction/Literature"
-
+image: /assets/img/books/master-marg.jpg
 
 pub_date: "1967"
-
+tags: [humor, illogic]
 ---
 
 I bought the Vintage edition of *Master and Margarita*, translated by Diana Burgin and Katherine Tiernan O'Connor at Half-Price Books Berkeley on October 13, 2021. It was $7.99, which is an adequate price, but a little higher than what I usually will pay for a used book. 

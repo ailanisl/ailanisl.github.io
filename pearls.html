@@ -13,7 +13,7 @@ permalink: /pearls/
     padding: 3rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
   }
-  .quote-list .quote-heading {
+  .quote-list .quote-link {
     background-color: transparent;
     color: black;
     font-weight: bold;
@@ -22,11 +22,11 @@ permalink: /pearls/
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 
-  .quote-description {
+  .quote-link .quote-description {
     color: #9BA487;
   }
 
-  .quote-list .quote-heading:hover, .quote-description:hover {
+  .quote-list .quote-link:hover, .quote-description:hover {
     color: #656565;
   } 
 
@@ -77,9 +77,9 @@ permalink: /pearls/
   {% for q in sorted_quotes %}
     <li>
       {% if q.heading %}
-      <a href="{{ q.url }}" class="quote-heading"> {{ q.author }} <span class="quote-description">{{ q.heading }}</span> </h2> </a>
+      <a class = "quote-link" href="{{ q.url }}" class="quote-heading"> {{ q.author }} <span class="quote-description">{{ q.heading }}</span> </h2> </a>
       {% else %}
-      <a href="{{ q.url }}" class="quote-heading"> {{ q.author }} </h2> </a>
+      <a class = "quote-link" href="{{ q.url }}" class="quote-heading"> {{ q.author }} </h2> </a>
       {% endif %}
       <br>
       {{ q.quote }}  
@@ -95,3 +95,21 @@ permalink: /pearls/
     </li>
   {% endfor %}
 </ul>
+
+<script>
+  // Save scroll position when clicking a quote-link
+  document.querySelectorAll("a.quote-link").forEach(link => {
+    link.addEventListener("click", () => {
+      sessionStorage.setItem("scrollPos", window.scrollY);
+    });
+  });
+
+  // On page load, restore scroll position if it exists
+  window.addEventListener("load", () => {
+    const scrollPos = sessionStorage.getItem("scrollPos");
+    if (scrollPos !== null) {
+      window.scrollTo(0, parseInt(scrollPos));
+      sessionStorage.removeItem("scrollPos");
+    }
+  });
+</script>

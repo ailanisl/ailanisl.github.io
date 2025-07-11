@@ -28,6 +28,7 @@ layout: default
       padding: 1rem;
       display:flex ;
       flex-direction: column;
+      flex-wrap: wrap;
       justify-content: center;
     }
     .category-description ol {
@@ -47,18 +48,20 @@ layout: default
   › <span>{{ page.title }}</span>
 </nav>
 
+  <h1 class="category-title">{{ page.title }}</h1>
+
   <div class="category-description">
   {{content}}
   </div>
 
 
 <div class="category-box">
-  <h1 class="category-title">{{ page.title }}</h1>
+
   {% assign category_name = page.category %}
   {% assign category_articles = site.articles | where_exp: "a", "a.categories contains category_name" | sort: "title" %}
 
   
-  {% assign grouped_by_type = category_articles | group_by: "type"  %}
+  {% assign grouped_by_type = category_articles | group_by: "genre"  %}
   <div class="type-columns">
     {% for type_group in grouped_by_type | sort: "title" %}
     <div class="type-box">

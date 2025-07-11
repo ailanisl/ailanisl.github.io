@@ -161,7 +161,7 @@ title: "Perusals"
                 {% assign sorted_books = site.books | sort: 'date_finished' | reverse %}
                 {% for book in sorted_books %}
                 <tr data-genre="{{ book.genre | downcase}}">
-                    <td><strong><a href="{{ book.url }}">{{book.title}}
+                    <td><strong><a class="book-link" href="{{ book.url }}">{{book.title}}
                     {% if book.reread %}
                         *
                     {% endif %}
@@ -236,6 +236,20 @@ title: "Perusals"
         }
     });
     });
+  // Save scroll position when clicking a quote-link
+    document.querySelectorAll("a.book-link").forEach(link => {
+        link.addEventListener("click", () => {
+        sessionStorage.setItem("scrollPos", window.scrollY);
+        });
+    });
 
+    // On page load, restore scroll position if it exists
+    window.addEventListener("load", () => {
+        const scrollPos = sessionStorage.getItem("scrollPos");
+        if (scrollPos !== null) {
+        window.scrollTo(0, parseInt(scrollPos));
+        sessionStorage.removeItem("scrollPos");
+        }
+    });
 
 </script>

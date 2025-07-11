@@ -12,7 +12,7 @@ source_slug: ferdydurke
 heading: "on writing stupid things"
 
 type: aphorism
-tags: [on writing]
+tags: [on writing, humor]
 date: 2022-04-17
 ---
 

@@ -28,6 +28,7 @@ p {
 p a {
   color: black;
   text-decoration: underline;
+  text-decoration-style: dotted;
 }
 
 p a:hover {
@@ -38,6 +39,7 @@ p a:hover {
 
 a {
   text-decoration: underline;
+  text-decoration-style: dotted;
   color: black;
 }
 
@@ -48,6 +50,7 @@ a:hover {
 .internal-link {
   color: #444;
   text-decoration: underline;
+  text-decoration-style: dotted;
   background-color: transparent;
 }
 .internal-link:hover {
@@ -58,6 +61,8 @@ a:hover {
 
 .external-link {
   text-decoration: underline;
+  text-decoration-style: dotted;
+
 }
 .external-link a{
   color: #444;
@@ -137,6 +142,8 @@ a:hover {
 .post-content a {
   color:#5C7423;
   text-decoration: underline;
+  text-decoration-style: dotted;
+
 
 }
 .post-content a:hover{
@@ -154,7 +161,7 @@ a:hover {
 }
 
 
-.post-content blockquote {
+blockquote {
   font-family: Georgia, 'Times New Roman', Times, serif;
   border-left: 2px solid #656565;
   margin-left: 2rem;
@@ -166,7 +173,7 @@ a:hover {
   padding-right: 2rem;
   color: #656565;
   /*background-color: #f2f5eb49;*/
-  font-size: 1rem;
+  font-size: 1.1em;
   
 }
 
@@ -699,7 +706,7 @@ body {
   }
   .main-content, .main-content-wrapper, .post-content,  .head-wrapper {
     flex: 1;
-    margin-left: 20%;
+    margin-left: 15%;
     margin-right: 5%;
 
   }
@@ -725,7 +732,7 @@ body {
 
   }
   .main-content-wrapper {
-    max-width: 270px;
+    max-width: 370px;
   }
 
   .left-sidebar {
@@ -884,6 +891,8 @@ body {
 }
 .col ul a:hover {
   text-decoration: underline;
+  text-decoration-style: dotted;
+
 }
 
 /* -------- Reading Log Table--------*/
@@ -936,4 +945,31 @@ body {
 
 .breadcrumbs a:hover {
   text-decoration: underline;
+  text-decoration-style: dotted;
+
+}
+
+/* ======================== WIKI STYLING ============= */
+.category-box {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+.type-columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border-top: 1px solid lightgray;
+  padding-top: 1rem;
+}
+.category-box h1 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-weight: normal;
+}
+    
+.category-title {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-weight: normal;
 }

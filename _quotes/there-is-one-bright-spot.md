@@ -6,7 +6,7 @@ author: "Leo Tolstoy"
 author_slug: leo-tolstoy
 
 source: "The Death of Ivan Illyich"
-source-slug: the-death-of-ivan-illyich
+source_slug: the-death-of-ivan-illyich
 
 tags: [humor, death]
 date: 2022-06-01
