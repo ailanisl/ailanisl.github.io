@@ -295,11 +295,11 @@ blockquote {
 /* ----------------------------------DEFAULT THEME--------------------------*/
 
 body {
-  background-color: #fffefc;
+  background-color: white; /* fffefc , fbf9f6*/
 }
 
 .right-sidebar, .left-sidebar {
-  background-color: #fbf9f6;
+  background-color: white;
 }
 
 
