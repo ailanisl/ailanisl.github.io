@@ -5,6 +5,9 @@ layout: default
     .main-content-wrapper {
       width: 450px;
     }
+    .tag-item-image {
+      border-radius: 6px;
+    }
 
 </style>
 
@@ -38,7 +41,11 @@ layout: default
             {% else %}<small>Quote</small> {% endif %}
           {% else %}<small>(in {{ item.collection }})</small>
         {% endcase %}
-        <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+        {% if item.author %}
+          <a href="{{ item.url | relative_url }}"><!--<span>by {{item.author}}</span>:--> {{ item.title }} </a>
+        {% else %}
+            <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+        {% endif %}
 
         {% assign count = count | plus: 1 %}
         {% if item.image %}

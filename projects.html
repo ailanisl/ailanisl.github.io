@@ -4,4 +4,115 @@ title: "Projects"
 permalink: /projects/
 ---
 
-Coming soon...
+<style>
+    .main-content-wrapper {
+        width: fit-content;
+    }
+
+    .proj-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        width: 550px;
+    }
+
+    .proj-image img {
+        width: 530px;
+        border-radius: 20px;
+    }
+
+
+    .proj-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        width: 500px;
+    }
+    .proj-title a {
+        text-decoration: none;
+        color: black;
+    }
+    .proj-title:hover a {
+        text-decoration: underline;
+        text-decoration-style: dotted;
+        color: black;
+    }
+    .project-tags .tag {
+        text-decoration: none;
+        color: black;
+    } 
+    .project-tags .tag:hover {
+        text-decoration: none;
+        color: black;
+    } 
+    .project-tags {
+        display: flex;
+        flex-direction: row;
+        white-space: nowrap;
+        gap: 3px;
+    }
+    .proj-tools {
+        font-size: 1.2rem;
+        color: #656565;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .proj-time {
+ 
+        padding-top: 1rem;
+        text-align: center;
+        color: #656565;
+
+    }
+    .proj-item a[href^='http']::after {
+        content: "";
+
+    }
+
+
+</style>
+
+<div class="main-content-wrapper">
+
+    <div class="project-list">
+        {% for proj in site.projects %}
+            <div class="proj-item">
+                <div class="proj-image">
+                    {% if proj.image %}
+                        <a href="{{ proj.ext_link }}"><img src="{{ proj.image | relative_url }}" alt="Thumbnail of {{ proj.title }}"></a>
+                    {% endif %}
+                </div>
+                    <div class="proj-text">
+                        <div class="proj-heading">
+                            <div class ="proj-title">
+                                {% if proj.ext_link %}
+                                    <a href="{{proj.ext_link}}" >
+
+                                <h3>{{ proj.title }} <span>{{ proj.type }}</span></h3>
+                            </a> 
+                            </div>
+                                {% endif %}
+
+                            <div class="project-tags">
+                                {% for tag in proj.tags %}
+                                <a href="#" class="tag">{{ tag }}</a>
+                                {% endfor %}
+                            </div>
+
+                            <div class="proj-tools">Tools: {{ proj.tools }}</div>
+
+
+                            <div class="proj-description">
+                                <p> {{ proj.description }}</p>
+                            </div>
+
+                            <div class="proj-time">{{ proj.time }}</div>
+
+                        </div>
+                    </div>
+            </div>
+            {% endfor %}
+        </div>
+</div>

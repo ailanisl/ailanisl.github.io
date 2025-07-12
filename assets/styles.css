@@ -52,11 +52,14 @@ a:hover {
   text-decoration: underline;
   text-decoration-style: dotted;
   background-color: transparent;
+  transition: all 0.3s;
+
 }
 .internal-link:hover {
   color: #5C7423;
   background-color: #F7F0F0;
   text-decoration: none;
+  transition: all 0.3s;
 }
 
 .external-link {
@@ -108,7 +111,7 @@ a:hover {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 4rem;
-  margin-top: 50px;
+  margin-top: 3%;
 }
 
 
@@ -292,11 +295,11 @@ blockquote {
 /* ----------------------------------DEFAULT THEME--------------------------*/
 
 body {
-  background-color: #fdfcfa;
+  background-color: #fffefc;
 }
 
 .right-sidebar, .left-sidebar {
-  background-color: #f9f7f4;
+  background-color: #fbf9f6;
 }
 
 
@@ -535,8 +538,8 @@ body {
   align-items: center;
   justify-content: center;
   padding-right: 40px;
-  width: 460px;
-  border-radius: 6px;
+  width: 490px;
+  border-radius: 3px;
 
   /*transition: background-color 0.3s;*/
 
@@ -550,13 +553,18 @@ body {
 
 .post-item-link:hover .post-item {
   /*background-color: rgba(225, 225, 225, 0.067);  light gray on hover */
-  width: fit-content;
 
   transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .post-item-link:hover .post-image img {
   filter: grayscale(0);
+
+}
+
+.post-item-link:hover .post-image {
+  width: 40px;
+  transition: width 0.3s;
 }
 
 .post-left {
@@ -600,6 +608,7 @@ body {
   border-radius: 3px;
   overflow: hidden;
   flex-shrink: 0;
+  transition: width 0.3s;
 }
 
 .post-image img {
@@ -610,6 +619,8 @@ body {
   filter: grayscale(1);
   transition: filter 0.3s;
 }
+
+
 
 .post-right {
   flex: 1;
@@ -972,4 +983,10 @@ body {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-style: italic;
   font-weight: normal;
+}
+
+
+
+.proj-item-link:hover img {
+    background-color: transparent;
 }

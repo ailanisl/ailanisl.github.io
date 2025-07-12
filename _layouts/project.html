@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="book-head-wrapper">
+        <a href="{{ '/projects/' | relative_url }}" class ="back-button" >&#8636;</a>
+        <header class="post-header">
+            <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+
+                  <p class="post-meta">
+
+                    {% if page.tags %}
+                    <div class="project-tags">
+                        {% for tag in page.tags %}
+                        <a href="#" class="tag">{{ tag }}</a>
+                        {% endfor %}
+                    {% endif %}
+                    <br>
+
+                    <p> <span class="decriptors">Tools: </span> {{ page.tools }} </p>
+                    <p> <span class="decriptors">Role: </span> {{ page.role }} </p>
+                    <p> <span class="decriptors"> Timeline: </span> {{ page.time }} </p>
+                </p>
+
+
+        </header>
+    </div>
+
+    <div class="post-content" itemprop="articleBody">
+        {{ content }}
+    </div>
+
+
+</article>

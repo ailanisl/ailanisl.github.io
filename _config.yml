@@ -49,6 +49,10 @@ collections:
     output: true 
     permalink: /tag/:name/
 
+  projects:
+    output: true
+    permalink: /projects/:title/
+
 defaults:
   - scope:
       path: "assets/img"

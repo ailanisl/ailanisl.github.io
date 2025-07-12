@@ -3,7 +3,6 @@ layout: "default"
 ---
 <style>
     .book-head-wrapper {
-        margin-top: 1%;
         margin-bottom: 4rem;
     }
 
@@ -46,7 +45,7 @@ layout: "default"
         {%- if page.tags -%}
           <div class="post-tags">
           {% for tag in page.tags %}
-            <a href="{{ '/tag/' | append: tag | relative_url }}" class="tag">{{ tag }}</a>
+            <a href="/tag/{{ tag | downcase | replace: ' ', '-' }}/" class="tag">{{ tag }}</a>
           {% endfor %}
         {%- endif -%}
         </div>

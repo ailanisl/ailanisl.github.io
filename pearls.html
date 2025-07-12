@@ -89,7 +89,7 @@ permalink: /pearls/
         <div class="quote-tags">
           
         {% for tag in q.tags %}
-          <a href="{{ '/tag/' | append: tag | relative_url }}" class="tag">{{ tag }}</a>
+          <a href="/tag/{{ tag | downcase | replace: ' ', '-' }}/" class="tag">{{ tag }}</a>
         {% endfor %}
       {%- endif -%}
     </li>

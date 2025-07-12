@@ -14,11 +14,11 @@ genre: "Afro Diaspora"
 
 tags: []
 date_pub: 2025-07-10
-date_mod: 2025-07-10
+date_mod: 2025-07-11
 
 ---
 
-Got into dancehall via afro DJs, who played songs by Shenseea and Tee-jay. Prefer dancing to dancehall because it's better for ticking and whining. It's sung/toasted in Patois, and I'm glad I can't fully understand what they're saying. 
+Got into dancehall via afro DJs, who played songs by Shenseea and Tee-jay. Prefer dancing to dancehall: it's better for ticking and whining. It's sung/toasted in Patois, and I'm glad I can't fully understand what they're saying. 
 
 Once you listen a bit to dancehall, you'll notice that different artists perform over the same riddims, adding their own twists. 
 
