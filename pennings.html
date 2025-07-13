@@ -2,6 +2,10 @@
 layout: page
 title: "Pennings"
 permalink: /pennings/
+
+description: This is a place where I keep my somewhat unpolished writing and musings - though they may be polished sometimes. 
+    The technology of written language is a godsend to slow thinkers and visual (albeit abstracted visual) learners such as myself.
+    As such, it is a nest for thought, so proceed with caution. 
 ---
 <style>
     .post-list{
@@ -36,15 +40,17 @@ permalink: /pennings/
         gap: 1rem;
     }
     .post-image {
+        border-radius: 3px;
+
         width: 10px;
         height: 100%;
         overflow: hidden;
         flex-shrink: 0;
         transition: width 0.3s ease-in;
-        border-radius: 0;
     }
 
     .post-image img {
+        border-radius: 0%;
         width: 100%;
         height: 11.5rem;
         object-fit:cover;
@@ -61,7 +67,8 @@ permalink: /pennings/
         display: flex;
         flex-direction: row;
         min-width: 400px;
-        padding-top: 1rem;
+        padding-top: 0.1rem;
+        font-family: system-ui, sans-serif;
 
         justify-content: space-between;
     }
@@ -71,8 +78,9 @@ permalink: /pennings/
         display: -webkit-box;
         -webkit-line-clamp: 4; /* Max lines */
         -webkit-box-orient: vertical;     
-        line-clamp: 2;
-        /* Optional: for forward compatibility (not widely supported yet) */
+
+        /* Optional: for forward compatibility (not widely supported yet) 
+        line-clamp: 2;*/
         box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;

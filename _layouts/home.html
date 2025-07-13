@@ -3,6 +3,10 @@ layout: default
 
 ---
 <style>
+
+.page-link {
+    text-decoration: none;
+}
 /*SPACER AND INSPOS */
 .inspo-section {
   display: flex;
@@ -36,7 +40,7 @@ layout: default
 #oyster-section {
   display: flex;
   flex-direction: column;
-  padding-bottom: 325px;
+  padding-bottom: 225px;
   padding-left: 50px;
 }
 #oyter-open:hover {
@@ -97,6 +101,10 @@ layout: default
 #eliot-quote:hover {
     color: #9BA487;
 }
+.proj-list {
+    width: 530px;
+}
+
 </style>
 
 
@@ -113,7 +121,7 @@ layout: default
 
 <!--FEATURED LIST-->
         <div id="writing-section">
-            <h3>Pinned Pieces</h3>
+            <a href="{{ '/pennings/' | relative_url }}" class="page-link"><h3>Penned Pieces  &#8640; </h3></a>
         </div>
         <div class="recent-posts">
             {% for post in site.posts limit:4 %}
@@ -182,6 +190,39 @@ layout: default
                 <img loading="lazy" src="/assets/img/pearls-1.svg" alt="two pearls with quotes by Etel Adnan and Gordon Hempton within" />  </a>
             </div>
         </div>
+    <div class="project-list">
+        <a href="{{ '/projects/' | relative_url}}" class="page-link"><h3>Projects  &#8640;</h3> </a><br>
+        {% for proj in site.projects %}
+            <div class="proj-item">
+                <div class="proj-image">
+                    {% if proj.image %}
+                        <a href="{{ proj.ext_link }}"><img src="{{ proj.image | relative_url }}"  alt="Thumbnail of {{ proj.title }}"></a>
+                    {% endif %}
+                </div>
+                    <div class="proj-text">
+                        <div class="proj-heading">
+                            <div class ="proj-title">
+                                {% if proj.ext_link %}
+                                    <a href="{{proj.ext_link}}" >
+
+                                <h3>{{ proj.title }} <span class="proj-type">{{ proj.type }}</span></h3>
+                            </a> 
+                            </div>
+                                {% endif %}
+
+                            <div class="proj-description">
+                                <p> {{ proj.description }}</p>
+                            </div>
+
+                            <div class="proj-time">{{ proj.time }}</div>
+
+                        </div>
+                    </div>
+            </div>
+            {% endfor %}
+        </div>
+
+
     </div>
 
     <script>

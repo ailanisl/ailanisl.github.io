@@ -116,9 +116,9 @@ a:hover {
 
 
 .post-content {
-  font-family:system-ui, sans-serif; 
+  font-family: Georgia, 'Times New Roman', Times, serif; 
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.8;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -299,7 +299,7 @@ body {
 }
 
 .right-sidebar, .left-sidebar {
-  background-color: white;
+  background-color: #FCFCFC;
 }
 
 
@@ -437,8 +437,19 @@ body {
 .navbar {
   display: flex;
   flex-direction: column;
-  padding-top: 250px;
-  padding-right: 15px;
+  padding: 2rem;
+  background-color: white;
+  height: fit-content;
+  width: 21%;
+  border: none;
+  border-radius: 0 20px 20px 0;
+  z-index: 2000;
+  position: fixed;
+  top: 160px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  gap: 1rem;
+
+
 }
 
 .navbar a {
@@ -446,7 +457,6 @@ body {
   color: black;
   font-size: 20px;
   text-decoration: none;
-  padding-bottom: 18px;
   transition: 0.3s;
 }
 
@@ -463,10 +473,19 @@ body {
   display: flex;
   justify-content: end;
   position: relative;
+  top: 380px;
   left: 2px;
   padding-right: -4px;
+}
 
-
+@media (min-width: 1800px) {
+  .navbar {
+    width: fit-content;
+    position: fixed;
+    left: 12%;
+    border-radius: 20px;
+    transition: width 0.8s ease;
+  }
 }
 
 * {
@@ -494,7 +513,7 @@ body {
 .main-content p {
   line-height: 1.6rem;
 }
-.main-content ul {
+.main-content ul, .main-content ol {
   margin-left: 2rem;
   font-size: 1.15rem;
   margin-bottom: 0.8rem;
@@ -524,7 +543,7 @@ body {
   gap: 20px;
   align-items: center;
   justify-content: center;
-  max-width: 460px;
+  max-width: 5300px;
 
   border-top: 1px solid #d3d3d3;
   border-bottom: 1px solid lightgray;
@@ -583,6 +602,8 @@ body {
 .post-right p {
   margin: 0;
   font-size: 14px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
 
   display: -webkit-box;
   -webkit-line-clamp: 2; /* Max lines */
@@ -733,8 +754,11 @@ body {
 
 
 @media screen and (max-width:640px) {
-  .navbar a {
-    font-size: 14px;
+  .navbar {
+    display: none;
+  }
+  .post-right {
+    display: none;
   }
   .main-content, .main-content-wrapper, .post-content,  .head-wrapper {
     flex: 1;
@@ -762,6 +786,21 @@ body {
     position:absolute;
     right:0;
     top: 50px;
+  }
+  .main-content {
+    max-width: 370px;
+  }
+  .proj-item {
+    margin-left: -25%;
+  }
+  .proj-item img {
+    max-width: 370px;
+  }
+  .proj-text {
+    max-width: 370px;
+  }  
+  #logo-title-wrapper img{
+    padding: 1rem;
   }
   
 }
@@ -856,7 +895,11 @@ body {
   top: 50%;
   transform: translateY(-50%);
   z-index: 2;
+
+
 }
+
+
 
 .nav.left {
     left: 0.5rem;
@@ -985,7 +1028,78 @@ body {
   font-weight: normal;
 }
 
+/* ==================== PROJECT STYLING -================*/
+.proj-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.proj-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 530px;
+}
 
+.proj-image img {
+    width: 530px;
+    border-radius: 20px;
+}
+
+
+.proj-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 500px;
+}
+.proj-title a {
+    text-decoration: none;
+    color: black;
+}
+.proj-title:hover a {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    color: black;
+}
+.project-tags .tag {
+    text-decoration: none;
+    color: black;
+} 
+.project-tags .tag:hover {
+    text-decoration: none;
+    color: black;
+} 
+.project-tags {
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+    gap: 3px;
+}
+.proj-tools {
+    font-size: 1.2rem;
+    color: #656565;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.proj-time {
+
+    padding-top: 1rem;
+    text-align: center;
+    color: #656565;
+
+}
+.proj-item a[href^='http']::after {
+    content: "";
+
+}
+
+.proj-type {
+    font-weight: normal;
+}
 
 .proj-item-link:hover img {
     background-color: transparent;

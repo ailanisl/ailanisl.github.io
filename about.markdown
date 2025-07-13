@@ -33,6 +33,8 @@ I worked with HTML, CSS, and a smidge of Javascript for this static site, using 
 
 Also, here's the Are.na moodboard I created for inspiration. It's called [Simple Sites](https://www.are.na/ailani-sato-lim/simple-sites-d6h6m1dgkdq). All of these influenced me in a cumulative manner, though I wouldn't be able to pinpoint what exactly. 
 
+Read more about my process on this post: <a href= "{% post_url 2025-06-27-my-intentions %}" class="internal-link">My Intentions</a>  
+
 
 
 --- 

@@ -5,6 +5,9 @@ layout: default
 
   <header class="head-wrapper">
     <h1 class="post-title">{{ page.title | escape }}</h1>
+    {% if page.description %} 
+    <p class="page-description"> {{ page.description }}</p>
+    {% endif %}
   </header>
 
   <div class="content-wrapper">

@@ -4,7 +4,15 @@ layout: default
 
 
 <style>
-
+  .book-head-wrapper{
+    margin-bottom: 4rem;
+  }
+  .post-footer {
+    margin-top: 4rem;
+  }
+  .post-tags {
+    margin-top: 1rem;
+  }
 </style>
 {% assign site.data.footnotes = "" %}
 
@@ -25,14 +33,7 @@ layout: default
         {%- if page.author -%}
           • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
         {%- endif -%}</p>
-        <!--Tags-->
-        {%- if page.tags -%}
-          <div class="post-tags">
-          {% for tag in page.tags %}
-            <a href="{{ '/tag/' | append: tag | relative_url }}" class="tag">{{ tag }}</a>
-          {% endfor %}
-        {%- endif -%}
-        </div>
+
     </header>
     {% endif %}
   </div>
@@ -41,19 +42,34 @@ layout: default
     {{ content }}
   </div>
 
+    <!--Tags-->
+  <footer class="post-footer">
+
+    {% if site.data.footnotes %}
+      <hr>
+      <h3>Notes</h3>
+      <ol class="sidenote-bottom-list">
+        {{ site.data.footnotes }}
+      </ol>
+    {% endif %}
+
+    {%- if page.tags -%}
+      <h3>Nodes:</h3>
+      <div class="post-tags">
+      {% for tag in page.tags %}
+        <a href="{{ '/tag/' | append: tag | relative_url }}" class="tag">{{ tag }}</a>
+      {% endfor %}
+    {%- endif -%}
+    </div>
+
+  </footer>
   {%- if site.disqus.shortname -%}
     {%- include disqus_comments.html -%}
   {%- endif -%}
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 
-{% if site.data.footnotes %}
-<hr>
-<h3>Notes</h3>
-<ol class="sidenote-bottom-list">
-  {{ site.data.footnotes }}
-</ol>
-{% endif %}
+
 </article>
 
 
