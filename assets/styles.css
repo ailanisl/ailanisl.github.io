@@ -794,10 +794,10 @@ body {
     margin-left: -25%;
   }
   .proj-item img {
-    max-width: 370px;
+    max-width: 310px;
   }
   .proj-text {
-    max-width: 370px;
+    max-width: 310px;
   }  
   #logo-title-wrapper img{
     padding: 1rem;
@@ -957,6 +957,7 @@ body {
   border-collapse: collapse;
   margin-top: 1rem;
   position: relative;
+  font-family: system-ui, sans-serif; 
 
 }
 
