@@ -11,15 +11,22 @@ description: This is a place where I keep my somewhat unpolished writing and mus
     .post-list{
         margin-top: 5rem;
         margin-right:10rem;
-        margin-left: 2.4rem;
+        margin-left: 0rem;
         display: flex;
         flex-direction: column;
         gap: 5rem;
+        position: inherit;
     }
+    @media (max-width: 914px) {
+        .post-list {
+            margin-left: 12%;
+        }
+    }
+
     @media (max-width: 640px) {
         .post-list {
             max-width: 290px;
-            margin-left: 1%;
+            margin-left: 10%;
         }
         .post-heading .category {
             display: none;
@@ -115,7 +122,6 @@ description: This is a place where I keep my somewhat unpolished writing and mus
 </style>
 
 
-<div class="main-content-wrapper">
 
 
 <!--
@@ -154,5 +160,4 @@ description: This is a place where I keep my somewhat unpolished writing and mus
         </div>
         </a>
     {% endfor %}
-</div>
 </div>

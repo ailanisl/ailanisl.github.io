@@ -1,5 +1,5 @@
 ---
-layout: "default"
+layout: default
 ---
 <style>
     .book-head-wrapper {
@@ -32,10 +32,25 @@ layout: "default"
       margin-top: 1rem;
       box-shadow:  0 2px 8px rgba(0, 0, 0, 0.15);
     }
+    @media (max-width: 914px) {
+      .post-content {
+        flex: 1;
+        margin-left: 23%;
+        margin-right: 5%;
+      }
+    @media (max-width: 640px) {
+      .post-content {
+        flex: 1;
+        margin-left: 5%;
+        margin-right: 5%;
+      }
+
+
+    }
+  }
 
 
 </style>
-
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
   <div class="book-head-wrapper">
     <header class="post-header">
@@ -103,7 +118,6 @@ layout: "default"
       {% endif %}
       
     </div>
-
   <footer class="book-footer">
     {%- if page.pub_date -%}
         <p><b>Originally published: </b> {{ page.pub_date }}</p>
@@ -111,7 +125,8 @@ layout: "default"
         <p><b>Category: </b> {{ page.category }}</p>
         <p><b>Genre: </b> {{ page.genre }}</p>
   </footer>
-  </div>
+ 
+ </div>
 
   {%- if site.disqus.shortname -%}
     {%- include disqus_comments.html -%}

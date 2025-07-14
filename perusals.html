@@ -9,12 +9,11 @@ title: "Perusals"
 #axes-section {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 10px;
 }
-.main-content-wrapper {
-    font-family: system-ui, sans-serif; 
 
+#axes-section, .carousel-section, .teachers-section, .log-section {
+    font-family: system-ui, sans-serif;
 }
 
 @media (max-width: 914px) {
@@ -26,14 +25,12 @@ title: "Perusals"
 
 </style>
 
-
-<div class="main-content-wrapper">
-<section id="axes-section">
+<div id="axes-section">
     <p><b>Axes:</b> <i>"We ought to read only the kind of books that wound or stab us. If the book we're reading doesn't wake us up with a blow to the head, what are we reading for?...A book must be the axe for the frozen sea within us”</i>- Kafka
     </p>
-</section>
+</div>
 
-    <section class="carousel-section" >
+    <div class="carousel-section" >
         <button class="nav left" onclick="scrollCarousel(-1)">&#9664</button>
         <div class="carousel-container">
             
@@ -70,10 +67,10 @@ title: "Perusals"
             
         </div>
         <button class="nav right" onclick="scrollCarousel(1)">&#9654</button>
-    </section>
-</section>
+    </div>
 
-<section class="teachers-section">
+
+<div class="teachers-section">
     <p>
         <b>The poets (1), philosophers (2), and writers (3)</b>, who are my greatests teachers
     </p>
@@ -128,9 +125,9 @@ title: "Perusals"
     </div>
 
 
-</section>
+</div>
 
-<section class="log-section">
+<div class="log-section">
     
     <div class="log-header">
         <p><strong>Reading log</strong> (* = reread,  ~ = audiobook)</p>
@@ -170,10 +167,8 @@ title: "Perusals"
             </tbody>
         </table>
 
-</section>
+    </div>
 </div>
-
-
 
 
 <script>
