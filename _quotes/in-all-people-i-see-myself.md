@@ -9,6 +9,8 @@ heading: "on the multitudinous self"
 source: "Song of Myself, 20"
 source_slug: song-of-myself
 
+page: 20
+
 type: poem
 tags: [transcendentalism, american poetry]
 date: 2022-06-29

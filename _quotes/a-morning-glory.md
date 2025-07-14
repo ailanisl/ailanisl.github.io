@@ -8,7 +8,7 @@ heading: "on the morning glory"
 
 source: "Song of Myself, 24"
 source_slug: song-of-myself
-
+page: "24"
 type: poem
 tags: [transcendentalism, american poetry, nature]
 date: 2022-06-29 2:00

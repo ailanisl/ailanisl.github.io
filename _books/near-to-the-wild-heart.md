@@ -11,6 +11,7 @@ category: "Fiction/Literature"
 
 pub_date: "1943"
 
+image: /assets/img/books/near-lispector.jpg
 ---
 
 My favorite book, perhaps because it introduced me to Clarice. 

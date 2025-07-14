@@ -10,7 +10,7 @@ image:
 #parent_topic:
 type: ideas
 categories: [science]
-tags: [science as mapmaking]
+tags: [science-as-mapmaking]
 date_pub: 2025-07-13
 date_mod: 2025-07-13
 

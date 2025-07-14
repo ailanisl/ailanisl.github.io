@@ -22,5 +22,4 @@ That's all I wrote in my journal at the time. When I think back about it, the wh
 
 I remember putting *Heart of a Dog* by Bulgakov on my list after reading this, but I never got around to it. 
 
-This is my favorite cover design I've found for the book (not the edition I bought).
-<img src="/assets/img/books/master-marg.jpg">
+I attached my favorite cover design that I've found for the book (not the edition I bought).

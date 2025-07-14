@@ -12,4 +12,8 @@ __Reasons I read__ (listed not in importance but in the order they come to mind)
 - Learning, through nonfiction books 
 - The aesthetic experience 
 
+The first two are fine in audio form. The last is quite different. 
+
+
+
 

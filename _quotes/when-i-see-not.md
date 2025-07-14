@@ -9,9 +9,10 @@ heading: "on the imperceptible clarity of faith"
 type: poem
 tags: [faith, american poetry]
 date: 2022-04-08
+
+note: "Emily probably wrote this poem when she was having vision issues. "
 ---
 
-__Notes:__ Emily probably wrote this poem when she was having vision issues. 
 
 
 {{ page.quote }}

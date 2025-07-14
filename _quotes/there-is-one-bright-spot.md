@@ -8,6 +8,7 @@ author_slug: leo-tolstoy
 source: "The Death of Ivan Illyich"
 source_slug: the-death-of-ivan-illyich
 
+type: "excerpt"
 tags: [humor, death]
 date: 2022-06-01
 ---

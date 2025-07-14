@@ -3,11 +3,15 @@ layout: "default"
 ---
 <style>
     .book-head-wrapper {
-        margin-bottom: 4rem;
+        margin-bottom: 3rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
 
     .book-footer {
         margin-top: 4rem;
+        font-family: system-ui, sans-serif;
     }
 
     .book-quotes {
@@ -15,30 +19,52 @@ layout: "default"
       flex-direction: column;
       gap: 0.2rem;
     }
+
+    .post-header {
+      display: flex;
+      flex-direction: column;
+    }
+    .book-image {
+      border-radius: 6px;
+      max-width: 150px;
+      max-height: auto;
+      object-fit: cover;
+      margin-top: 1rem;
+      box-shadow:  0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+
 </style>
 
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
   <div class="book-head-wrapper">
-    <a href="{{ '/perusals/#log-section' | relative_url }}" class="back-button">&#8636;</a>
     <header class="post-header">
+      <a href="{{ '/perusals/#log-section' | relative_url }}" class="back-button">&#8636;</a>
+
       <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
       <p class="post-meta">
         
 
         {% assign author_page = site.articles | where: "title", page.author | first %}
+        <div class="book-author">
+        <p>
         {% if author_page %}
           <a href="{{ author_page.url }}">{{ page.author }}</a>
         {% else %}
           {{ page.author }}
         {% endif %}
+        <p>
+        </div>
 
-
+        <div class="book-country">
         <p><b>Country: </b> {{ page.country }} </p>
+        </div>
 
 
-
+        <div class ="book-date">
         <p><b>Date finished: </b> {{ page.date_finished | date: "%B %-d, %Y" }} </p>
-    </p>
+          </p>
+        </div>
 
 
         <!--Tags-->
@@ -48,8 +74,12 @@ layout: "default"
             <a href="/tag/{{ tag | downcase | replace: ' ', '-' }}/" class="tag">{{ tag }}</a>
           {% endfor %}
         {%- endif -%}
-        </div>
     </header>
+        {% if page.image %}
+          <img src="{{ page.image }}" class="book-image" alt="image of {{page.title}}">
+        {% endif %}
+        </div>
+
   </div>
 
   <div class="post-content" itemprop="articleBody">
@@ -74,13 +104,6 @@ layout: "default"
       
     </div>
 
-
-  </div>
-
-  {%- if site.disqus.shortname -%}
-    {%- include disqus_comments.html -%}
-  {%- endif -%}
-
   <footer class="book-footer">
     {%- if page.pub_date -%}
         <p><b>Originally published: </b> {{ page.pub_date }}</p>
@@ -88,6 +111,13 @@ layout: "default"
         <p><b>Category: </b> {{ page.category }}</p>
         <p><b>Genre: </b> {{ page.genre }}</p>
   </footer>
+  </div>
+
+  {%- if site.disqus.shortname -%}
+    {%- include disqus_comments.html -%}
+  {%- endif -%}
+
+
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>

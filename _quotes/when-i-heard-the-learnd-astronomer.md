@@ -9,10 +9,11 @@ heading: being very Romantic
 type: poem
 tags: [science-as-mapmaking, transcendentalism, american poetry]
 date: 2022-04-14
+
+note: "Sorry for the wrong line arrangement. Need to see how to fix this."
+
 ---
 
-
-__Note:__ Sorry for the wrong line arrangement. Need to see how to fix this.
 
 
 {{ page.quote }}

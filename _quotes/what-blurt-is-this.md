@@ -8,7 +8,7 @@ heading: "on balance"
 
 source: "Song of Myself, 22"
 source_slug: song-of-myself
-
+page: "22"
 type: poem
 tags: [neutrality, american poetry]
 date: 2022-06-29

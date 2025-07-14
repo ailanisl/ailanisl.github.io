@@ -9,6 +9,7 @@ heading: "on what is felt, not deduced"
 source: "Song of Myself, 30"
 source_slug: song-of-myself
 
+page: "30"
 type: poem
 tags: [transcendentalism, science-as-mapmaking, american poetry, illogic]
 date: 2022-07-01

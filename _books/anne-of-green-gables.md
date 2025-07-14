@@ -5,7 +5,7 @@ author: "Lucy Maud Montgomery"
 date_finished: 2022-01-10
 country: "Canada"
 
-genre: "Bildungsroman"
+genre: "Children's Literature"
 category: "Fiction/Literature"
 
 pub_date: "1908"

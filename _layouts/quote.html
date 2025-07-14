@@ -3,7 +3,11 @@ layout: default
 
 ---
 <style>
+  .quote-notes {
+    margin-top: 4rem;
 
+    color: #656565;
+  }
 </style>
 <div class="main-content-wrapper">
 <a href="{{ '/pearls/' | relative_url }}" class="back-button">&#8636; to pearls </a>
@@ -36,4 +40,11 @@ layout: default
     </i>
   {% endif %}
 </p>
+
+{% if page.note %}
+<div class="quote-notes">
+<h3>Notes:</h3>
+<p> {{ page.note }} </p></div>
+{% endif %}
 </div>
+
