@@ -5,7 +5,7 @@ author: "Fernando Pessoa"
 date_finished: 2022-11-25
 country: "Portugal"
 
-genre: "Philosophical Fiction"
+genre: "Philosophical Literature"
 category: "Fiction/Literature"
 
 pub_date: "1982"

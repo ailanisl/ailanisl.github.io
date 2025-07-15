@@ -36,6 +36,9 @@ collections:
   books:
     output: true
     permalink: /books/:slug/
+  tbrs:
+    output: true
+    permalink: /tbrs/:slug/
 
   articles: 
     output: true

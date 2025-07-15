@@ -5,7 +5,7 @@ author: "Alan Lightman"
 date_finished: 2022-09-05
 country: "UK"
 
-genre: "Philosophical Fiction"
+genre: "Philosophical Literature"
 category: "Fiction/Literature"
 
 pub_date: "1992"

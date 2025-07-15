@@ -1,0 +1,140 @@
+---
+layout: default
+title: "Antilibrary"
+permalink: /perusals/antilibrary/
+---
+<style>
+    .antilibrary-quote {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .antilibrary-quote p {
+        width: 355px;
+    }
+
+    .shelf-frame {
+
+        display: flex;
+        flex-direction: column;
+    }
+    .area-stacks {
+        display: flex;
+        flex-direction: row;
+        border: 2px double lightgray;
+        padding: 1rem;
+        border-radius: 6px;
+        height: 16rem;
+        width: 570px;
+        gap: 0.5rem;
+    }
+    .area-stack {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 1px;
+        flex-wrap: no-wrap;
+        overflow: hidden;
+    }
+    .tbr-spine {
+        border: 1px double grey;
+        padding: 2px 4px;
+        font-size: 0.9rem;
+        line-height: 1.1rem;
+        max-width: 186px;
+        width:fit-content;
+
+        max-height: 16rem;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .tbr-spine span {
+        display: inline-block;
+        max-width: 160px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        }
+    .book-title::after {
+        content: " ";
+    }
+
+    .antilibrary-space {
+        margin-top: 4rem;
+    }
+</style>
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="book-head-wrapper">
+    <header class="post-header">
+      <a href="{{ '/perusals/#log-section' | relative_url }}" class="back-button">&#8636;</a>
+
+      <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+      </header>
+    </div>
+<div class="antilibrary-space">
+
+    <div class="antilibrary-quote" > 
+        <p>It is foolish to think that you have to read all the books you buy, as it is foolish to criticize those who buy more books than they will
+         ever be able to read. It would be like saying that you should use all  the cutlery or glasses or screwdrivers or drill bits you bought before buying new ones.</p>
+        <div class="attribution" style="text-align: right; color: #656565;"> - Umberto Eco, on the Antilibrary</div>
+         
+    </div>
+    <br>
+<p>Ok, but I really need to stop buying more books and read what I own.</p><br>
+{% assign grouped_by_category = site.tbrs | group_by_exp: "item", "item.categories[0]" %}
+
+{% for category in grouped_by_category | sort %}
+<div class="shelf-frame">
+  <h2 style="font-weight: normal;">{{ category.name | capitalize }}</h2>
+
+  {% assign grouped_by_area = category.items | group_by: "area" %}
+  <div 
+  <div class="area-stacks" data-area="{{area_group.name}}">
+    {% for area_group in grouped_by_area %}
+        {% assign sorted_items = area_group.items | sort: "author" %}
+        {% for tbr in sorted_items %}
+
+<!--      <div class="area-stack">-->
+            <div class="tbr-spine" >
+                <span class="book-title" style="font-weight: 600; padding-right: 3px;">{{ tbr.title | truncate: 25, '…' }} </span> | {{ tbr.author }}
+            </div>
+          {% endfor %}
+
+    {% endfor %}
+    </div>
+</div>
+  {% endfor %}
+</div>
+
+
+<!--    <h3 style="font-weight: normal;">{{ area_group.name | capitalize }} </h3> -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const stackContainers = document.querySelectorAll('.area-stacks');
+  const maxHeight = 197; // 16rem in pixels
+
+  stackContainers.forEach(container => {
+    const spines = Array.from(container.querySelectorAll('.tbr-spine'));
+    container.innerHTML = ''; // Clear all to re-insert dynamically
+
+    let currentStack = document.createElement('div');
+    currentStack.className = 'area-stack';
+    container.appendChild(currentStack);
+
+    spines.forEach(spine => {
+      currentStack.insertBefore(spine, currentStack.firstChild);
+
+      if (currentStack.scrollHeight > maxHeight) {
+        currentStack.removeChild(spine);
+
+        currentStack = document.createElement('div');
+        currentStack.className = 'area-stack';
+        container.appendChild(currentStack);
+        currentStack.insertBefore(spine, currentStack.firstChild);
+      }
+    });
+  });
+});
+</script>
