@@ -1,30 +1,110 @@
+<style>
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  footer p, .u-email {
+    color: #656656;
+  }
+  footer a {
+    text-decoration: none;
+  }
+  .wrapper {
+
+    min-width: 530px;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+    text-align: center;
+
+  }
+  .footer-col-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding-top: 2rem;
+  }
+  .footer-col-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    gap: 0.6rem;
+    width: 200px;
+  }
+  .footer-col-1 h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+  }
+  .footer-col-2 {
+    display: flex;
+    flex-direction: column;
+  }
+  .socials-box {
+    display: flex;
+    flex-direction: row;
+    gap: 0.7rem;    
+  }
+  hr {
+    border-top: 0.5px #656656;
+  }
+  @media (max-width: 914px) {
+    footer .wrapper {
+      min-width: 500px;
+
+    }
+    .footer-col-1 {
+      margin-left: 13%;
+    }
+  }
+  @media (max-width: 640px) {
+    footer .wrapper {
+      min-width: 300px;
+    }
+    .footer-col-1 {
+      margin-left: 0;
+    }
+  }
+</style>
 <footer class="site-footer h-card">
   <data class="u-url" href="{{ "/" | relative_url }}"></data>
 
   <div class="wrapper">
+    <img src="/assets/img/rose-name.jpg" width="270px">
 
-    <h2 class="footer-heading">{{ site.title | escape }}</h2>
 
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li class="p-name">
-            Ailani Sato-Lim
-            </li>
-            {%- if site.email -%}
-            <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-            {%- endif -%}
-        </ul>
+        <a href="{{ '/about/' | relative_url }}">About</a>
+        <a href="{{ '/wiki-index/' | relative_url }}">Wiki</a>
+        <a href="#">Sitemap</a>
+        
+        <br>
+        
+
+
       </div>
 
       <div class="footer-col footer-col-2">
-        {%- include social.html -%}
+        <div class="contact-list">
+            {%- if site.email -%}
+            <p><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+            {%- endif -%}
+          </div>
+        <div class="socials-box">
+            <a href="https://github.com/ailanisl">github</a>
+            <a href="https://www.are.na/ailani-sato-lim/index">Are.na</a>
+            <a href="https://www.pinterest.com/ailanisdream/">Pinterest</a>
+
+        </div>
+ 
+          
       </div>
 
-      <div class="footer-col footer-col-3">
-        <p>{{- site.description | escape -}}</p>
-      </div>
+
     </div>
+    <div class="tag-line" style="text-align: center; margin-top: 1rem;">Handcrafted with care, 2025</div>
+
 
   </div>
 

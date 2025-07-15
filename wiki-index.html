@@ -71,7 +71,7 @@ permalink: /wiki-index/
 <!-- Grouped Content -->
 {% assign grouped_by_category = site.articles | group_by_exp: "item", "item.categories[0]" %}
 
-{% for category in grouped_by_category %}
+{% for category in grouped_by_category | sort %}
 <div class="category-box">
   <h1><a href="{{ /category.name/ | relative_url }}" >{{ category.name | capitalize }} &#8640;</a></h1>
 

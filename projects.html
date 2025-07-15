@@ -29,6 +29,9 @@ permalink: /projects/
                                 <h3>{{ proj.title }} <span class="proj-type">{{ proj.type }}</span></h3>
                             </a> 
                             </div>
+                                {% else %}
+                                    <h3>{{ proj.title }} <span class="proj-type">{{ proj.type }}</span></h3>
+
                                 {% endif %}
 
                             <div class="project-tags">

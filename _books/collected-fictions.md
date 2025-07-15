@@ -13,6 +13,7 @@ reread: false
 audio: false
 
 tags: [mysticism, science-as-mapmaking]
+permalink: /books/collected-fictions/
 ---
 
 I don't think I read all of the stories, as I read them nonlinearly. 
