@@ -12,8 +12,16 @@ layout: default
     .book-footer {
         margin-top: 4rem;
         font-family: system-ui, sans-serif;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly        
     }
+  
 
+    .book-footer p {
+      text-align: center;
+    }
+ 
     .book-quotes {
       display: flex;
       flex-direction: column;
@@ -43,6 +51,14 @@ layout: default
         flex: 1;
         margin-left: 5%;
         margin-right: 5%;
+      }
+      .book-footer {
+        flex-direction: column;
+        justify-content: left;
+        align-items: baseline;
+      }
+      .book-footer p {
+        text-align: left;
       }
 
 
@@ -118,13 +134,13 @@ layout: default
       {% endif %}
       
     </div>
-  <footer class="book-footer">
+  <div class="book-footer">
     {%- if page.pub_date -%}
-        <p><b>Originally published: </b> {{ page.pub_date }}</p>
+        <p><b>Published </b><br> {{ page.pub_date }}</p>
     {%- endif -%}
-        <p><b>Category: </b> {{ page.category }}</p>
-        <p><b>Genre: </b> {{ page.genre }}</p>
-  </footer>
+        <p><b>Category </b><br> {{ page.category }}</p>
+        <p><b>Genre </b><br> {{ page.genre }}</p>
+  </div>
  
  </div>
 

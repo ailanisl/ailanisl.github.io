@@ -19,6 +19,9 @@ permalink: /perusals/antilibrary/
 
         display: flex;
         flex-direction: column;
+        overflow: hidden;
+
+
     }
     .area-stacks {
         display: flex;
@@ -27,8 +30,11 @@ permalink: /perusals/antilibrary/
         padding: 1rem;
         border-radius: 6px;
         height: 16rem;
-        width: 570px;
+        width: 530px;
         gap: 0.5rem;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
     }
     .area-stack {
         display: flex;
@@ -62,7 +68,24 @@ permalink: /perusals/antilibrary/
 
     .antilibrary-space {
         margin-top: 4rem;
+
     }
+
+    @media (max-width: 914px) {
+      .area-stacks {
+        width: 400px;
+        margin:auto;
+      }
+    }
+    @media (max-width: 640px) {
+      .area-stacks {
+        width: 300px;
+        margin:auto;
+        overflow-y: scroll;
+      }
+    }
+      
+    
 </style>
 
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">

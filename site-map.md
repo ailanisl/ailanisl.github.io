@@ -22,10 +22,15 @@ permalink: /site-map/
 ## __<a href="{{ '/wiki-index/' | relative_url }}">Personal Wiki </a>__ <span style="font-size: 1.1rem;">A digital garden of my own</span>
 
 {% assign grouped_by_category = site.articles | group_by_exp: "item", "item.categories[0]" %}
-
+<ul>
 {% for category in grouped_by_category | sort %}
-- <b><a href="{{ '/category.name/' | relative_url }}" >{{ category.name | capitalize }} </a></b>
+  <li>
+    <b><a href="{{ '/' | append: category.name | append: '/' | relative_url }}">{{ category.name | capitalize }}</a></b>
+
+  </li>
 {% endfor %}
+</ul>
+
 <br>
 ## <b> <a href="{{ '/glossary/' | relative_url }}">Glossary</a> </b> <span style="font-size: 1.1rem;">A personal dictionary</span>
 

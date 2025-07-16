@@ -42,7 +42,7 @@ collections:
 
   articles: 
     output: true
-  permalink: /:categories/:slug/
+  permalink: /articles/:type/:slug/
 
   quotes:
     output: true

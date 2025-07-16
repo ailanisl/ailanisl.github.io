@@ -795,16 +795,22 @@ body {
   }
   .project-list {
     margin-left:5%;
+    max-width: 350px;
+
+  }
+  .proj-item {
+    max-width: 300px;
+
   }
   .proj-item img {
-    max-width: 310px;
+    max-width: 300px;
     transition: all 0.3s ease;
   }
   .proj-text {
     max-width: 310px;
   }  
   #logo-title-wrapper img{
-    padding: 1rem;
+    width: 3.5rem;
   }
   
 }

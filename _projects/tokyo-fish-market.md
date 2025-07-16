@@ -1,7 +1,7 @@
 ---
 layout: project
 title: "Tokyo Fish Market"
-type: "Website Interface Design"
+type: "Website Interface Design (opens Figma)"
 
 tags: [User Interface, Graphic Design]
 

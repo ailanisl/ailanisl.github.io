@@ -37,6 +37,7 @@ __To Read (Big Picture):__
 
 __To Read (Minutiae):__
 - Begus (2024). Experimental Narratives: [A Comparison of Human Crowdsourced Storytelling and AI Storytelling](https://www.nature.com/articles/s41599-024-03868-8)
+- A. Johns (2023). [The Science of Reading: Information, Media, and Mind in Modern America](https://www.degruyterbrill.com/document/doi/10.7208/chicago/9780226821498/html)
 
 
 ### Links 
@@ -45,4 +46,6 @@ __To Read (Minutiae):__
 
 
 ### Current Researchers 
-- [Nina Beguš](https://www.ninabegus.com) 
+- [Nina Beguš](https://www.ninabegus.com); UC Berkeley STMS
+- [Adrian Johns](https://home.uchicago.edu/~johns/); UChicago CHSS
+- [Lorraine Daston](https://www.mpiwg-berlin.mpg.de/people/ldaston); Max Planck Institute for the History of Science

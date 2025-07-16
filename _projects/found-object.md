@@ -1,7 +1,7 @@
 ---
 layout: project
 title: "Found Object"
-type: "Mobile App Design"
+type: "Mobile App Design (opens Notion)"
 
 tags: [UI/UX, Product Design, Prototyping]
 

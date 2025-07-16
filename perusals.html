@@ -16,7 +16,26 @@ title: "Perusals"
     font-family: system-ui, sans-serif;
 }
 
-@media (max-width: 914px) {
+.antilibrary-button {
+    background-color: white;
+    border-radius: 6px;
+    padding: 4px;
+}
+.antilibrary-button a {
+    text-decoration: none;
+    color: #656565;
+}
+.antilibrary-button a:hover {
+    color: #656565;
+    background-color: transparent;
+}
+.antilibrary-button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+@media (max-width: 640px) {
     .carousel-section {
         max-width: 330px;
   }  
@@ -110,6 +129,8 @@ title: "Perusals"
                 <li> 
                     <a href ="">William Faulkner</a> </li>
             </ul>
+
+
         </div>
  <!--       <div class="col">
             <p>(4)</p>
@@ -122,12 +143,16 @@ title: "Perusals"
                     <a href ="">Ikko Tanaka</a> </li>
             </ul>
         </div>-->
+
+    </div>
+    <div class="antilibrary-button-wrapper">
+        <button class="antilibrary-button"><a href="{{ '/perusals/antilibrary/' | relative_url }}">Antilibrary</a></button>
     </div>
 
 
 </div>
-<a href="{{ '/perusals/antilibrary/' | relative_url }}">Antilibrary</a>
 <div class="log-section">
+
     
     <div class="log-header">
         <p><strong>Reading log</strong> (* = reread,  ~ = audiobook)</p>
