@@ -790,9 +790,7 @@ body {
     right:0;
     top: 50px;
   }
-  .main-content {
-    max-width: 370px;
-  }
+
   .project-list {
     margin-left:5%;
     max-width: 350px;

@@ -43,6 +43,7 @@ __To Read (Minutiae):__
 ### Links 
 - [Berkeley: Center for Science, Technology, Medicine, and Society ](https://cstms.berkeley.edu)
 - [STS Wiki](https://stswiki.org)
+- [Max Planck Institute for the History of Science](https://www.mpiwg-berlin.mpg.de)
 
 
 ### Current Researchers 
