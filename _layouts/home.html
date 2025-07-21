@@ -198,33 +198,7 @@ layout: default
             </div>
         </div>
 
-{% assign all_content =  site.books | concat: site.articles | concat: site.quotes %}
-{% assign sorted_content = all_content | sort: 'last_modified_at' | reverse %}
 
-<section class="recent-updates">
-  <h2>Recently Updated</h2>
-  <ul>
-    {% for item in sorted_content limit:10 %}
-
-      <li>
-      <a href="{{ item.url | relative_url }}">
-        {% case item.collection %}
-            {% when 'quotes' %} 
-                [{{ item.collection | capitalize }}] <strong>{{ item.author }} {{ item.heading }} </strong> 
-            {% when 'books' %} 
-                [{{ item.collection | capitalize }}] <strong>{{ item.title }} by {{ item.author }} </strong> 
-            {% when 'articles' %} 
-                [{{ item.collection | capitalize }}] <strong>{{ item.title }} </strong> 
-     
-            {% endcase %}
-            </a>
-
-            <div class="excerpt">{{ item.excerpt | strip_html | truncatewords: 30 }} </div>               
-            <small>({{ item.last_modified_at | date: "%b %-d, %Y" }})</small>
-        </li>
-    {% endfor %}
-  </ul>
-</section>
 
 
 
