@@ -47,6 +47,13 @@ a:hover {
   color: #656565;
 }
 
+a[href^='http']::after {
+  content: "\2197";
+  display: inline;
+  vertical-align: super;
+  font-size: 0.5rem;
+
+}
 .internal-link {
   color: #444;
   text-decoration: underline;
@@ -156,10 +163,10 @@ a:hover {
 }
 
 .post-content a[href^='http']::after {
-  content: "↗";
+  content: "\2197";
   display: inline;
   vertical-align: super;
-  font-size: 0.8rem;
+  font-size: 0.5rem;
 
 }
 
@@ -298,8 +305,8 @@ body {
   background-color: white; /* fffefc , fbf9f6*/
 }
 
-.right-sidebar, .left-sidebar {
-  background-color: #FCFCFC;
+.right-sidebar, .left-sidebar { /* #FCFCFC */
+  background-color: white;
 }
 
 

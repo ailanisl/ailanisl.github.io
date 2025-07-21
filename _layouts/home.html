@@ -84,6 +84,25 @@ layout: default
     .post-item {
         width: auto;
     } 
+    .recent-updates ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .recent-updates li {
+        margin-bottom: 1rem;
+    }
+
+    .recent-updates small {
+        color: #888;
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+    }
+    .recent-updates a {
+        text-decoration: none;
+    }
+
+
 }
 
 /* ELIOT EPIGRAPH */
@@ -154,17 +173,6 @@ layout: default
         </div>
 <!--END FEATURES LIST-->
 
-      <!--  <nav class="theme-bar">
-            <a href="#">Art</a>
-            <a href="#">Culture</a>
-            <a href="#">Design</a>
-            <a href="#">Literature</a>
-            <a href="#">Music</a>            
-            <a href="#">Philosophy</a>
-            <a href="#">Religion</a>
-            <a href="#">Nonsense</a>
-        </nav>-->
-
         <!--SPACING AND PICS-->
         <div class ="inspo-section">
             <div class = "inspo-container" > <!--WORK ON MAKING OVERLAY-->
@@ -190,38 +198,34 @@ layout: default
             </div>
         </div>
 
-<!--
-    <div class="project-list">
-        <a href="{{ '/projects/' | relative_url}}" class="page-link"><h3>Projects  &#8640;</h3> </a><br>
-        {% for proj in site.projects %}
-            <div class="proj-item">
-                <div class="proj-image">
-                    {% if proj.image %}
-                        <a href="{{ proj.ext_link }}"><img src="{{ proj.image | relative_url }}"  alt="Thumbnail of {{ proj.title }}"></a>
-                    {% endif %}
-                </div>
-                    <div class="proj-text">
-                        <div class="proj-heading">
-                            <div class ="proj-title">
-                                {% if proj.ext_link %}
-                                    <a href="{{proj.ext_link}}" >
+{% assign all_content =  site.books | concat: site.articles | concat: site.quotes %}
+{% assign sorted_content = all_content | sort: 'last_modified_at' | reverse %}
 
-                                <h3>{{ proj.title }} <span class="proj-type">{{ proj.type }}</span></h3>
-                            </a> 
-                            </div>
-                                {% endif %}
+<section class="recent-updates">
+  <h2>Recently Updated</h2>
+  <ul>
+    {% for item in sorted_content limit:10 %}
 
-                            <div class="proj-description">
-                                <p> {{ proj.description }}</p>
-                            </div>
+      <li>
+      <a href="{{ item.url | relative_url }}">
+        {% case item.collection %}
+            {% when 'quotes' %} 
+                [{{ item.collection | capitalize }}] <strong>{{ item.author }} {{ item.heading }} </strong> 
+            {% when 'books' %} 
+                [{{ item.collection | capitalize }}] <strong>{{ item.title }} by {{ item.author }} </strong> 
+            {% when 'articles' %} 
+                [{{ item.collection | capitalize }}] <strong>{{ item.title }} </strong> 
+     
+            {% endcase %}
+            </a>
 
-                            <div class="proj-time">{{ proj.time }}</div>
+            <div class="excerpt">{{ item.excerpt | strip_html | truncatewords: 30 }} </div>               
+            <small>({{ item.last_modified_at | date: "%b %-d, %Y" }})</small>
+        </li>
+    {% endfor %}
+  </ul>
+</section>
 
-                        </div>
-                    </div>
-            </div>
-            {% endfor %}
-        </div>-->
 
 
 

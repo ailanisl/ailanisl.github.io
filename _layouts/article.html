@@ -147,7 +147,7 @@ layout: "default"
           Article originally added:  {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
              {{ page.date_pub | date: date_format }}
           <br>
-          Last updated on: {{ page.date_mod | date: date_format }}
+          Last updated on: {{ page.last_modified_at | date: "%b %-d, %Y" }}
         </time>
 
   </div>

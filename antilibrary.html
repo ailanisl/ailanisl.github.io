@@ -108,7 +108,7 @@ permalink: /perusals/antilibrary/
 <p>Ok, but I really need to stop buying more books and read what I own.</p><br>
 {% assign grouped_by_category = site.tbrs | group_by_exp: "item", "item.categories[0]" %}
 
-{% for category in grouped_by_category | sort %}
+{% for category in grouped_by_category  %}
 <div class="shelf-frame">
   <h2 style="font-weight: normal;">{{ category.name | capitalize }}</h2>
 

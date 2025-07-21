@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+<style>
+  .node-heading a {
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .node-heading {
+    padding-left: 1rem;
+  }
+  @media (max-width: 914px) {
+    .main-content {
+      margin-left: 25%;
+      margin-right: 15%;
+
+    }
+  }
+
+  @media (max-width:640px) {
+    .main-content {
+      flex:1;
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+  }
+</style>
+
+  <body>
+
+
+    <div class="head-wrapper">
+
+  <!-- LEFT SIDEBAR -->
+
+        
+
+    <div class="left-sidebar">
+        <div class="logo-space">      </div>
+
+
+
+        <nav class="navbar">
+          {% for item in site.data.navigation %}
+            <a href="{{ item.url | relative_url }}"
+            class="{% if current_url == item.url %}active{% endif %}">
+            {{ item.title }}</a>
+          {% endfor %}
+        </nav>
+        <div class="tab-wrapper">
+        <a href="{{ '/wiki-index/' | relative_url }}"><img src="{{ '/assets/img/index-tab1.svg' | relative_url }}" alt="a tab that leads to the index of my personal wiki"></a>
+        </div>
+      </div>
+
+
+
+    </div>
+    <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation">☰</button>
+    <nav class="mini-navbar" id="mobile-nav">
+          {% for item in site.data.navigation %}
+            <a href="{{ item.url | relative_url }}"
+            class="{% if current_url == item.url %}active{% endif %}">
+            {{ item.title }}</a>
+          {% endfor %}
+          <a href=" {{ '/wiki-index/' | relative_url }}">Index</a>
+    </nav>
+
+    <div id="logo-title-wrapper">
+    <a href= "{{ '/' | relative_url }}" > <img src="{{ '/assets/img/name-stamp.png' | relative_url }}" class = "logo" width = "80px" alt="Logo of my site: it is a red stamp with my name in Chinese characters">
+      <div class="title-space">
+          <h2 class="site-title">
+          <em>Ailani's Pocketbook</em></h2></a> 
+      </div>
+  
+    </div>
+
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+        {{ content }}
+    </div>
+
+    <section class="end-spacer"></section>
+    {%- include footer.html -%}
+  <script>
+    document.getElementById("lastModified").textContent =
+      "Last Updated: " + document.lastModified;
+
+    document.addEventListener("DOMContentLoaded", function() {
+    const links = document.querySelectorAll('a[href^="http"]');
+    links.forEach(link => {
+      if (!link.href.includes(window.location.hostname)) {
+        link.setAttribute("target", "_blank");
+        link.setAttribute("rel", "noopener noreferrer");
+        link.classList.add("external-link");
+      }
+    });
+  });
+  document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.getElementById("hamburger-btn");
+    const mobileNav = document.getElementById("mobile-nav");
+
+    hamburger.addEventListener("click", function () {
+      mobileNav.classList.toggle("active");
+    });
+  });
+  </script>
+</body>
+</html>

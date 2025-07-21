@@ -46,5 +46,9 @@ layout: default
 <h3>Notes:</h3>
 <p> {{ page.note }} </p></div>
 {% endif %}
+
+
 </div>
 
+<br>
+Added on {{ page.last_modified_at |  date: "%b %-d, %Y"  }}

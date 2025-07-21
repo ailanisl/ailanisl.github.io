@@ -23,7 +23,7 @@ permalink: /site-map/
 
 {% assign grouped_by_category = site.articles | group_by_exp: "item", "item.categories[0]" %}
 <ul>
-{% for category in grouped_by_category | sort %}
+{% for category in grouped_by_category %}
   <li>
     <b><a href="{{ '/' | append: category.name | append: '/' | relative_url }}">{{ category.name | capitalize }}</a></b>
 
