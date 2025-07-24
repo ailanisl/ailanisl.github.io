@@ -19,7 +19,7 @@ Hello, I'm Ailani. I like to collect things in this tiny <a href="{{ '/about/' |
 I'm interested in paradox and emptiness, the interaction between human and 
     non-human intelligences, <a href="{{ '/tag/american-poetry/' | relative_url }}" class="internal-link"> American poetry</a>, and artistic cultures around the world. 
 
-I'm excited about the handmade, embodied, and <a href="{{ '/articles/ideas/low-tech-web/' | relative_url }}" class="internal-link"> low-tech</a> web, 
+I'm excited about the handmade, embodied, and <a href="{{ '/articles/low-tech-web/' | relative_url }}" class="internal-link"> low-tech</a> web, 
     and have an affinity for design that trespasses upon art.  
 <p style="text-align: center;">
     &rarr; This site is <span class="special-deco"><a href= "{% post_url 2025-06-27-my-intentions %}" style="color: #5C7423; font-weight: 500;">hand-coded</a></span> 	&larr; </p>
