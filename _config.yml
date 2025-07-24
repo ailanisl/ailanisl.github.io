@@ -43,7 +43,7 @@ collections:
 
   articles: 
     output: true
-  permalink: /articles/:type/:slug/
+    permalink: /articles/:type/:slug/
 
   quotes:
     output: true
