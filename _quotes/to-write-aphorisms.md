@@ -10,7 +10,7 @@ author_slug:  susan-sontag
 heading: "on the commodification of wisdom"
 
 type: aphorism
-tags: [wisdom]
+tags: [wisdom, on writing]
 date: 2025-07-18
 ---
 

@@ -72,7 +72,7 @@ permalink: /wiki-index/
 
 {% for category in grouped_by_category %}
 <div class="category-box">
-  <h1><a href="{{ '/category.name/' | relative_url }}" >{{ category.name | capitalize }} &#8640;</a></h1>
+  <h1><a href="{{ '/' | append: category.name | append: '/' | relative_url }}" >{{ category.name | capitalize }} &#8640;</a></h1>
 
   {% assign grouped_by_type = category.items | group_by: "type" %}
   

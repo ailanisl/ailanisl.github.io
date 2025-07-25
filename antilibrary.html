@@ -32,7 +32,7 @@ permalink: /perusals/antilibrary/
 
     }
     #library-header-wrapper {
-      width: 530px; margin-left: auto; margin-right: auto;
+      width: 600px; margin-left: auto; margin-right: auto;
     }
     .area-stacks {
         display: flex;
@@ -40,7 +40,7 @@ permalink: /perusals/antilibrary/
         border: 2px double lightgray;
         padding: 1rem;
         border-radius: 6px;
-        height: 16.5rem;
+        height: auto;
         width: 100%;
         gap: 0.5rem;
         overflow-x: auto;
@@ -57,21 +57,18 @@ permalink: /perusals/antilibrary/
         display: flex;
         flex-direction: column-reverse;
         gap: 1px;
-        max-height: 16rem;
+        max-height: 15rem;
         flex-wrap: nowrap;
         flex-shrink: 1;
     }
+    .area-stacks::-webkit-scrollbar {
+      height: 6px;
+    }
 
-.area-stacks::-webkit-scrollbar {
-  height: 6px;
-}
-
-.area-stacks::-webkit-scrollbar-thumb {
-  background: #aaa;
-  border-radius: 3px;
-}
-
-
+    .area-stacks::-webkit-scrollbar-thumb {
+      background: white;
+      border-radius: 3px;
+    }
 
 
     .tbr-spine {
@@ -93,6 +90,9 @@ permalink: /perusals/antilibrary/
         overflow: hidden;
         text-overflow: ellipsis;
         }
+    .tbr-spine p {
+      flex-wrap: wrap;
+    }
     .book-title::after {
         content: " ";
     }
@@ -180,38 +180,46 @@ permalink: /perusals/antilibrary/
   </div>
 
 
+  <div class="bookshelf">
 
+      {% assign grouped_by_category = site.tbrs | group_by_exp: "item", "item.categories[0]" %}
 
-{% assign grouped_by_category = site.tbrs | group_by_exp: "item", "item.categories[0]" %}
+      {% for category in grouped_by_category %}
+      <div class="shelf-frame">
+        <h2 style="font-weight: normal;">{{ category.name | capitalize }}</h2>
 
-{% for category in grouped_by_category | sort %}
-<div class="shelf-frame">
-  <h2 style="font-weight: normal;">{{ category.name | capitalize }}</h2>
+        {% assign grouped_by_area = category.items | group_by: "area" %}
+        
+        <div class="area-stacks">
+          {% for area_group in grouped_by_area %}
+        <div class="area-stack" data-area="{{ area_group.name }}">
+          {% assign sorted_items = area_group.items | sort: "author" %}
+          {% for tbr in sorted_items %}
+            <div class="tbr-spine">
+              <span class="book-title" style="font-weight: 600; padding-right: 3px;">
+                {% if tbr.link %}
+                  <a href="{{tbr.link}}" style="content: none; text-decoration: none;" target="_blank" rel="noopener noreferrer">{{ tbr.title | truncate: 25, '…' }}</a>
+                {% else %}
+                  {{ tbr.title | truncate: 25, '…' }}
+                {% endif %}
+              </span> 
+              {% assign author_page = site.articles | where: "title", tbr.author | first %}
+                {% if author_page %}
+                  <a href="{{ author_page.url }}">| {{ tbr.author }}</a>
+                {% else %}
+                  | {{ tbr.author }}
+                {% endif %}
+              
+            </div>
+          {% endfor %}
+        </div>
+      {% endfor %}
 
-  {% assign grouped_by_area = category.items | group_by: "area" %}
-  
-  <div class="area-stacks">
-    {% for area_group in grouped_by_area %}
-  <div class="area-stacks" data-area="{{ area_group.name }}">
-    {% assign sorted_items = area_group.items | sort: "author" %}
-    {% for tbr in sorted_items %}
-      <div class="tbr-spine">
-        <span class="book-title" style="font-weight: 600; padding-right: 3px;">
-          {% if tbr.link %}
-            <a href="{{tbr.link}}" style="content: none; text-decoration: none;" target="_blank" rel="noopener noreferrer">{{ tbr.title | truncate: 25, '…' }}</a>
-          {% else %}
-            {{ tbr.title | truncate: 25, '…' }}
-          {% endif %}
-        </span> | {{ tbr.author }}
+        </div>
+
       </div>
-    {% endfor %}
+        {% endfor %}
   </div>
-{% endfor %}
-
-  </div>
-
-</div>
-  {% endfor %}
 </div>
 
 

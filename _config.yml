@@ -56,6 +56,9 @@ collections:
   projects:
     output: true
     permalink: /projects/:title/
+  wiki:
+    output: true
+    permalink: /:slug/
 
 defaults:
   - scope:

@@ -7,7 +7,7 @@ author: "Leo Tolstoy"
 date_finished: 2022-08-22
 country: "Russia"
 
-genre: "Autobiographical essay"
+genre: "Autobiographical"
 category: "Nonfiction"
 
 

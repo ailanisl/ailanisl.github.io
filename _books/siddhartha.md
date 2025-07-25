@@ -1,6 +1,6 @@
 ---
 layout: book
-title: "Siddhartha **"
+title: "Siddhartha"
 author: "Hermann Hesse"
 date_finished: 2022-06-09
 country: "Germany"

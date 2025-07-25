@@ -121,7 +121,7 @@ layout: default
     color: #9BA487;
 }
 .proj-list {
-    width: 530px;
+    width: 600px;
 }
 
 </style>
@@ -133,13 +133,14 @@ layout: default
                             Where is the knowledge we have lost in information?</i> <br>
                             - TS Eliot
                             </p>
+
         <div class = "intro-section" >
             {{ content }}
         </div>
 
 <!--FEATURED LIST-->
         <div id="writing-section">
-            <a href="{{ '/pennings/' | relative_url }}" class="page-link"><h3>Penned Pieces  &#8640; </h3></a>
+            <a href="{{ '/pennings/' | relative_url }}" class="page-link"><h3>Pinned Pieces  &#8640; </h3></a>
         </div>
         <div class="recent-posts">
             {% for post in site.posts limit:4 %}
@@ -172,13 +173,36 @@ layout: default
             {% endfor %}
         </div>
 <!--END FEATURES LIST-->
-
-        <!--SPACING AND PICS-->
-        <div class ="inspo-section">
-            <div class = "inspo-container" > <!--WORK ON MAKING OVERLAY-->
-                <a href=" {{ '/about' | relative_url }}"> <img  loading="lazy" src="/assets/img/inspo-woman.png" alt="my drawing of a woman that leads to the about page" />
-                About this site</a>
+        <div class="shelf-frame" style="margin: 4rem 0;">
+            <a href="{{ '/perusals/' | relative_url }}" style="text-decoration: none;"><h3 style="height: 40px;">Recently Read  &#8640; </h3></a>
+            {% assign recent_books = site.books | sort: 'date_finished' | reverse %}
+            <div class="area-stacks" style="height: fit-content;">
+                {% for book in recent_books limit:20 %}
+                <div class="area-stack">
+                
+                    <div class="tbr-spine">
+                        <a href="{{ book.url }}" style="text-decoration: none; ">
+                        <span  style="font-weight: 600; ">
+                            {{ book.title | truncate: 26, '…' }} </span> {{ book.author }}</a>
+                        
+                    </div>
                 </div>
+                {% endfor %}
+            </div>
+            </div>
+
+
+
+        </div>
+
+
+
+    <!--SPACING AND PICS-->
+    <div class ="inspo-section">
+        <div class = "inspo-container" > <!--WORK ON MAKING OVERLAY-->
+            <a href=" {{ '/about' | relative_url }}"> <img  loading="lazy" src="/assets/img/inspo-woman.png" alt="my drawing of a woman that leads to the about page" />
+            About this site</a>
+            </div>
 
     <!--Trying to make the pinwheel-->
         </div>
@@ -187,29 +211,35 @@ layout: default
         <div class="spacer-fortypx"></div>
 
         <!--OYSTER BUTTON-->
-        <div id = "oyster-section">
-            <div id = "oyster-wrapper" onclick="pearlFunction()" >
-                <img loading="lazy" src = "/assets/img/oyster-larger.svg" alt="My drawing of an oyster that opens to reveal pearls"/>
-                <p id = "open-oyster">Open oyster</p>
-            </div>
-            <div id = "pearl-wrapper" >
-            <a href ="{{ '/pearls/' | relative_url }}" >
-                <img loading="lazy" src="/assets/img/pearls-1.svg" alt="two pearls with quotes by Etel Adnan and Gordon Hempton within" />  </a>
-            </div>
-        </div>
-
-
-
 
 
 
     <script>
-        function pearlFunction() {
-            let pearl = document.getElementById("pearl-wrapper")
-            let p = document.getElementById("open-oyster")
-            if (pearl.style.display === "none" ) {
-                pearl.style.display = "block", p.style.display = "none";
-            } else {
-                pearl.style.display = "none", p.style.display = "block";
-            } }
+        
+        document.addEventListener('DOMContentLoaded', function () {
+        const stackContainers = document.querySelectorAll('.area-stacks');
+        const maxHeight = 197; // 16rem in pixels
+
+        stackContainers.forEach(container => {
+            const spines = Array.from(container.querySelectorAll('.tbr-spine'));
+            container.innerHTML = ''; // Clear all to re-insert dynamically
+
+            let currentStack = document.createElement('div');
+            currentStack.className = 'area-stack';
+            container.appendChild(currentStack);
+
+            spines.forEach(spine => {
+            currentStack.insertBefore(spine, currentStack.firstChild);
+
+            if (currentStack.scrollHeight > maxHeight) {
+                currentStack.removeChild(spine);
+
+                currentStack = document.createElement('div');
+                currentStack.className = 'area-stack';
+                container.appendChild(currentStack);
+                currentStack.insertBefore(spine, currentStack.firstChild);
+            }
+            });
+        });
+        });
     </script>
