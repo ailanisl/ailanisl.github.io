@@ -1,6 +1,20 @@
 ---
 layout: quote 
-quote: <p> What I see not, I better see—<br>Through Faith—my Hazel Eye<br>Has periods of shutting—<br>But, No lid has Memory—<br><br>For frequent, all my sense obscured<br>I equally behold<br>As someone held a light unto<br>The Features so beloved—-<br><br>And I arise—and in my Dream—<br>Do Thee distinguished Grace—<br>Till jealous Daylight interrupt—<br>And mar thy perfectness—</p>
+quote: |
+     What I see not, I better see—
+     Through Faith—my Hazel Eye
+     Has periods of shutting—
+     But, No lid has Memory—
+     
+     For frequent, all my sense obscured
+     I equally behold
+     As someone held a light unto
+     The Features so beloved—-
+     
+     And I arise—and in my Dream—
+     Do Thee distinguished Grace—
+     Till jealous Daylight interrupt—
+     And mar thy perfectness—
 
 author: "Emily Dickinson"
 author_slug: emily-dickinson
@@ -15,5 +29,4 @@ note: "Emily probably wrote this poem when she was having vision issues. "
 
 
 
-{{ page.quote }}
-
+{{ page.quote | newline_to_br }} 

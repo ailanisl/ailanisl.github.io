@@ -7,20 +7,35 @@ description: <p>Here are adornments to my mind. <i>"And there is also in prose c
 
 ---
 <style>
+  .content-wrapper {
+    width: 100%;
+    max-width: none;
+  }
+  .post-content {
+    width: 100%;
+    max-width: none;
+  }
   .quote-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1rem;
-    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0 auto;
+    max-width: none;
   }
 
   .quote-card {
-    border: 1px solid #f0f0f0;
-    border-radius: 10px;
+    border-radius: 3px;
     padding: 1rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.005);
     cursor: pointer;
     transition: transform 0.2s ease;
+
+    width: calc(50% - 4rem); /* 4 columns minus gap */
+
+    min-width: 300px;
+    box-sizing: border-box;
   }
 
   .quote-card:hover {
@@ -28,8 +43,10 @@ description: <p>Here are adornments to my mind. <i>"And there is also in prose c
   }
 
   .quote-snippet {
-    font-size: 1.1rem;
-    margin-bottom: 0.75rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
   }
 
   .quote-meta {
@@ -41,6 +58,9 @@ description: <p>Here are adornments to my mind. <i>"And there is also in prose c
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;   
     color: black;
     text-decoration: none;
+    width: calc(50% - 4rem); /* 4 columns minus gap */
+
+    min-width: 300px;
   }
   .quote-grid a:hover {
     color: black;
@@ -70,8 +90,75 @@ description: <p>Here are adornments to my mind. <i>"And there is also in prose c
     line-height: 2.2rem;
   }
 
+
+
+@media (max-width: 480px) {
+  .quote-card {
+    width: 100%;
+  }
+}
+
+
+</style>
+
+
+
+
+<div class="quote-grid">
+{% assign sorted_quotes = site.quotes | sort: 'date' | reverse %}
+{% for quote in sorted_quotes %}
+    <a class="quote-link" href ="{{ quote.url }}">
+        <div class="quote-card" >
+
+        {% if quote.heading %}
+          <h2 class="quote-heading"> {{ quote.author }} <span class="quote-description">{{ quote.heading }}</span> </h2> 
+        {% else %}
+          <h2 class = "quote-heading"> {{ quote.author }} </h2> 
+        {% endif %}
+        
+        <p class="quote-snippet">{{ quote.quote }}</p>
+
+        
+        <div class="quote-meta">
+          <div class="quote-tags">
+            {% for tag in quote.tags %}
+              <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      
+      </div>
+     </a>
+  {% endfor %}
+</div>
+
+
+
+
+<script>
+  // Save scroll position when clicking a quote-link
+  document.querySelectorAll("a.quote-link").forEach(link => {
+    link.addEventListener("click", () => {
+      sessionStorage.setItem("scrollPos", window.scrollY);
+    });
+  });
+
+  // On page load, restore scroll position if it exists
+  window.addEventListener("load", () => {
+    const scrollPos = sessionStorage.getItem("scrollPos");
+    if (scrollPos !== null) {
+      window.scrollTo(0, parseInt(scrollPos));
+      sessionStorage.removeItem("scrollPos");
+    }
+  });
+
+
+</script>
+
+
+
   
-/*
+<!--
   .quote-list {
     display: flex;
     flex-direction: column;
@@ -130,60 +217,4 @@ description: <p>Here are adornments to my mind. <i>"And there is also in prose c
     .quote-list {
       padding-right: 10%;
     }
-  }*/
-
-</style>
-
-
-
-
-<div class="quote-grid">
-{% assign sorted_quotes = site.quotes | sort: 'date' | reverse %}
-{% for quote in sorted_quotes %}
-    <a class="quote-link" href ="{{ quote.url }}">
-        <div class="quote-card" >
-
-        {% if quote.heading %}
-          <h2 class="quote-heading"> {{ quote.author }} <span class="quote-description">{{ quote.heading }}</span> </h2> 
-        {% else %}
-          <h2 class = "quote-heading"> {{ quote.author }} </h2> 
-        {% endif %}
-        
-        <p class="quote-snippet">{{ quote.quote }}</p>
-
-        
-        <div class="quote-meta">
-          <div class="quote-tags">
-            {% for tag in quote.tags %}
-              <span class="tag">{{ tag }}</span>
-            {% endfor %}
-          </div>
-        </div>
-      
-      </div>
-     </a>
-  {% endfor %}
-</div>
-
-
-
-
-<script>
-  // Save scroll position when clicking a quote-link
-  document.querySelectorAll("a.quote-link").forEach(link => {
-    link.addEventListener("click", () => {
-      sessionStorage.setItem("scrollPos", window.scrollY);
-    });
-  });
-
-  // On page load, restore scroll position if it exists
-  window.addEventListener("load", () => {
-    const scrollPos = sessionStorage.getItem("scrollPos");
-    if (scrollPos !== null) {
-      window.scrollTo(0, parseInt(scrollPos));
-      sessionStorage.removeItem("scrollPos");
-    }
-  });
-
-
-</script>
+  }*/-->

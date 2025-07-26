@@ -1,0 +1,57 @@
+---
+layout: default
+title "tester"
+permanline: /tester/
+---
+<style>
+.quote-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.quote-card {
+  border: 1px solid #f0f0f0;
+  border-radius: 6px;
+  padding: 1rem;
+  width: calc(25% - 1rem);
+  min-width: 200px;
+  box-sizing: border-box;
+  transition: transform 0.2s ease;
+}
+</style>
+
+
+<div class="quote-grid">
+{% assign sorted_quotes = site.quotes | sort: 'date' | reverse %}
+{% for quote in sorted_quotes %}
+    <a class="quote-link" href ="{{ quote.url }}">
+        <div class="quote-card" >
+
+        {% if quote.heading %}
+          <h2 class="quote-heading"> {{ quote.author }} <span class="quote-description">{{ quote.heading }}</span> </h2> 
+        {% else %}
+          <h2 class = "quote-heading"> {{ quote.author }} </h2> 
+        {% endif %}
+        
+        <p class="quote-snippet">{{ quote.quote }}</p>
+
+        
+        <div class="quote-meta">
+          <div class="quote-tags">
+            {% for tag in quote.tags %}
+              <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      
+      </div>
+     </a>
+  {% endfor %}
+</div>
+

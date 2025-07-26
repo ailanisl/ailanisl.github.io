@@ -1,6 +1,27 @@
 ---
 layout: quote 
-quote: <p>The Lilac is an ancient shrub<br> But ancienter than that <br> The Firmamental Lilac<br> Upon the Hill tonight—<br> The Sun subsiding on his Course<br> Bequeaths this final Plant<br> To Contemplation—not to Touch—<br> The Flower of Occident.<br> Of one Corolla is the West—<br> The Calyx is the Earth— <br> The Capsules burnished Seeds the Stars<br> The Scientist of Faith<br> His research has but just begun—<br> Above his synthesis<br> The Flora unimpeachable<br> To Time’s Analysis—<br> “Eye hath not seen” may possibly<br> Be current with the Blind<br> But let not Revelation<br> By theses be detained— </p>
+quote: |
+    The Lilac is an ancient shrub
+    But ancienter than that 
+    The Firmamental Lilac
+    Upon the Hill tonight—
+    The Sun subsiding on his Course
+    Bequeaths this final Plant
+    To Contemplation—not to Touch
+    The Flower of Occident.
+    Of one Corolla is the West—
+    The Calyx is the Earth— 
+    The Capsules burnished Seeds the Stars
+    The Scientist of Faith
+    His research has but just begun—
+    Above his synthesis
+    The Flora unimpeachable
+    To Time’s Analysis—
+    “Eye hath not seen” may possibly
+    Be current with the Blind
+    But let not Revelation
+    By theses be detained— 
+           
 
 author: "Emily Dickinson"
 author_slug: emily-dickinson
@@ -10,4 +31,4 @@ tags: [nature, american poetry]
 date: 2022-04-03
 ---
 
-{{ page.quote }}
+{{ page.quote | newline_to_br }} 

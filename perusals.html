@@ -20,10 +20,14 @@ title: "Perusals"
     background-color: white;
     border-radius: 6px;
     padding: 4px;
+    border: none;
 }
 .antilibrary-button a {
     text-decoration: none;
-    color: #656565;
+    color: lightgray;
+    font-size: 2rem;
+    font-weight: bold;
+    
 }
 .antilibrary-button a:hover {
     color: #656565;
@@ -31,8 +35,10 @@ title: "Perusals"
 }
 .antilibrary-button-wrapper {
     display: flex;
-    justify-content: center;
-    margin-top: 2rem;
+    position: relative;
+    bottom: 7rem;
+    left: 8rem;
+    
 }
 
 @media (max-width: 640px) {
@@ -44,6 +50,13 @@ title: "Perusals"
 }
 
 </style>
+
+    <div class="antilibrary-button-wrapper">
+        <button class="antilibrary-button"><a href="{{ '/perusals/antilibrary/' | relative_url }}">Antilibrary</a></button>
+    </div>
+
+
+
 
 <div id="axes-section">
     <p><b>Axes:</b> <i>"We ought to read only the kind of books that wound or stab us. If the book we're reading doesn't wake us up with a blow to the head, what are we reading for?...A book must be the axe for the frozen sea within us”</i>- Kafka
@@ -146,9 +159,7 @@ title: "Perusals"
         </div>-->
 
     </div>
-    <div class="antilibrary-button-wrapper">
-        <button class="antilibrary-button"><a href="{{ '/perusals/antilibrary/' | relative_url }}">Antilibrary</a></button>
-    </div>
+    
 
 
 </div>

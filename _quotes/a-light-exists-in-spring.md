@@ -1,6 +1,29 @@
 ---
 layout: quote 
-quote: <p> A Light exists in Spring <br> Not present on the Year<br> At any other period —-<br> When March is scarcely here<br> <br>A Color stands abroad <br> On Solitary Fields<br>That Science cannot overtake<br>But Human Nature feels.<br> <br> It waits upon the Lawn,<br>It shows the furthest Tree <br>Upon the furthest Slope you know<br>It almost speaks to me. <br> <br> Then as Horizons step <br> <br> Or Noons report away <br> Without the Formula of sound<br>It passes and we stay —-<br><br>A quality of loss<br>Affecting our Content<br>As Trade had suddenly encroached<br>Upon a Sacrament.</p>
+quote: |
+    A Light exists in Spring 
+    Not present on the Year
+     At any other period —-
+     When March is scarcely here<br> <br>A Color stands abroad 
+     On Solitary Fields
+     That Science cannot overtake
+     But Human Nature feels.
+     
+     It waits upon the Lawn,
+     
+     It shows the furthest Tree 
+     Upon the furthest Slope you know
+     It almost speaks to me. 
+     
+     Then as Horizons step 
+     Or Noons report away
+     Without the Formula of sound
+     It passes and we stay —-
+     
+     A quality of loss
+     Affecting our Content
+     As Trade had suddenly encroached
+     Upon a Sacrament.
 
 author: "Emily Dickinson"
 author_slug: emily-dickinson
@@ -10,4 +33,4 @@ tags: [nature, science-as-mapmaking, american poetry]
 date: 2022-04-03
 ---
 
-{{ page.quote }}
+{{ page.quote | newline_to_br }}

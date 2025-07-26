@@ -1,6 +1,14 @@
 ---
 layout: quote 
-quote: <p>When I heard the learn’d astronomer,<br>When the proofs, the figures, were ranged in columns &nbsp;&nbsp;&nbsp; before me,<br>When I was shown the charts and diagrams, to add, divide, and measure them,<br>When I sitting heard the astronomer where he lectured with much applause in the lecture-room,<br>How soon unaccountable I became tired and sick,<br>Till rising and gliding out I wander’d off by myself,<br>In the mystical moist night-air, and from time to time,<br>Look’d up in perfect silence at the stars.</p>
+quote: |
+    When I heard the learn’d astronomer,
+    When the proofs, the figures, were ranged in columns &nbsp;&nbsp;&nbsp; before me,
+    When I was shown the charts and diagrams, to add, divide, and measure them,
+    When I sitting heard the astronomer where he lectured with much applause in the lecture-room,
+    How soon unaccountable I became tired and sick,
+    Till rising and gliding out I wander’d off by myself,
+    In the mystical moist night-air, and from time to time,
+    Look’d up in perfect silence at the stars.
 
 author: "Walt Whitman"
 author_slug: walt-whitman
@@ -16,5 +24,4 @@ note: "Sorry for the wrong line arrangement. Need to see how to fix this."
 
 
 
-{{ page.quote }}
-
+{{ page.quote | newline_to_br }} 

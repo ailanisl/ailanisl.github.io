@@ -3,19 +3,26 @@ layout: default
 
 ---
 <style>
+  .main-content-wrapper {
+    margin-left: 0;
+  }
   .quote-notes {
     margin-top: 4rem;
 
     color: #656565;
   }
+  #author-image {
+    margin-top: 3rem ;
+    margin-bottom: 3rem ;
+  }
 </style>
 <div class="main-content-wrapper">
-<a href="{{ '/pearls/' | relative_url }}" class="back-button">&#8636; to pearls </a>
+<a href="{{ '/pearls/' | relative_url }}" class="back-button">&#8636; to all pearls </a>
 
-<section id="quote">
+<div id="quote">
   <br>
   {{ content }}
-</section>
+</div>
 
 
 
@@ -47,8 +54,17 @@ layout: default
 <p> {{ page.note }} </p></div>
 {% endif %}
 
+{% if author_page %}
+    <a href="{{ author_page.url }}" id="author-image"><img src="{{ author_page.image }}" width="300px" style="border-radius: 6px;"></a>
+{% endif %}    
 
 </div>
 
 <br>
 Recorded on {{ page.date |  date: "%b %-d, %Y"  }}
+
+<div class="quote-tags" style="margin-top: 1rem;">
+  {% for tag in page.tags %}
+    <span class="tag">{{ tag }}</span>
+  {% endfor %}
+</div>

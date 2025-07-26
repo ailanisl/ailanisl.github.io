@@ -1,6 +1,6 @@
 ---
 layout: tag
-title: "Journalism"
+title: "journalism"
 tag: "journalism"
 permalink: /tag/journalism/
 ---

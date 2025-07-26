@@ -1,16 +1,50 @@
 ---
-layout: default
+layout: page
 title: "Antilibrary"
 permalink: /perusals/antilibrary/
 ---
 <style>
   .main-content {
     max-width: fit-content;
+    
   }
+
+  .post-title {
+    position: relative;
+    left: 8rem;
+  }
+.perusals-button {
+    background-color: white;
+    border-radius: 6px;
+    padding: 4px;
+    border: none;
+}
+.perusals-button a {
+    text-decoration: none;
+    color: lightgray;
+    font-size: 2rem;
+    font-weight: bold;
+    
+}
+.perusals-button a:hover {
+    color: #656565;
+    background-color: transparent;
+}
+.perusals-button-wrapper {
+    display: flex;
+    position: relative;
+    bottom: 7rem;
+
+    
+}
+
 .antilibrary-space a[href^='http']::after {
   content: none;
   
 
+}
+.antilibrary-space {
+  font-family: system-ui, sans-serif;
 }
     .antilibrary-quote {
         display: flex;
@@ -37,7 +71,7 @@ permalink: /perusals/antilibrary/
     .area-stacks {
         display: flex;
         flex-direction: row;
-        border: 2px double lightgray;
+        border: 1px solid lightgray;
         padding: 1rem;
         border-radius: 6px;
         height: auto;
@@ -60,6 +94,7 @@ permalink: /perusals/antilibrary/
         max-height: 15rem;
         flex-wrap: nowrap;
         flex-shrink: 1;
+        
     }
     .area-stacks::-webkit-scrollbar {
       height: 6px;
@@ -155,16 +190,9 @@ permalink: /perusals/antilibrary/
       
     
 </style>
-
-  <div id="library-head-wrapper" >
-    <header class="post-header">
-      <a href="{{ '/perusals/#log-section' | relative_url }}" class="back-button">&#8636;</a>
-
-      <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
-      </header>
+  <div class="perusals-button-wrapper">
+        <button class="perusals-button"><a href="{{ '/perusals/' | relative_url }}">Perusals</a></button>
     </div>
-
-
 
 <div class="antilibrary-space">
 

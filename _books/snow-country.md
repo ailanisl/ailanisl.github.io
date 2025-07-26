@@ -12,7 +12,7 @@ category: "Fiction/Literature"
 
 
 pub_date: "1948"
-
+tags: [japan]
 ---
 
 > The Milky Way came down just over there, to wrap the night earth in its naked embrace. There was a terrible volumptuousness about it. (134)
