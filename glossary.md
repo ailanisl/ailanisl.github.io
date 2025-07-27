@@ -16,7 +16,7 @@ __dovetail__: (verb)
 
 __florilegia__: (noun)
 1. gathering flowers 
-2. A collection of literature verses like a commonplace book. Pricate book of anecdote, poetry, daily thoughts, lists
+2. A collection of literature verses like a commonplace book. Private book of anecdote, poetry, daily thoughts, lists
 
 __sublimate__: (intrans. verb) 
 1. to be transformed directy from the solid to gaseous state or vice versa without liquid state (liminal state)

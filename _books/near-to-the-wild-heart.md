@@ -11,6 +11,7 @@ category: "Fiction/Literature"
 
 pub_date: "1943"
 
+tags: [modernism, brazil]
 image: /assets/img/books/near-lispector.jpg
 ---
 

@@ -200,7 +200,7 @@ layout: default
 
         
 
-<h2>Recently activity in the <a href="{{ '/wiki-index/' | relative_url }}" >wiki &#8640;</a></h2>
+<h2>Recent activity in the <a href="{{ '/wiki-index/' | relative_url }}" >wiki &#8640;</a></h2>
         <div class="recent-articles">
         
             {% assign sorted_articles = site.articles | sort: "date_mod" | reverse %}
@@ -220,6 +220,7 @@ layout: default
                     <div class="article-textbox">
                         <h3>{{ article.title }}</h3>
                         <div class="category">{{ article.categories[0] }}</div>
+                        <p class="last-mod-date"> ({{ article.date_mod }})</p>
                     </div>
                 </div>
                 </a>

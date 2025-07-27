@@ -74,6 +74,6 @@ Recorded on {{ page.date |  date: "%b %-d, %Y"  }}
 
 <div class="quote-tags" style="margin-top: 1rem;">
   {% for tag in page.tags %}
-    <span class="tag">{{ tag }}</span>
+    <a href="/tag/{{ tag | downcase | replace: ' ', '-' }}/" class="tag">{{ tag }}</a>
   {% endfor %}
 </div>

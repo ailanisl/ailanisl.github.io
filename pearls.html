@@ -59,6 +59,9 @@ description: "Here are adornments to my mind."
     display: -webkit-box;
     -webkit-line-clamp: 10;
     -webkit-box-orient: vertical;
+
+    line-clamp: 10;
+    box-orient: vertical;
   }
 
   .quote-meta {
@@ -156,6 +159,8 @@ description: "Here are adornments to my mind."
 .styled-select option {
   font-size: 1rem;
   font-weight: normal;
+  font-family: sans-serif;
+  font-style: normal;
 }
 .styled-select {
   appearance: none;
@@ -177,22 +182,36 @@ description: "Here are adornments to my mind."
 
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-style: italic;
+  color: #656565;
 }
 
 #pessoa-quote a {
   text-decoration: none;
-  background-color: #F7F0F0;
+  background-color: transparent;
+  border-radius: 6px;
+  padding: 0px 2px;
+  box-shadow:  2px 2px 2px rgba(0, 0, 0, 0.061);
+  transition: all 0.3s ease;
 }
 #pessoa-quote a:hover {
-  background-color: transparent;
+  box-shadow: none;
+  transition: all 0.3s ease;
 }
+.post-content .internal-link {
+  color: black;
+}
+.post-content .internal-link:hover {
+  background-color: transparent;
+  color: black;
 
+}
 </style>
 <div id="top-pearls">
 <p style="position: relative; bottom: 2.3rem;">
  <span id="pessoa-quote" style="font-family: Georgia, 'Times New Roman', Times, serif; font-style: italic; font-size: 1.8rem; line-height: 2.5rem">
   "And there is also <a href="{{ '/pearls/?tag=prose' | relative_url }}">in prose</a> convulsive subtlety in which a great actor, <a href="{{ '/pearls/?tag=on+writing' | relative_url }}">the Word,</a> rhythmically
-   <a href="{{ '/pearls/?tag=creativity' | relative_url }}">transforms</a> the untouchable <a href="{{ '/pearls/?tag=mystery' | relative_url}}">mystery</a> of the Universe into its corporeal substance." </span>- Pessoa
+   <a href="{{ '/pearls/?tag=creativity' | relative_url }}">transforms</a> the untouchable <a href="{{ '/pearls/?tag=mystery' | relative_url}}">mystery</a> of the Universe into its corporeal substance." </span>
+   - <a href="{{ '/articles/fernando-pessoa' | relative_url }}" class="internal-link" >Pessoa</a>
 </p>
 
 
@@ -239,8 +258,8 @@ description: "Here are adornments to my mind."
           <h2 class = "quote-heading"> {{ quote.author }} </h2> 
         {% endif %}
         
-        <p class="quote-snippet">{{ quote.quote }}</p>
-      </a>
+        <p class="quote-snippet " >{{ quote.quote }}</p>
+     
 
         
         <div class="quote-meta">
@@ -250,7 +269,7 @@ description: "Here are adornments to my mind."
             {% endfor %}
           </div>
         </div>
-      
+       </a>
       </div>
      
   {% endfor %}

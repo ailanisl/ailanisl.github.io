@@ -9,6 +9,57 @@ layout: default
       border-radius: 6px;
     }
 
+    .blogquote-card {
+      margin: 0;
+      width: calc(45%);
+    }
+@media (max-width: 600px) {
+  .blogquote-card {
+    width: 100%;
+  }
+}
+
+    .blogquote-snippet {
+      -webkit-line-clamp: 8;
+      padding-left: 0%;
+      margin-top: 0.6rem;
+
+      line-clamp: 8;
+      box-orient: vertical;
+    }
+    .article-item {
+      border: 1px solid lightgray;
+      border-radius: 6px;
+      padding: 1rem;
+      height: fit-content;
+      min-width: 200px;
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      align-items: last baseline;
+
+    }
+  .tag-items-wrap {
+    gap: 1rem;
+    max-width: none;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: space-around;
+  }
+    .tag-article-link {
+      border: none;
+      padding: none;
+
+    }
+    .category {
+      font-size: large;
+      letter-spacing: 0.2rem;
+    }
+
 </style>
 
 
@@ -23,34 +74,74 @@ layout: default
 <h1>On {{ page.title | capitalize }}</h1>
 <p>Appears in {% include tag-post-count.html tag=page.tag %} item(s).</p>
 
-
-<ul>
+<div class="tag-items-wrap">
   {% assign tag_name = page.tag %}
   {% assign all_collections = site.posts | concat: site.articles | concat: site.books | concat: site.quotes %}
   {% for item in all_collections %}
     {% if item.tags contains tag_name %}
-      <li>
-        {% case item.collection %}
-          {% when "books" %}<small>Book</small>
-          {% when "articles" %}
-            {% if item.type %}<small>{{ item.type | capitalize }}</small>{% endif %}
-          {% when "posts" %}<small>Penning</small>
-          {% when "quotes" %}
-            {% if item.type %}<small>{{ item.type | capitalize }}</small> 
-            {% else %}<small>Quote</small> {% endif %}
-          {% else %}<small>(in {{ item.collection }})</small>
-        {% endcase %}
-        {% if item.author %}
-          <a href="{{ item.url | relative_url }}"><!--<span>by {{item.author}}</span>:--> {{ item.title }} </a>
-        {% else %}
-            <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
-        {% endif %}
+      {% if item.quote %}
+        <div class="blogquote-card"> <a href="{{ item.url | relative_url }}" style="text-decoration: none;">
+          <div class="category">
+            {% if item.type %}
+                {{ item.type | capitalize }}
+            {% else %}
+                QUOTE
+            {% endif %}
+          </div>
+          {% if item.heading %}
+            <h2 class="quote-heading"> {{ item.author }} <span class="quote-description">{{ item.heading }}</span> </h2> 
+          {% else %}
+            <h2 class = "quote-heading"> {{ item.author }} </h2> 
+          {% endif %}
 
-        {% assign count = count | plus: 1 %}
-        {% if item.image %}
-        <img class="tag-item-image" src=" {{ item.image | relative_url }}" alt="image of {{ item.title }}" width="100px" height="100%" fit-content="" >
+          <p class="blogquote-snippet">{{ item.quote | newline_to_br }}</p>
+          </a>
+        </div>
+      {% else %}
+        <a href="{{ item.url | relative_url }}" style="text-decoration: none;" id="tag-article-link" >
+          <div id="tag-item" class="article-item">
+              {% if item.image %}
+                <div class="article-image" >
+                  <img src=" {{ item.image | relative_url }}" alt="image of {{ item.title }}" >
+                </div>
+              {% endif %}
+              
+              <div class="article-textbox">
+              {% case item.collection %} <!--Which collection is it from?-->
+              
+
+                {% when "books" %}
+                  <div class="category">Book</div>
+                  <div id="book-title"><h2>{{ item.title }}</h2></div>
+                  <div id="author-title"> {{item.author}} </div>
+
+
+                {% when "articles" %}
+                  {% if item.type %}
+                    <div class="category">{{ item.type | capitalize }}</div>
+                    <h2>{{ item.title }}</h2>
+                  {% endif %}
+                
+                
+                {% when "posts" %}
+                  <div class="category">Penning</div>
+                  <h2>{{ item.title }}</h2>
+                              
+                {% else %}<div class="category">(in {{ item.collection }})</div>
+              
+                {% endcase %}
+              
+              <!-- -->
+              
+
+
+            
+            </div>
+            
+          </div>
+        </a>
         {% endif %}
-      </li>
+        {% assign count = count | plus: 1 %}
     {% endif %}
   {% endfor %}
-</ul>
+</div>
