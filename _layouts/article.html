@@ -90,7 +90,8 @@ layout: "default"
     <header class="article-header">
     <!--BREADCRUMB NAVIGATION-->
     <nav class="breadcrumbs"> 
-      <a href="{{ '/wiki-index/' | relative_url }}">Index</a>
+      <a href="{{ '/' | relative_url }}">Home</a>
+      › <a href="{{ '/wiki-index/' | relative_url }}">Index</a>
 
       {% if page.categories %}
         {% for cat in page.categories %}

@@ -17,20 +17,21 @@ layout: default
   }
   #quote {
     font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 2rem;
   }
 </style>
 <div class="main-content-wrapper">
-<a href="{{ '/pearls/' | relative_url }}" class="back-button">&#8636; to all pearls </a>
+<nav class="breadcrumbs">
+  <a href="{{ '/' | relative_url }}">Home</a>
+  › 
+  <a href="/pearls/">Pearls</a>
 
-<div id="quote">
-  <br>
-  {{ content }}
-</div>
+</nav>    
 
 
 
-<p class="quote-attribution">
-  — 
+
+<h3 style="font-weight: 500;" class="quote-attribution">
   {% assign author_page = site.articles | where: "title", page.author | first %}
   {% if author_page %}
     <a href="{{ author_page.url }}">{{ page.author }}</a>
@@ -49,7 +50,12 @@ layout: default
     {% endif %}
     </i>
   {% endif %}
-</p>
+  </h3>
+
+<div id="quote">
+  {{ content }}
+</div>
+
 
 {% if page.note %}
 <div class="quote-notes">

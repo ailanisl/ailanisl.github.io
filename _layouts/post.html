@@ -21,8 +21,12 @@ layout: default
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
   <div class="book-head-wrapper">
     {% if page.collection == "posts" %}
-    <a href="{{ '/pennings/' | relative_url }}" class="back-button">&#8636; to all pennings</a>
-    
+<nav class="breadcrumbs">
+  <a href="{{ '/' | relative_url }}">Home</a>
+  › 
+  <a href="/pennings/">Pennings</a>
+
+</nav>    
     
 
     <header class="post-header">
@@ -40,7 +44,7 @@ layout: default
     {% endif %}
   </div>
 
-  <div class="post-content" itemprop="articleBody">
+  <div class="post-content" id="blog-content" itemprop="articleBody">
     {{ content }}
   </div>
 

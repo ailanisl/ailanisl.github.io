@@ -82,8 +82,13 @@ layout: default
         transform: rotate(25deg);
     }
     .post-item {
-        width: auto;
+        width: fit-content;
+
     } 
+
+    .recent-posts {
+        align-items: end;
+    }
     .recent-updates ul {
         list-style: none;
         padding: 0;
@@ -140,7 +145,7 @@ layout: default
 
 <!--FEATURED LIST-->
         <div id="writing-section">
-            <a href="{{ '/pennings/' | relative_url }}" class="page-link"><h3>Pinned Pieces  &#8640; </h3></a>
+            <a href="{{ '/pennings/' | relative_url }}" class="page-link"><h2>Pinned Pieces  &#8640; </h2></a>
         </div>
         <div class="recent-posts">
             {% for post in site.posts limit:4 %}
@@ -174,7 +179,7 @@ layout: default
         </div>
 <!--END FEATURES LIST-->
         <div class="shelf-frame" style="margin: 4rem 0;">
-            <a href="{{ '/perusals/' | relative_url }}" style="text-decoration: none;"><h3 style="height: 40px;">Recently Read  &#8640; </h3></a>
+            <a href="{{ '/perusals/' | relative_url }}" style="text-decoration: none;"><h2 style="height: 40px;">Recently Read  &#8640; </h2></a>
             {% assign recent_books = site.books | sort: 'date_finished' | reverse %}
             <div class="area-stacks" style="height: fit-content;">
                 {% for book in recent_books limit:20 %}
@@ -189,10 +194,36 @@ layout: default
                 </div>
                 {% endfor %}
             </div>
-            </div>
+        </div>
 
 
 
+        
+
+<h2>Recently activity in the <a href="{{ '/wiki-index/' | relative_url }}" >wiki &#8640;</a></h2>
+        <div class="recent-articles">
+        
+            {% assign sorted_articles = site.articles | sort: "date_mod" | reverse %}
+            {% assign recent_articles = sorted_articles | slice: 0, 6 %}
+
+
+            {% for article in recent_articles %}
+                <a href="{{ article.url | relative_url }}" class="article-link">
+                <div class="article-item">
+                    {% if article.image %}
+                    <div class="article-image">
+                    
+                        <img src="{{ article.image | relative_url }}" alt="{{ article.title }}">
+                    
+                    </div>
+                    {% endif %}
+                    <div class="article-textbox">
+                        <h3>{{ article.title }}</h3>
+                        <div class="category">{{ article.categories[0] }}</div>
+                    </div>
+                </div>
+                </a>
+            {% endfor %}
         </div>
 
 
