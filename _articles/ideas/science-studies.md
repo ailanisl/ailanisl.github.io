@@ -5,7 +5,7 @@ era: "Postwar to today"
 subheading: "Academic field"
 country: "US?"
 
-image: 
+image: /assets/img/articles/science.jpeg
 
 #parent_topic:
 type: ideas
