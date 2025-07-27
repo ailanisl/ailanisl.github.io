@@ -4,39 +4,7 @@ title: "Antilibrary"
 permalink: /perusals/antilibrary/
 ---
 <style>
-  .main-content {
-    max-width: fit-content;
-    
-  }
-
-  .post-title {
-    position: relative;
-    left: 8rem;
-  }
-.perusals-button {
-    background-color: white;
-    border-radius: 6px;
-    padding: 4px;
-    border: none;
-}
-.perusals-button a {
-    text-decoration: none;
-    color: lightgray;
-    font-size: 2rem;
-    font-weight: bold;
-    
-}
-.perusals-button a:hover {
-    color: #656565;
-    background-color: transparent;
-}
-.perusals-button-wrapper {
-    display: flex;
-    position: relative;
-    bottom: 7rem;
-
-    
-}
+ 
 
 .antilibrary-space a[href^='http']::after {
   content: none;
@@ -55,6 +23,7 @@ permalink: /perusals/antilibrary/
     }
     .antilibrary-quote p {
         width: 355px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
     }
 
     .shelf-frame {
@@ -107,7 +76,7 @@ permalink: /perusals/antilibrary/
 
 
     .tbr-spine {
-        border: 1px double grey;
+        border: 1px double lightgrey;
         padding: 2px 4px;
         font-size: 0.9rem;
         line-height: 1.1rem;
@@ -128,14 +97,17 @@ permalink: /perusals/antilibrary/
     .tbr-spine p {
       flex-wrap: wrap;
     }
+    .tbr-spine:hover {
+      background-color: #f7f0f088;
+      transition: background-color 0.3s ease;
+    }
+
+
+
     .book-title::after {
         content: " ";
     }
 
-    .antilibrary-space {
-        margin-top: 4rem;
-
-    }
 
     @media (max-width: 1100px) {
       .area-stacks {
@@ -190,11 +162,13 @@ permalink: /perusals/antilibrary/
       
     
 </style>
-  <div class="perusals-button-wrapper">
-        <button class="perusals-button"><a href="{{ '/perusals/' | relative_url }}">Perusals</a></button>
-    </div>
+<div class="toggle-nav">
+  <a href="{{ '/perusals/' | relative_url }}" class="tab {% if page.title == 'Perusals' %}active{% endif %}">Library</a>
+  <a href="/antilibrary" class="tab {% if page.title == 'Antilibrary' %}active{% endif %}">Antilibrary</a>
+</div>
 
 <div class="antilibrary-space">
+
 
   <div id="antilibrary-intro" style="max-width: 530px; margin-left: auto; margin-right: auto;">
       <div class="antilibrary-quote" > 
@@ -233,9 +207,9 @@ permalink: /perusals/antilibrary/
               </span> 
               {% assign author_page = site.articles | where: "title", tbr.author | first %}
                 {% if author_page %}
-                  <a href="{{ author_page.url }}">| {{ tbr.author }}</a>
+                  <a href="{{ author_page.url }}"> {{ tbr.author }}</a>
                 {% else %}
-                  | {{ tbr.author }}
+                   {{ tbr.author }}
                 {% endif %}
               
             </div>
@@ -249,7 +223,6 @@ permalink: /perusals/antilibrary/
         {% endfor %}
   </div>
 </div>
-
 
 <!--    <h3 style="font-weight: normal;">{{ area_group.name | capitalize }} </h3> -->
 <script>

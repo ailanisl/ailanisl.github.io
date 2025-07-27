@@ -12,7 +12,7 @@ type: people
 categories: [literature]
 tags: [modernism, brazil, novelists]
 date_pub: 2025-07-05
-date_mod: 2025-07-06
+date_mod: 2025-07-26
 
 ---
 
@@ -24,21 +24,10 @@ Clarice has her own form of grammar that denies the language of the rational min
 
 <img src= "/assets/img/articles/clarice-manuscript.jpg" class="article-supplement">
 
-__Books I've read by her:__
-- Near to the Wild Heart 
-- The Passion According to G.H.
-- Agua Viva
-- Breath of Life 
-- Selected Crônicas
-- An Apprenticeship, or the Book of Pleasures 
-- Hour of the Star 
+__Links:__
+- [Official website](https://site.claricelispector.ims.com.br/en/)
+
+
 
 __Books about Clarice:__ 
 - Why this World by Benjamin Moser 
-
-__To read:__
-- The Chandelier 
-- Apple in the Dark 
-
-__Links:__
-- [Official website](https://site.claricelispector.ims.com.br/en/)

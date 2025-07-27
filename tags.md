@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default-2
 title: All Tags
 permalink: /tags/
 ---

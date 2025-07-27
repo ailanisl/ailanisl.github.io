@@ -19,14 +19,13 @@ title: "Perusals"
 .antilibrary-button {
     background-color: white;
     border-radius: 6px;
-    padding: 4px;
-    border: none;
+    padding: 4px 6px;
+    border: 1px solid lightgray;
 }
 .antilibrary-button a {
     text-decoration: none;
-    color: lightgray;
-    font-size: 2rem;
-    font-weight: bold;
+    color: gray;
+    font-size: 1rem;
     
 }
 .antilibrary-button a:hover {
@@ -35,9 +34,9 @@ title: "Perusals"
 }
 .antilibrary-button-wrapper {
     display: flex;
-    position: relative;
-    bottom: 7rem;
-    left: 8rem;
+    justify-content: center;
+    align-items: center;
+    
     
 }
 
@@ -51,10 +50,10 @@ title: "Perusals"
 
 </style>
 
-    <div class="antilibrary-button-wrapper">
-        <button class="antilibrary-button"><a href="{{ '/perusals/antilibrary/' | relative_url }}">Antilibrary</a></button>
-    </div>
-
+<div class="toggle-nav">
+  <a href="{{ '/perusals/' | relative_url }}" class="tab {% if page.title == 'Perusals' %}active{% endif %}">Library</a>
+  <a href="{{ '/perusals/antilibrary/' | relative_url }}" class="tab {% if page.title == 'Antilibrary' %}active{% endif %}">Antilibrary</a>
+</div>
 
 
 

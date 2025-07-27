@@ -3,10 +3,18 @@ layout: page
 title: "Pearls and poems"
 permalink: /pearls/
 
-description: <p>Here are adornments to my mind. <i>"And there is also in prose convulsive subtlety in which a great actor, the Word, rhythmically transforms the untouchable mystery of the Universe into its corporeal substance." - Pessoa </i>
-
+description: "Here are adornments to my mind."
 ---
 <style>
+  .main-content {
+    max-width: 100%;
+  }
+
+  #top-pearls {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .content-wrapper {
     width: 100%;
     max-width: none;
@@ -18,31 +26,35 @@ description: <p>Here are adornments to my mind. <i>"And there is also in prose c
   .quote-grid {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    gap: 0rem;
     justify-content: flex-start;
-    width: 100%;
-    margin: 0 auto;
+    flex-wrap: wrap;
+    
     max-width: none;
-  }
+    margin-left: 20%;
+    margin-right: 12%;
 
+  }
   .quote-card {
-    border-radius: 3px;
-    padding: 1rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.005);
+
+    border-radius: 10px;
+    padding: 1.5rem;
     cursor: pointer;
     transition: transform 0.2s ease;
 
-    width: calc(50% - 4rem); /* 4 columns minus gap */
-
-    min-width: 300px;
+    width: calc(30% ); /* 4 columns minus gap */
     box-sizing: border-box;
+
+  
   }
 
   .quote-card:hover {
     transform: scale(1.02);
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.064);
   }
 
   .quote-snippet {
+    color: #656565;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 10;
@@ -58,9 +70,7 @@ description: <p>Here are adornments to my mind. <i>"And there is also in prose c
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;   
     color: black;
     text-decoration: none;
-    width: calc(50% - 4rem); /* 4 columns minus gap */
-
-    min-width: 300px;
+    min-width: calc(33% ); /* 4 columns minus gap */
   }
   .quote-grid a:hover {
     color: black;
@@ -70,12 +80,12 @@ description: <p>Here are adornments to my mind. <i>"And there is also in prose c
 
   .quote-card h2  {
     background-color: transparent;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 1.2rem;
     line-height: normal;
   }
   .quote-description {
-    color: #9BA487;
+    font-weight: 500;
   }
   .quote-link {
     text-decoration: none;
@@ -84,32 +94,142 @@ description: <p>Here are adornments to my mind. <i>"And there is also in prose c
     width: 100%;
     break-inside: avoid;
   }
+  .quote-card.hidden {
+    display: none;
+    pointer-events: none;
+  }
 
   .quote-tags {
     gap: 3px;
     line-height: 2.2rem;
   }
+  .quote-tags .tag {
+    background-color: transparent;
+    border: 1px solid #e5d6d69e;
+    color: #af9292;
+  }
 
+@media (min-width: 1900px) {
+  .quote-card {
+    width: calc(23%);
+  }
+}
+@media (max-width: 914px) {
+  .quote-card {
+    width: calc(50%);
+  }
+  .quote-grid {
+    margin: 0 auto;
+  }
 
-
-@media (max-width: 480px) {
+}
+@media (max-width: 500px) {
   .quote-card {
     width: 100%;
   }
+  .quote-grid {
+    margin: 0 auto;
+  }
 }
 
+.filters {
+  display: flex;
+  flex-wrap: wrap ;
+  justify-content: space-between;
+  gap: 1remrem;
+  padding: 1rem;
+ 
+}
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.filter-group label {
+  font-family: systems-ui, sans-serif;
+  color: gray;
+}
+
+.styled-select option {
+  font-size: 1rem;
+  font-weight: normal;
+}
+.styled-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-size: 1.2rem; /* Makes selected option text larger */
+  font-weight: bold;
+  padding: 0.4rem 2rem 0.4rem 0.5rem;
+  border: 1px solid  lightgrey;
+  border-radius: 6px;
+  background: url('data:image/svg+xml;utf8,<svg fill="%23666" height="16" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 0.5rem center;
+  background-color: #fff;
+  background-size: 1rem;
+  cursor: pointer;
+  width: auto;
+
+  text-align: center;
+  max-width: 100%;
+
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
+}
+
+#pessoa-quote a {
+  text-decoration: none;
+  background-color: #F7F0F0;
+}
+#pessoa-quote a:hover {
+  background-color: transparent;
+}
 
 </style>
+<div id="top-pearls">
+<p style="position: relative; bottom: 2.3rem;">
+ <span id="pessoa-quote" style="font-family: Georgia, 'Times New Roman', Times, serif; font-style: italic; font-size: 1.8rem; line-height: 2.5rem">
+  "And there is also <a href="{{ '/pearls/?tag=prose' | relative_url }}">in prose</a> convulsive subtlety in which a great actor, <a href="{{ '/pearls/?tag=on+writing' | relative_url }}">the Word,</a> rhythmically
+   <a href="{{ '/pearls/?tag=creativity' | relative_url }}">transforms</a> the untouchable <a href="{{ '/pearls/?tag=mystery' | relative_url}}">mystery</a> of the Universe into its corporeal substance." </span>- Pessoa
+</p>
 
 
 
+<div class="filters">
+
+
+  <div class="filter-group">
+    <label for="tag-filter"> TAG</label>
+    <select id="tag-filter" class="styled-select">
+      <option value="all">All</option>
+      {% assign all_tags = site.quotes | map: "tags" | join: "," | split: "," | uniq | sort %}
+      {% for tag in all_tags %}
+        <option value="{{ tag | strip }}">{{ tag | strip  }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div class="filter-group">
+    <label for="author-filter">AUTHOR</label>
+    <select id="author-filter" class="styled-select">
+      <option value="all">All</option>
+      {% assign all_authors = site.quotes | map: "author" | uniq | sort %}
+      {% for author in all_authors %}
+        <option value="{{ author | strip }}">{{ author | strip }}</option>
+      {% endfor %}
+    </select>
+  </div>
+</div>
+
+</div>
 
 <div class="quote-grid">
 {% assign sorted_quotes = site.quotes | sort: 'date' | reverse %}
 {% for quote in sorted_quotes %}
-    <a class="quote-link" href ="{{ quote.url }}">
-        <div class="quote-card" >
 
+    <div class="quote-card" 
+      data-tags="{{ quote.tags | join: ',' }}"
+      data-author="{{ quote.author | strip }}">
+        <a class="quote-link" href ="{{ quote.url }}">
         {% if quote.heading %}
           <h2 class="quote-heading"> {{ quote.author }} <span class="quote-description">{{ quote.heading }}</span> </h2> 
         {% else %}
@@ -117,6 +237,7 @@ description: <p>Here are adornments to my mind. <i>"And there is also in prose c
         {% endif %}
         
         <p class="quote-snippet">{{ quote.quote }}</p>
+      </a>
 
         
         <div class="quote-meta">
@@ -128,7 +249,7 @@ description: <p>Here are adornments to my mind. <i>"And there is also in prose c
         </div>
       
       </div>
-     </a>
+     
   {% endfor %}
 </div>
 
@@ -151,6 +272,57 @@ description: <p>Here are adornments to my mind. <i>"And there is also in prose c
       sessionStorage.removeItem("scrollPos");
     }
   });
+ // FILTER by tag or author
+
+    //Update URL 
+document.addEventListener("DOMContentLoaded", function () {
+  const tagFilter = document.getElementById('tag-filter');
+  const authorFilter = document.getElementById('author-filter');
+  const cards = document.querySelectorAll('.quote-card');
+
+  // Read from URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const initialTag = urlParams.get('tag');
+  const initialAuthor = urlParams.get('author');
+
+  if (initialTag) tagFilter.value = initialTag;
+  if (initialAuthor) authorFilter.value = initialAuthor;
+
+  function updateURL() {
+    const query = new URLSearchParams();
+    const tag = tagFilter.value.toLowerCase();
+    const author = authorFilter.value.toLowerCase();
+
+    if (tag !== 'all') query.set('tag', tag);
+    if (author !== 'all') query.set('author', author);
+
+    history.replaceState(null, '', `${window.location.pathname}?${query.toString()}`);
+  }
+
+function applyFilters() {
+  const selectedTag = tagFilter.value.toLowerCase().trim();
+  const selectedAuthor = authorFilter.value.toLowerCase().trim();
+
+  cards.forEach(card => {
+    const tags = card.dataset.tags.split(',');
+    const cardAuthor = card.dataset.author.toLowerCase().trim();
+
+    const tagMatch = (selectedTag === 'all') || tags.includes(selectedTag);
+    const authorMatch = (selectedAuthor === 'all') || cardAuthor === selectedAuthor;
+
+    card.classList.toggle('hidden', !(tagMatch && authorMatch));
+  });
+
+  updateURL();
+}
+
+
+  tagFilter.addEventListener('change', applyFilters);
+  authorFilter.addEventListener('change', applyFilters);
+
+  applyFilters(); // On load
+});
+
 
 
 </script>

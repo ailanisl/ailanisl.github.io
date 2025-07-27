@@ -96,6 +96,9 @@ a[href^='http']::after {
     font-size: 1.5rem;
     color: black;
     line-height: 3rem;
+    font-size: 1.2rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
 }
 .back-button:hover {
     color: lightgray;
@@ -326,7 +329,7 @@ body {
   gap: 10px;
   position: fixed;
   bottom: 1%;
-
+  
   max-height: 40%;
 }
 .node-list {
@@ -465,6 +468,7 @@ body {
   .navbar {
     width: 16%;
     padding: auto;
+
   }
 }
 .navbar a {
@@ -541,11 +545,10 @@ body {
   justify-content: center;
   gap: 14px;
   margin-bottom: 70px;
-  margin-top: 150px;
-  font-size: larger;
+  margin-top: 8rem;
 }
 .intro-section p {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   line-height: 1.5rem;
 }
 
@@ -656,7 +659,7 @@ body {
   height: 100%;
   object-fit:cover;
   display: block;
-  filter: grayscale(1);
+  filter: grayscale(0);
   transition: filter 0.3s;
 }
 
@@ -767,6 +770,7 @@ body {
   .left-sidebar {
     width: 11%;
   }
+
 
   .navbar a {
     font-size: 1.2rem;
@@ -1214,11 +1218,13 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .tbr-spine a {
   color: black;
+  flex-wrap: wrap;
 }
 .tbr-spine:hover{
-  background-color: rgba(211, 211, 211, 0.211);
+  background-color: #f7f0f088;
   transition: background-color 0.3s ease;
 }
 
@@ -1231,6 +1237,13 @@ body {
   .area-stacks {
     width: 500px;
     margin:auto;
+    }
+    .node-box {
+    padding-left: 0;
+    }
+    .node-list .tag {
+      padding: 3px 6px;
+      font-size: 0.8rem;
     }
   }
 
@@ -1260,3 +1273,40 @@ body {
     }
   }
 
+  @media (max-width: 440px) {
+    .area-stacks {
+    width: 300px;
+
+    }
+  }
+
+  /* TOGGLE NAV */
+.toggle-nav {
+  display: inline-flex;
+  background: #f0f0f0;
+  border-radius: 6px;
+  padding: 2px;
+  width: fit-content;
+
+  position: absolute;
+  top:3rem;
+  left: 50%;
+  margin-left: -80px;
+}
+
+.toggle-nav .tab {
+  padding: 4px 6px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #333;
+  background: transparent;
+  font-weight: 500;
+}
+.toggle-nav .tab:hover {
+  background-color: transparent;
+}
+
+.toggle-nav .tab.active {
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}

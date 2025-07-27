@@ -43,7 +43,23 @@ layout: "default"
     p ul {
       padding-left: 20%;
     }
+    .linked-contentblock {
+      border: 1px solid lightgray;
+      border-radius: 10px;
+      padding: 1rem 2rem;
+      margin: 2rem auto;
 
+    }
+    .books-tbrs {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+
+    }
+    .related-books, .related-tbrs {
+      display: flex;
+      flex-direction: column;
+    }
     @media (max-width: 914px) {
 
     }
@@ -52,6 +68,9 @@ layout: "default"
 
       .article-image {
         max-width: 100px;
+      }
+      .books-tbrs {
+        flex-direction: column;
       }
     }
 
@@ -130,9 +149,64 @@ layout: "default"
 <!--MAIN CONTENT -->
     {{ content }}
 
+<div class="linked-contentblock">
+
+<!--CONNECTIONS -->
+<p>Linked Content within the Pocketbook</p>
+<div class="books-tbrs">
+  {% if page.type == "people" %}
+    {% assign books_by_author = site.books | where: "author", page.title %}
+    {% if books_by_author.size > 0 %}
+      <div class="related-books">
+        <h3>Books I've Read </h3>
+        <ul>
+          {% for book in books_by_author %}
+            <li>
+              <a href="{{ book.url }}">{{ book.title }}</a>
+              {% if book.date_finished %}
+                <span class="book-date">({{ book.date_finished | date: "%Y" }})</span>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      
+    {% endif %}
+
+  <!--TBRs-->
+    {% assign tbrs = site.tbrs | where: "author", page.title %}
+    {% if tbrs.size > 0 %}
+      <div class="related-tbrs">
+        <h3>Books To Read </h3>
+        <ul>
+          {% for book in tbrs %}
+            <li>
+              <a href="{{ tbr.url }}">{{ book.title }}</a>
+
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+    </div>
+
+
+    {% assign quotes_by_author = site.quotes | where: "author", page.title %}
+    {% if quotes_by_author.size > 0 %}
+      <section class="related-quotes">
+        <a href="/pearls/?author={{ page.title | uri_escape }}">See some of their pearls </a>
+   
+      </section>
+    {% endif %}
+  {% endif %}
+
+</div>
 <!-- FOOTER DETAILS  -->
   <div class="article-footer">
     <!--Adding Tags-->
+    <br>
+    <hr>
+    <br>
       <h3>Nodes</h3>
         {%- if page.tags -%}
           <div class="post-tags">
