@@ -380,7 +380,7 @@ blockquote {
 /* ----------------------------------DEFAULT THEME--------------------------*/
 
 body {
-  background-color: white; /* fffefc , fbf9f6*/
+  background-color: white; /* fffefc , fbf9f6.    rgb(253, 253, 253)*/
 }
 
 .right-sidebar, .left-sidebar { /* #FCFCFC */
@@ -793,7 +793,7 @@ body {
   margin: 0;
 }
 
-.article-image {
+.article-thumb {
   width: 100px;
 
   height: auto;
@@ -803,7 +803,7 @@ body {
   
 }
 
-.article-image img {
+.article-thumb img {
   width: 100%;
   height: auto;
   object-fit: fill;
@@ -1157,6 +1157,32 @@ body {
   text-decoration-style: dotted;
 
 }
+
+.spotify-button {
+  display:flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+.spotify-button a {
+  text-decoration: none;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+
+.spotify-button img:hover {
+  animation: spin 3s linear infinite;
+  transform: scale(1.05);
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg);}
+  to { transform: rotate(360deg); }
+}
+
+
 
 /* ======================== WIKI STYLING ============= */
 .category-box {

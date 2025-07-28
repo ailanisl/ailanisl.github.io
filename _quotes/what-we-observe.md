@@ -7,7 +7,7 @@ author_slug: werner-heisenberg
 heading: 
 
 type: aphorism
-tags: [nature, science-as-mapmaking]
+tags: [nature, science-as-mapmaking, universe]
 date: 2022-07-26
 ---
 

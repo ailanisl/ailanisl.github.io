@@ -1,6 +1,6 @@
 --- 
 layout: book
-title: "The Passion According to G.H"
+title: "The Passion According to G.H."
 author: "Clarice Lispector"
 date_finished: 2022-08-09
 country: "Brazil"
