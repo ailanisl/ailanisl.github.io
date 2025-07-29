@@ -48,6 +48,7 @@ layout: "default"
       max-width: 220px;
       max-height: auto;
       object-fit: cover;
+      margin-top: 1rem;
     }
 
     p ul {
@@ -148,8 +149,9 @@ layout: "default"
       </header>
 
       {% if page.image %}
-     
+     <div class="image-caption" style="display: flex;flex-direction: column;">
         <img src="{{ page.image }}" class="article-image" alt="image of {{page.title}}">
+        <p style="font-size: small; color: gray;"> {{ page.image_cred }} </p></div>
       {% endif %}
     
   </div>

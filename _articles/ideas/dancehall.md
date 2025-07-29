@@ -27,4 +27,6 @@ __Beat Characteristics__
 - Snare on the 3
 
 __Playlist__
-- [Modern Dancehall](https://open.spotify.com/playlist/7KrKGU1i02zSEXqsVQ195X?si=0641777ba4bb410b)
+<div class="spotify-button">
+    <a href= "https://open.spotify.com/playlist/7KrKGU1i02zSEXqsVQ195X?si=0641777ba4bb410b" target="_blank" rel="noopener noreferrer" class="spotify-link"><img src="/assets/img/articles/dancehall.png"><h3 class="playlist-title">Modern Dancehall (Spotify)</h3></a>
+</div>    

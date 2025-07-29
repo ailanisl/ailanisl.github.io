@@ -1,6 +1,6 @@
 --- 
 layout: book
-title: "Love in the Void: Where God Finds Us"
+title: "Love in the Void"
 author: "Simone Weil"
 date_finished: 2023-04-05
 country: "France"
@@ -16,7 +16,7 @@ audio: false
 
 tags: [catholicism, mysticism, emptiness, religion]
 ---
-
+Full title is _Love in the Void: Where God Finds Us_
 **Notes and Quotes**
 
 > The soul’s natural inclination to love beauty is the trap God most frequently uses in order to win it and open it the breath from on high… The beauty of the world is the mouth of a labyrinth
