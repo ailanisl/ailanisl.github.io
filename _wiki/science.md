@@ -1,6 +1,6 @@
 ---
 title: Science
-layout: wiki_category
+layout: music_category
 category: science
 permalink: /science/
 

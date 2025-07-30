@@ -80,6 +80,12 @@ a[href^='http']::after {
   color: #444;
 }
 
+.caption {
+  font-size: small;
+  color: #656565;
+  line-height: 0.5rem;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -1158,6 +1164,12 @@ body {
 
 }
 
+.playlist-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .spotify-button {
   display:flex;
   flex-direction: column;
@@ -1189,13 +1201,16 @@ body {
   margin-top: 3rem;
   display: flex;
   flex-direction: column;
+  margin-bottom: 3rem;
 }
 .type-columns {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   border-top: 1px solid lightgray;
   padding-top: 1rem;
+  gap: 2rem 1rem;
 }
 .category-box h1 {
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -1547,7 +1562,7 @@ body {
     border: 1px solid #e5d6d69e;
     color: #af9292;
     padding: 4px 6px;
-    font-family: systems-ui, sans-serif;
+    font-family: system-ui, sans-serif;
     font-weight: 300;
   }
 

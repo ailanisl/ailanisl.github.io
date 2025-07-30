@@ -6,7 +6,7 @@ layout: "default"
     hr {
       color: lightgray;
     }
-    h2 {
+    .post h2 {
       font-weight: 600;
       margin-top: 0.75rem;
       margin-bottom: 0.3rem;
@@ -170,6 +170,42 @@ layout: "default"
 
 <!--CONNECTIONS -->
 <p>Linked Content within the Pocketbook</p>
+{% if page.see_also %}
+  <div class="related-books">
+    <h3> See also: </h3>
+        <ul>
+          {% for slug in page.see_also %}
+            {% assign related=site.articles | where: "slug", slug | first %}
+            {% if related %}
+              <li><a href="{{ related.url}}"> {{ related.title }}</a></li>
+            {% else %}
+              <li><em>Missing article for slug: {{ slug }}</em></li>
+            {% endif %}
+          {% endfor %}
+        </ul>    
+  </div>
+{% endif %}
+
+{% assign backlinks = "" | split: "" %}
+
+{% for article in site.articles %}
+  {% if article.see_also contains page.slug and article.slug != page.slug %}
+    {% assign backlinks = backlinks | push: article %}
+  {% endif %}
+{% endfor %}
+
+{% if backlinks.size > 0 %}
+  <section class="mentioned-in">
+    <h2>Mentioned In</h2>
+    <ul>
+      {% for backlink in backlinks %}
+        <li><a href="{{ backlink.url }}">{{ backlink.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endif %}
+
+
 <div class="books-tbrs">
   {% if page.type == "people" %}
     {% assign books_by_author = site.books | where: "author", page.title %}
@@ -229,7 +265,7 @@ layout: "default"
           <div class="post-tags">
             
           {% for tag in page.tags %}
-            <a href="{{ '/tag/' | append: tag | relative_url }}" class="tag">{{ tag }}</a>
+            <a href="/tag/{{ tag | downcase | replace: ' ', '-' }}/" class="tag">{{ tag }}</a>
           {% endfor %}
         {%- endif -%}
         </div>

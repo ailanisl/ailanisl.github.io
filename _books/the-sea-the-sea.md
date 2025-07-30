@@ -21,4 +21,4 @@ tags: [emptiness, humor, art]
 
 The 500 pages of Murdoch were well worth it for the last 50 pages themselves. Yes, I guess I read for denouements that don't veil themselves as denouements.
 
-> Loose ends can never be properly tied, one is always producing new ones. Time, like the sea, untinies all knots. Judgments on people are never final, they emerge from swimmings up which at once suggest the need of a resuscitation. Human arrangements are nothing but loose ends and hazy reckoning, whatever art may otherwise pretend in order to console us. (477)
+> Loose ends can never be properly tied, one is always producing new ones. Time, like the sea, unties all knots. Judgments on people are never final, they emerge from swimmings up which at once suggest the need of a resuscitation. Human arrangements are nothing but loose ends and hazy reckoning, whatever art may otherwise pretend in order to console us. (477)

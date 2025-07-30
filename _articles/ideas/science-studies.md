@@ -1,6 +1,7 @@
 ---
 layout: article 
 title: "Science Studies"
+slug: science-studies
 era: "Postwar to today"
 subheading: "Academic field"
 country: "US?"
@@ -10,6 +11,8 @@ image: /assets/img/articles/science.jpeg
 #parent_topic:
 type: ideas
 categories: [science]
+genre: "Science & Tech Studies"
+
 tags: [science-as-mapmaking]
 date_pub: 2025-07-13
 date_mod: 2025-07-18

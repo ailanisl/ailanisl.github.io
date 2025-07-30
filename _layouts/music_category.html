@@ -58,6 +58,7 @@ layout: default
 
 <div class="category-box">
 
+
   {% assign category_name = page.category %}
   {% assign category_articles = site.articles | where_exp: "a", "a.categories contains category_name"  %}
 
@@ -66,7 +67,7 @@ layout: default
   <div class="type-columns">
     {% for type_group in grouped_by_type %}
     <div class="type-box">
-      <h2>{{ type_group.name | capitalize }}</h2>
+      <h3 style="text-transform: uppercase;">{{ type_group.name | capitalize }}</h3>
           {% for article in type_group.items %}
             <div class="article-card">
               <a href="{{ article.url }}" class="internal-link">{{ article.title }}</a>
