@@ -12,6 +12,7 @@ pub_date: "1974"
 
 reread: false
 audio: false
+image: /assets/img/books/hearing-trumpet.jpg
 
 tags: [surrealism]
 ---

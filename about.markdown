@@ -27,7 +27,7 @@ This site was generated through [Jekyll](https://jekyllrb.com/) and is hosted in
 I worked with HTML, CSS, and a smidge of Javascript for this static site, using VScode as a text editor. This is the first website I've made, so forgive the crudeness of the code. 
 
 
-<img src="/assets/img/desktop.jpg">
+<img src="/assets/img/desktop.jpg" alt="An image of my cluttered desk with books, notebooks, and a desktop">
 <h5>This was the state of my desk during the ordeal.</h5>
 
 

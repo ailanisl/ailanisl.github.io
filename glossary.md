@@ -8,6 +8,9 @@ permalink: /glossary/
 __anodyne__: (adj.)
 1. capable of soothing or eliminating pain
 
+__argot__: (noun)
+1. the jargon or slang of a particular group or class 
+
 __compassion__: (noun)
 1. Literally, 'suffering with'
 
@@ -25,3 +28,6 @@ __sublimate__: (intrans. verb)
 
 __taxonomy__: (noun)
 1. an ordered arrangement of groups or categories
+
+__otiose__: (adj.) 
+1. Serving no practical purpose or result 

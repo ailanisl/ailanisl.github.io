@@ -763,9 +763,7 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  
-
-
+  justify-content: center;
   padding: 1.5rem 0;
   gap: 2rem;
 }
@@ -821,7 +819,7 @@ body {
 
 
 .end-spacer {
-  height: 30%;
+  height: 10%;
 }
 
 .hamburger {

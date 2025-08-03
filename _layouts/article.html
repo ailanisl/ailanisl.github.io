@@ -105,14 +105,17 @@ layout: "default"
     <!--BREADCRUMB NAVIGATION-->
     <nav class="breadcrumbs"> 
       <a href="{{ '/' | relative_url }}">Home</a>
-      › <a href="{{ '/wiki-index/' | relative_url }}">Index</a>
+      › <a href="{{ '/wiki-index/' | relative_url }}">Wiki Index</a>
 
       {% if page.categories %}
         {% for cat in page.categories %}
          › <a href="/{{ cat | downcase | url_encode }}/">{{ cat | capitalize }}</a>
         {% endfor %}
+      
       {% endif %}
 
+
+      › {{ page.title }}
 
 
       <!--type

@@ -13,7 +13,7 @@ type: ideas
 categories: [science]
 genre: "4E Cognition"
 
-tags: [cognition]
+tags: [cognition, embodiment]
 date_pub: 2025-07-29
 date_mod: 2025-07-29
 

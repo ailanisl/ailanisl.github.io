@@ -200,7 +200,7 @@ layout: default
 
         
 
-<h2>Recent activity in the <a href="{{ '/wiki-index/' | relative_url }}" >wiki &#8640;</a></h2>
+<h2>Recent activity in the <a href="{{ '/wiki-index/' | relative_url }}" >wiki </a>&#8640;</h2>
         <div class="recent-articles">
         
             {% assign sorted_articles = site.articles | sort: "date_mod" | reverse %}
@@ -243,8 +243,10 @@ layout: default
         
 
         <!--OYSTER BUTTON-->
-
-
+        <div style="display: flex; width: 270px;  text-align: center; margin-left: auto; margin-right: auto;">
+        <a href=" {{ '/portfolio/' | relative_url }}" style="text-decoration: none;"> <img  loading="lazy" src="/assets/img/rose-name.jpg" width="270px" alt="my drawing of a figure reaching for a rose wreathed by disembodied hands in the horizon.       " />
+            Portfolio?</a>
+        </div>
 
     <script>
         

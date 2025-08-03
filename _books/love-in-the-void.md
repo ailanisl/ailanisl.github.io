@@ -14,9 +14,11 @@ image: /assets/img/books/love-void.jpg
 reread: false
 audio: false
 
-tags: [catholicism, mysticism, emptiness, religion]
+tags: [catholicism, mysticism, emptiness, religion, beauty]
 ---
-Full title is _Love in the Void: Where God Finds Us_
+Full title is _Love in the Void: Where God Finds Us_. Borrowed from the Berkeley Public Library. I remember reading this at the Emeryville Public Market and on grass fields..
+
+
 **Notes and Quotes**
 
 > The soul’s natural inclination to love beauty is the trap God most frequently uses in order to win it and open it the breath from on high… The beauty of the world is the mouth of a labyrinth
