@@ -1,7 +1,7 @@
 ---
 layout: quote 
 quote: "If a writer is so cautious that he never writes anything that cannot be criticized, he will never write anything that can be read. If you want to help other people you have got to make up your mind to write things that some men will condemn. "
-source: "New Seeds of Comtemplation"
+source: "New Seeds of Contemplation"
 source_slug: new-seeds-of-contemplation
 author: "Thomas Merton"
 author_slug: thomas-merton
