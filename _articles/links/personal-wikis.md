@@ -20,4 +20,4 @@ date_mod: 2025-08-02
 - [Tom Critchlow](https://tomcritchlow.com/wiki/)
 - [Stringloo](https://strikingloo.github.io/wiki/) 
 - [Barnsworthburning](https://barnsworthburning.net) 
--  
+- [Johannes Klingebiel](https://johannesklingebiel.de/wiki/)

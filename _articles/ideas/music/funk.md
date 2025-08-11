@@ -29,6 +29,8 @@ Funk engendered a raucous break from the prim and proper—from “the intense c
 - Sly and the Family Stone 
 - Curtis Mayfield
 - James Brown
+- WAR 
+- Cymande 
 
 
 ### Links: 
@@ -36,8 +38,8 @@ Funk engendered a raucous break from the prim and proper—from “the intense c
 
 
 __Playlist(s):__
-
-
+- [Funk Psychedelica](https://open.spotify.com/playlist/2DeBkazfrQxGsVZ26pTbgR?si=ae0c1fe4ba2242d1)
+- [EAR FOOD](https://open.spotify.com/playlist/0uuMXf1Z0QfIVy3gg1Jkve?si=09cd4357599146b6) 
 
 __To read/watch:__ 
 - Ricky Vincent (1996). _Funk: The Music, the People, and the Rhythm of the One._

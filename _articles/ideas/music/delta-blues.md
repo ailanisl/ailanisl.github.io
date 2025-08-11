@@ -31,3 +31,5 @@ My top artists:
 - Mississippi John Hurt 
 - Sam Carr
 
+Playlists: 
+- [Phonograph Blues ](https://open.spotify.com/playlist/3prcsVHFuSeHQMHC3VpK4m?si=9915ca102ea74cac)
