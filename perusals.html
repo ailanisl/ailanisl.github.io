@@ -193,7 +193,7 @@ title: "Perusals"
                 {% assign sorted_books = site.books | sort: 'date_finished' | reverse %}
                 {% for book in sorted_books %}
                 <tr data-genre="{{ book.genre | downcase}}">
-                    <td><strong><a class="book-link" href="{{ book.url }}">{{book.title}}
+                    <td><strong><a class="book-link" href="{{ book.url }}">{{book.title }}
                     {% if book.reread %}
                         *
                     {% endif %}

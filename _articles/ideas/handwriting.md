@@ -12,7 +12,9 @@ type: ideas
 categories: [technology]
 tags: [creativity, embodiment, artifacts]
 date_pub: 2025-07-18
-
+see_also:
+    - distributed-cognition
+    - embodied-cognition 
 ---
 
 A mainly visual form of communication that involves some kinesthetic capability. One of the most (the most?) important technologies in the development of human history. 
@@ -41,12 +43,12 @@ From my (handwritten) notes for Terry Regier's class _Language and Thought_: on 
 Humans both invent new ideas and preserve/transmit them so that they are available for upcoming generations 
 - In other species, invention happens, but preservation does not (= SLIPPAGE)
 
-### The Book:
+__The Book:__
 - Faithful transmission 
 - Metadata contained: Who wrote the book? When?
 - Human kids are brought up in environments (with books, toys, other artifacts) that represent human "cognitive collectivity" which point to things well beyond the immediate environment of parents and friends 
 
-Ever-new artifacts: represent the entire collective wisdom of entire social group throughout its entire cultural history
+Ever-new <a href="{{ '/tag/artifacts/' | relative_url }}">artifacts</a>: represent the entire collective wisdom of entire social group throughout its entire cultural history
 
 ### The desire to share things with others 
 It's a simple extension of _shared intentionality_. Applied not only to those you are immediately interacting with, but also beyond - to others. 
@@ -54,8 +56,10 @@ It's a simple extension of _shared intentionality_. Applied not only to those yo
 - Allows cultural learning and the rest is racheted up on that base 
 
 ## __Phenomenology and Embodiment__
-Arts: the comparison between printing or word processing, handwriting is described as more conducive to creativity (as well as memory). The sensuality of handwriting, the undulations of one's wrist, the grip of the stylus, give physcial embodiment to the abstract activity of thinking through language. 
+Arts: the comparison between printing or word processing, handwriting is described as more conducive to creativity (as well as memory). The sensuality of handwriting, the undulations of one's wrist, the grip of the stylus, give physcial <a href="{{ '/articles/embodied-cognition/' | relative_url }}">embodiment</a> to the abstract activity of thinking through language. 
 
 
 ## __Links:__ 
 - [Greg Niemeyer (video)](https://www.gregniemeyer.com/handwriting)
+- [Anne Carson: Beware the man whose handwriting sways like a reed in the wind (video)](https://www.youtube.com/watch?v=g8fPmTtG0qw)
+    - Handwriting and identity, Parkinson's disease, and boxing
