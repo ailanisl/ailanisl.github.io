@@ -9,7 +9,7 @@ genre: "Autobiographical"
 category: "Nonfiction"
 
 pub_date: "2021"
-tags: [US]
+tags: [cognition, machine]
 reread: false
 audio: true
 ---

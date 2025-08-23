@@ -9,7 +9,11 @@ genre: "Autobiographical"
 category: "Nonfiction"
 
 pub_date: "1993"
-tags: [US]
+tags: []
 reread: false
 audio: true
 ---
+
+San Gabriel Valley, Chicano culture, and la vida loca. 
+
+Love for the SGV
