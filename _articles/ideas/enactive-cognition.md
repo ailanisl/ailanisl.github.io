@@ -15,7 +15,7 @@ genre: "4E Cognition"
 
 tags: [cognition, embodiment]
 date_pub: 2025-07-29
-date_mod: 2025-07-29
+date_mod: 2025-08-13
 
 see_also:
     - distributed-cognition

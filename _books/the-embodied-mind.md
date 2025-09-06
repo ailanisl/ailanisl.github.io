@@ -12,6 +12,8 @@ pub_date: "1991"
 tags: [embodiment, cognition]
 reread: false
 audio: false
+
+
 ---
 My notes: <a href="{{ '/articles/embodied-cognition/' | relative_url }}">Embodied Cognition article</a>
 

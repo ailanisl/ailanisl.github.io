@@ -1,0 +1,154 @@
+---
+permalink: /academics/
+title: "Academic Webpage"
+---
+
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+<style>
+    #wrapper-ac {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        gap: 2rem;
+    }
+    .shadow-box {
+        border: 1px solid lightgray;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.056);
+
+        
+
+        width: fit-content;
+        padding: 1rem;
+    }
+
+    #text-stuff {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+    }
+
+    #name-card {
+        position: relative;
+
+        display: flex;
+        gap: 1.5rem;
+    }
+    #links {
+        display: flex;
+        gap:0.75rem;
+    }
+
+    #bio-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: auto;
+        scrollbar-width: none;
+
+        height: 410px;
+        width: 360px;
+
+        position: relative;
+    }
+    #bio-filter {
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+
+        width: 350px;
+        justify-content: center;
+
+        position: fixed;
+
+        padding: 0.8rem;
+        border-radius: 10px;
+        
+
+        background: rgba(255, 255, 255, 0.889);
+        backdrop-filter: blur(5px) saturate(140%);
+        -webkit-backdrop-filter: blur(5px) saturate(140%);
+        
+
+    }
+    .bio {
+        font-family: monospace;
+        
+        margin: 1rem;
+        margin-top: 3rem;
+        
+        
+    }
+    .bio p {
+        font-size: 1rem;
+    }
+</style>
+
+<body>
+<div id="wrapper-ac">
+<!--The NAME CARD -->
+<div class="shadow-box" id="name-card">
+    <img src="/assets/img/photo-of-me.png" alt="a dithered photo of me" height="200px">
+
+    <div id="text-stuff">
+        <h2 style="font-size: 2rem;">Ailani Sato-Lim</h2>
+        <p>BA Cognitive Science, UC Berkeley</p>
+        <p>Interested in big (often too big) ideas</p>
+    
+        <div id="links" style="margin-top: 2rem; font-family: Georgia, 'Times New Roman', Times, serif;">
+            <a href="#">CV</a> 
+            •
+            <a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a>
+            •
+            <a href="{{ '/' | relative_url }}">Personal site</a>
+        </div>
+    </div>
+</div>
+
+<!--The BIO CARDm -->
+<h3>BIO</h3>
+<div class="shadow-box" id="bio-card" style="padding: 0;">
+    <ol id="bio-filter">
+        <li>
+            <label for="academic">ACADEMIC</label>
+        </li>
+        <li>
+            <label for="intergenerational">INTERGENERATIONAL</label>
+        </li> <!--Credits to Aaron Z. Lewis-->
+        <li>
+            <label for="multimodal">MULTIMODAL</label>
+        </li>
+    </ol>
+
+    <ol id="bios">
+        
+        <li class="bio" data-category="academic">
+            <p>
+                I graduated from UC Berkeley with a bachelor's in cognitive science and a minor in Buddhist studies. 
+                There, I did some independent (idiosyncratic) research on how conceptual metaphor may have accounted 
+                for the distinctly modern and individualistic model of mind in American Buddhism, which pervades 
+                current mindfulness movements and neuroscience research of meditation. <br><br>
+
+                I also did some lab and research apprenticeships during my time at Berkeley. I studied how far-right 
+                groups reasoned about climate change through religious metaphor (e.g., altar of climate, St. Greta) with 
+                Eve Sweetser and Kim Grogan (UBC). I also helped out at Berkeley's Language and Cognitive Development Lab, 
+                where we looked at how children determine group belonging based on language cues and how Hindu and Muslim 
+                children in Gujarat, India thought about norms, violations, and loopholes of religious groups (their own and others).
+
+            </p>
+        </li>
+
+    </ol>
+</div>
+
+
+
+</div>
+</body>
+
+</html>
