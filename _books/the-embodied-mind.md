@@ -13,6 +13,7 @@ tags: [embodiment, cognition]
 reread: false
 audio: false
 
+image: /assets/img/books/varela.jpg
 
 ---
 My notes: <a href="{{ '/articles/embodied-cognition/' | relative_url }}">Embodied Cognition article</a>

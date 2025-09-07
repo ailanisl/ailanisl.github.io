@@ -12,7 +12,7 @@ list_title: "Pennings"
 ---
 
 
-<p style="font-size: 2rem">Hello, I'm Ailani. </p>
+<p style="font-size: 2rem; font-family: Georgia; font-style: italic;">Hello, I'm Ailani. </p>
 
 I collect things in this tiny <a href="{{ '/about/' | relative_url }}" class="internal-link">pocket</a> on the web. 
 
