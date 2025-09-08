@@ -115,22 +115,23 @@ title: "Academic Webpage"
 
     #bio-matrix {
         display: flex;
-        flex-direction: row;
+        flex-wrap: wrap;
         gap: 4rem;
         align-items: center;
         justify-content: space-between;
+
     }
 
     .image-container {
-        max-width: 780px;
-        overflow: hidden;
-        position: relative;
-
-
+        flex: 1 1 200px;   /* can grow/shrink, min width 200px */
+        display: flex;
+        justify-content: flex-end; /* push image to the right */
     }
     .image-container img{
         max-width: 100%;
         height: auto;
+        object-fit: contain;
+        image-rendering: auto;
     }
     #personal-site-button {
         display: flex;
@@ -282,7 +283,7 @@ title: "Academic Webpage"
     </div>
 <!-- 2x2 Matrix of my academic interests -->
     <div class="image-container">
-        <img id="matrix" src="/assets/img/matrix.png" alt="2x2 matrix of my academic interests" >
+        <img id="matrix" src="/assets/img/matrix.png" alt="2x2 matrix of my academic interests" style="">
     </div>
 </div>
     <div id="personal-site-button">
