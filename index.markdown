@@ -20,6 +20,8 @@ Here, I store little <a style="color: #5C7423;" href="{{ '/pearls/' | relative_u
     of wisdom, my <a style="color: #5C7423;" href="{{ '/pennings/' | relative_url }}" class="internal-link">pennings</a>, a paperback <a style="color: #5C7423;" href="{{ '/perusals/' | relative_url }}" class="internal-link">reading</a> log, 
     and other paraphernalia. (In short, a digital florilegium and <a style="color: #5C7423;" href="{{ '/wiki-index/' | relative_url }}" class="internal-link">personal wiki)</a>. 
 
+<p>If you're looking for my academic webpage, click <a style="color: #5C7423;" href="{{ '/academics/' | relative_url }}" class="internal-link">here</a></p>
+
 <p style="margin-right:auto; margin-left:auto;"> 
     &rarr; This site is <span class="special-deco"><a href= "{% post_url 2025-06-27-my-intentions %}" style="color: #5C7423; font-weight: 500;">hand-coded</a></span> 	&larr; </p>
 
