@@ -29,7 +29,7 @@ title: "Academic Webpage"
         display: flex;
         flex-direction: column;
         width: 50%;
-        padding: 2rem;
+        padding: 3rem;
         box-sizing: border-box;
         
     }
@@ -89,6 +89,15 @@ title: "Academic Webpage"
 
         position: relative;
     }
+
+    #bio-header {
+        display: flex;
+        justify-content: space-between;
+        
+        max-width: 700px;
+        position: relative;
+        top: 0.7rem;
+    }
     #bio-filter {
         list-style-type: none;
         display: flex;
@@ -96,8 +105,9 @@ title: "Academic Webpage"
         gap: 0.5rem;
         flex-wrap: wrap;
 
-        width: fit-content;
-        justify-content: center;
+        
+        justify-content: flex-end;
+        
     }
 
     .tab {
@@ -197,9 +207,6 @@ title: "Academic Webpage"
         transition: all 0.3s ease;
     }
 */
-#matrix-container {
-    
-}
 
 .quadrant-map {
   position: relative;
@@ -257,7 +264,7 @@ title: "Academic Webpage"
 /* Clusters (dashed ellipses) */
 .cluster {
   position: absolute;
-  border: 2px dashed #aaa;
+  border: 1px dashed #aaa;
   border-radius: 50%;
   text-align: center;
   padding: 1rem;
@@ -265,14 +272,21 @@ title: "Academic Webpage"
 }
 
 #gpa-photo {
-    display: flex; 
-    flex-direction: column; 
     width: 160px;
     position: relative; 
     left: 50%;
+}
+#hawaii-photo {
+    width: 255px;
+    position: relative; left: 10%; top: 4rem;
+    
+
+}
+.family-pic {
+    display: flex; 
+    flex-direction: column;
     align-items:center;
 }
-
 @media (max-width: 1120px) {
     #matrix-container {
         transform: scale(0.9);
@@ -320,7 +334,12 @@ title: "Academic Webpage"
     }
     
 }
-
+@media (max-width: 500px) {
+    #hawaii-photo {
+        left: 0;
+    
+    }
+}
 </style>
 
 <body>
@@ -350,13 +369,14 @@ title: "Academic Webpage"
 <!--The BIO CARDm -->
 <div id="body">
     <div id="bio-block">
-    <h3 >BIO</h3>
-    <div id="bio-filter">
-        <button class="tab active" onclick="showBio('academic', this)">ACADEMIC</button>
-        <button class="tab" onclick="showBio('intergenerational', this)">INTERGENERATIONAL</button>
-        <button class="tab" onclick="showBio('multimodal', this)">MULTIMODAL</button>
-    </div>
-    
+        <div id="bio-header">
+            <h2 style="padding-left: 1rem;">  BIO</h2>
+            <div id="bio-filter">
+                <button class="tab active" onclick="showBio('academic', this)">ACADEMIC</button>
+                <button class="tab" onclick="showBio('intergenerational', this)">INTERGENERATIONAL</button>
+                <button class="tab" onclick="showBio('multimodal', this)">MULTIMODAL</button>
+            </div>
+        </div>
         
         <div id="bios">
             
@@ -432,8 +452,8 @@ title: "Academic Webpage"
                     </div>
                 <div class="image-col" style="width: 100%;">
                     <div id="familiy-photos" style="display: flex; flex-direction: column; max-width: 700px; margin-bottom: 4rem;">
-                        <div id="gpa-photo"><img src="/assets/img/cliff.png" alt="photo of grandpa WW2" width="160px">My grandfather (left) in WW2</div>
-                        <img src="/assets/img/hawaii.png" alt="photo of early days in hawaii" width="255px" style="position: relative; left: 10%; top: 4rem;">
+                        <div id="gpa-photo" class="family-pic"><img src="/assets/img/cliff.png" alt="photo of grandpa WW2" width="160px">My grandfather (left) in WW2</div>
+                        <div id="hawaii-photo" class="family-pic"><img src="/assets/img/hawaii.png" alt="photo of early days in hawaii" >Early days in Hawai'i</div>
                     </div>
                 </div>
             </div>
@@ -443,13 +463,13 @@ title: "Academic Webpage"
                 <div class="flex-row">
                     <div class="shadow-box" id="bio-card" style="padding: 1rem;">
                         <p>
-                        <b>Kinesthetic</b>: I love to move my body by any means possible, but I'm particularly enamored by mobility and flexibility... I love stretching & yoga, martial arts like muay thai, the occasional bouldering session, and dancing to afrobeats, dancehall, hip-hop or amapiano.
+                        <b>Kinesthetic</b>: I love to move my body by any means possible, and I'm particularly enamored by mobility and flexibility... I love stretching & yoga, martial arts like muay thai, the occasional bouldering session, and dancing to afrobeats, dancehall, hip-hop or amapiano.
                         <br>
                         <br>
-                        <b>Mental</b>: To move my mind, I read lots of fiction (I think fiction is more “real” than nonfiction). I like the pretentious stuff that plays with language in crazy ways – so lots of modernism, but really anything written in 20th century or in America. My favorite writers though, for some reason,  write in Romance languages: Clarice Lispector (Brazil), Fernando Pessoa (Portugal), and Borges (Argentina). 
+                        <b>Mental</b>: To move my mind, I read lots of <a href="{{ '/perusals/' | relative_url }}">fiction</a> (I think fiction is more “real” than nonfiction). I like the pretentious stuff that plays with language in crazy ways – so lots of modernism, but really anything written in 20th century or in America. My favorite writers though, for some reason,  write in Romance languages: <a href="{{ '/articles/clarice-lispector/' | relative_url }}">Clarice Lispector (Brazil)</a>, <a href="{{ '/articles/fernando-pessoa/' | relative_url }}">Fernando Pessoa (Portugal)</a>, and Borges (Argentina). 
                         <br>
                         <br>
-                        <b>Auditory</b>: I find joy in a huge variety of genres, but my favorites are 70s soul and funk, RnB, hip hop, 60s folk revival, Hawaiian, and latin indie.
+                        <b>Auditory</b>: I find joy in a huge variety of <a href="{{ '/music/' | relative_url }}">genres</a>, but my favorites are 70s <a href="{{ '/articles/soul/' | relative_url }}">soul</a> and <a href="{{ '/articles/funk/' | relative_url }}">funk</a>, <a href="{{ '/articles/nu-rnb/' | relative_url }}">RnB</a>, hip hop, 60s folk revival, Hawaiian, and latin indie.
                         </p>
                     </div>
                 <div class="image-col">
