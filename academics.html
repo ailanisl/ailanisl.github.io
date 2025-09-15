@@ -9,20 +9,43 @@ title: "Academic Webpage"
   {%- include head.html -%}
 
 <style>
-    #wrapper-ac {
+    #body-wrapper {
+        display: flex; 
+    }
+    #left-bar {
+        flex: 1;
         display: flex;
         flex-direction: column;
         padding: 2rem;
-        gap: 2rem;
-        max-width: 1400px;
+        gap: 1rem;
+        max-width: 50%;
         position: relative;
+        padding-top: 10rem;
+        box-sizing: border-box;
     }
+
+    #body {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        padding: 2rem;
+        box-sizing: border-box;
+        
+    }
+
     .shadow-box {
         border: 1px solid lightgray;
         border-radius: 10px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.056);
         width: fit-content;
         padding: 1rem;
+    }
+
+    .image-container {
+        width: 100%;
+        height: auto;
+   
     }
 
     #text-stuff {
@@ -61,7 +84,8 @@ title: "Academic Webpage"
         scrollbar-width: none;
 
         height: fit-content;
-        width: 400px;
+        min-width: 400px;
+        max-width: 700px;
 
         position: relative;
     }
@@ -118,27 +142,18 @@ title: "Academic Webpage"
 
     #bio-matrix {
         display: flex;
-        flex-wrap: wrap;
-        gap: 4rem;
+        flex-direction: column;
+        gap: 2rem;
         align-items: start;
         justify-content: space-between;
 
     }
-    .image-col {
+    .image-col-academic {
         width: fit-content;
+
     }
-    .image-container {
-        flex: 1 1 200px;   /* can grow/shrink, min width 200px */
-        display: flex;
-        justify-content: flex-end; /* push image to the right */
-    }
-    .image-container img{
-        max-width: 100%;
-        height: auto;
-        object-fit: contain;
-        image-rendering: auto;
-    }
-    #personal-site-button {
+
+/*    #personal-site-button {
         display: flex;
         flex-direction: column;
         align-items:end;
@@ -146,10 +161,10 @@ title: "Academic Webpage"
 
         position: absolute;
         top:2rem;
-        right: 2rem;
+        right: 2rem; }
         
       
-    }
+    
     #personal-site-button a {
         display: flex;
         flex-direction: column;
@@ -181,18 +196,15 @@ title: "Academic Webpage"
         background: linear-gradient(180deg, #E4E4E4 0%, #F2F2F2 100%);
         transition: all 0.3s ease;
     }
-
+*/
 #matrix-container {
-    transform: scale(0.7);   /* 80% of original size */
-    transform-origin: top left; /* scale from top-left corner */
-    position: relative;
-    left: 10rem;
+    
 }
 
 .quadrant-map {
   position: relative;
-  width: 800px;
-  height: 500px;
+  width: 640px;
+  height: 400px;
   margin: 2rem auto;
   border: 1px solid transparent;
   font-family: "Helvetica Neue", sans-serif;
@@ -220,7 +232,7 @@ title: "Academic Webpage"
 .label {
   position: absolute;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-style: italic;
 }
@@ -232,14 +244,12 @@ title: "Academic Webpage"
 /* Items */
 .item {
   position: absolute;
-  font-size: 1.3rem;
+  font-size: 1rem;
   white-space: nowrap;
   text-align: center;
 }
 #matrix-container a, .item a {
-    color: black;
-    text-decoration: underline;
-    text-decoration-color: #ffb7a7;
+    color: teal;
 
 
 }
@@ -254,29 +264,55 @@ title: "Academic Webpage"
   font-size: 0.9rem;
 }
 
+#gpa-photo {
+    display: flex; 
+    flex-direction: column; 
+    width: 160px;
+    position: relative; 
+    left: 50%;
+    align-items:center;
+}
 
-@media (max-width: 900px) {
-    #bio-matrix {
+@media (max-width: 1120px) {
+    #matrix-container {
+        transform: scale(0.9);
+        transform-origin: top left;
+
+    }
+}
+@media (max-width: 1064px) {
+    .image-col-academic {
+        margin: 0 auto;
+        max-width: 50vw;
+        overflow-x: auto;
+    }
+    .quadrant-map {
+        left: 4rem;
+    }
+}
+@media (max-width: 800px) {
+    #body-wrapper {
         flex-direction: column;
     }
-    #matrix-container {
-        margin: 0 auto;
-        width: 100vw; 
-        height: 100%;
-        overflow-y: hidden;
-        overflow-x: auto;
-        white-space: nowrap;
-        left: 0;
+    #left-bar, #body {
+        width: auto;
+        max-width: none;
     }
-
+    #left-bar {
+        padding-top: 2rem;
+    }
     #bio-card {
-        width:auto;
+        min-width:auto;
         height: auto;
         margin-right: auto;
     }
 
     #name-card {
         width: auto;
+    }
+
+    .image-col-academic {
+        max-width: 80vw;
     }
 
     #personal-site-button {
@@ -289,30 +325,32 @@ title: "Academic Webpage"
 
 <body>
 <div id="body-wrapper">
-<div id="wrapper-ac">
+    <div id="left-bar">
 
 
-<!--The NAME CARD -->
-<div class="shadow-box" id="name-card">
-    <img src="/assets/img/pink-profile.png" alt="a dithered photo of me" height="190px" style="border-radius: 10px;">
+    <!--The NAME CARD -->
+        <div class="shadow-box" id="name-card">
+            <img src="/assets/img/pink-profile.png" alt="a dithered photo of me" height="190px" style="border-radius: 6px;">
 
-    <div id="text-stuff">
-        <h2 style="font-size: 2rem;">Ailani Sato-Lim</h2>
-        <p>BA Cognitive Science, UC Berkeley</p>
-        <p>Interested in big (often too big) ideas</p>
-    
-        <div id="links" style="margin-top: 2rem; font-family: Georgia, 'Times New Roman', Times, serif;">
-            <a href="/assets/files/Sato-Lim_CV2025-3.pdf">CV</a> 
-            •
-            <a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a>
-            •
-            <a href="{{ '/' | relative_url }}">Personal site</a>
+            <div id="text-stuff">
+                <h2 style="font-size: 1.8rem; font-family: Georgia, 'Times New Roman', Times, serif; font-style: italic;">Ailani Sato-Lim</h2>
+                <p>BA Cognitive Science, UC Berkeley</p>            
+                <div id="links" style="margin-top: 2rem; font-family: Georgia, 'Times New Roman', Times, serif;">
+                    <a href="/assets/files/Sato-Lim_CV2025-3.pdf">CV</a> 
+                    •
+                    <i><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></i>
+                    •
+                    <a href="{{ '/' | relative_url }}">personal site</a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+    </div> <!--left-bar END-->
+
 
 <!--The BIO CARDm -->
-    <h3 style="position: relative; top: 1.5rem; left: 0.5rem; font-weight: 500;">BIO</h3>
+<div id="body">
+    <div id="bio-block">
+    <h3 >BIO</h3>
     <div id="bio-filter">
         <button class="tab active" onclick="showBio('academic', this)">ACADEMIC</button>
         <button class="tab" onclick="showBio('intergenerational', this)">INTERGENERATIONAL</button>
@@ -320,7 +358,6 @@ title: "Academic Webpage"
     </div>
     
         
-
         <div id="bios">
             
             <div class="bio active" id="academic">
@@ -340,7 +377,7 @@ title: "Academic Webpage"
                         where we looked at how children determine group belonging based on language cues and how Hindu and Muslim 
                         children in Gujarat, India thought about norms, violations, and loopholes of religious groups (their own and others).</p>
                     </div>
-                    <div class="image-col" >
+                    <div class="image-col-academic" >
                         <div id="matrix-container">
                             <div class="quadrant-map">
                             <!-- Axis Labels -->
@@ -358,11 +395,11 @@ title: "Academic Webpage"
                             <div class="item" style="top: 40%; left: 82%;"><a href="{{ '/articles/science-studies/' | relative_url }}">Sociology of Science</a></div>
 
                             <!-- Clusters -->
-                            <div class="cluster" style="top: 15%; left: 60%; width: 220px; height: 120px; font-size: 1.2rem;">
+                            <div class="cluster" style="top: 15%; left: 60%; width: 220px; height: 120px; font-size: 1rem;">
                                 <br><strong>Cultural technologies</strong><br>
                                 <a href="/assets/files/tomasello-COHC-ch1.pdf">Language</a> · Writing · <a href="https://henryfarrell.net/wp-content/uploads/2025/03/Science-Accepted-Version.pdf">AI</a>
                             </div>
-                            <div class="cluster" style="top: 35%; left: 55%; width: 200px; height: 100px; font-size: 1.2rem;">
+                            <div class="cluster" style="top: 35%; left: 55%; width: 200px; height: 100px; font-size: 1rem;">
                                 <strong><a href="https://en.wikipedia.org/wiki/Embodied_cognition" style="text-decoration: underline;">4E cognition</a></strong><br>
                                 Enactive · Distributed · Embodied
                                 
@@ -377,7 +414,7 @@ title: "Academic Webpage"
 
             <div class="bio" id="intergenerational">
                 <div class="flex-row">
-                    <div class="shadow-box" id="bio-card" style="padding: 1rem;">
+                    <div class="shadow-box" id="bio-card" style="padding: 1rem; margin-bottom: 2rem;">
                         <p>
                         My nearest ancestors were an eclectic bunch of 
                         <a href="https://sites.bu.edu/koreandiaspora/issues/history-of-korean-immigration-to-america-from-1903-to-present/">plantation workers</a>,
@@ -393,8 +430,11 @@ title: "Academic Webpage"
                         My parents met at school in Hawai'i, which is why I got my Hawaiian name. But I was born and raised in Los Angeles, California, specifically the San Gabriel Valley. I love the culture in SoCal, from the <i>bandas</i> that play late into the night, the unassuming strip malls with the <i>best</i> fusion cuisines, even to the squawking bright green parrots on the powerlines.  
                         </p>
                     </div>
-                <div class="image-col">
-
+                <div class="image-col" style="width: 100%;">
+                    <div id="familiy-photos" style="display: flex; flex-direction: column; max-width: 700px; margin-bottom: 4rem;">
+                        <div id="gpa-photo"><img src="/assets/img/cliff.png" alt="photo of grandpa WW2" width="160px">My grandfather (left) in WW2</div>
+                        <img src="/assets/img/hawaii.png" alt="photo of early days in hawaii" width="255px" style="position: relative; left: 10%; top: 4rem;">
+                    </div>
                 </div>
             </div>
             </div>
@@ -406,7 +446,7 @@ title: "Academic Webpage"
                         <b>Kinesthetic</b>: I love to move my body by any means possible, but I'm particularly enamored by mobility and flexibility... I love stretching & yoga, martial arts like muay thai, the occasional bouldering session, and dancing to afrobeats, dancehall, hip-hop or amapiano.
                         <br>
                         <br>
-                        <b>Mental</b>: To move my mind, I read lots of fiction (I think fiction is more “real” than nonfiction). I like the pretentious stuff that plays with language in crazy ways–so lots of modernism, but really anything written in 20th century or in America. My favorite writers though, for some reason,  write in Romance languages: Clarice Lispector (Brazil), Fernando Pessoa (Portugal), and Borges (Argentina). 
+                        <b>Mental</b>: To move my mind, I read lots of fiction (I think fiction is more “real” than nonfiction). I like the pretentious stuff that plays with language in crazy ways – so lots of modernism, but really anything written in 20th century or in America. My favorite writers though, for some reason,  write in Romance languages: Clarice Lispector (Brazil), Fernando Pessoa (Portugal), and Borges (Argentina). 
                         <br>
                         <br>
                         <b>Auditory</b>: I find joy in a huge variety of genres, but my favorites are 70s soul and funk, RnB, hip hop, 60s folk revival, Hawaiian, and latin indie.
@@ -418,16 +458,14 @@ title: "Academic Webpage"
             </div>
 
         </div>
-<!-- 2x2 Matrix of my academic interests 
-    <div class="image-container">
-        <img id="matrix" src="/assets/img/matrix.png" alt="2x2 matrix of my academic interests" style="">
     </div>
-</div>-->
+</div> <!-- End body div -->
+
     
 
 
 
-
+<!--
     <div id="personal-site-button">
         <a href="{{ '/' | relative_url }}" style="text-decoration: none;">
         <div id="window">
@@ -438,7 +476,7 @@ title: "Academic Webpage"
         </div>
         <p>Another world of poetry, music, and art &rarr; </p></a>
         <img src="/assets/img/window-shadow.png">
-    </div>
+    </div>-->
 
 </div>
 
@@ -447,7 +485,7 @@ title: "Academic Webpage"
 
 
 
-</div> <!--Body wrapper END-->
+
 
 
 <script>
