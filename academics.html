@@ -11,26 +11,41 @@ title: "Academic Webpage"
 <style>
     #body-wrapper {
         display: flex; 
+        flex-wrap: wrap;
     }
     #left-bar {
-        flex: 1;
         display: flex;
         flex-direction: column;
         padding: 2rem;
         gap: 1rem;
-        max-width: 50%;
-        position: relative;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        width: 30%;
+        max-width: 600px;
+        height: 100vh;
+        
+        
         padding-top: 10rem;
         box-sizing: border-box;
+
+        border-right: 1px solid lightgray;
+
+        
+
+        
     }
 
-    #body {
-        flex: 2;
+
+    .ac-content {
+        margin-left: 35%; 
+        flex: 1;
         display: flex;
         flex-direction: column;
-        width: 50%;
-        padding: 3rem;
-        box-sizing: border-box;
+        padding: 2rem;
+        
         
     }
 
@@ -39,6 +54,7 @@ title: "Academic Webpage"
         border-radius: 10px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.056);
         width: fit-content;
+        height: fit-content;
         padding: 1rem;
     }
 
@@ -62,16 +78,36 @@ title: "Academic Webpage"
     }
 
     #name-card {
-        position: relative;
         display: flex;
         gap: 1.5rem;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: flex-end;
+        width: 100%;
+        max-width: 400px;
     }
 
+    #name-card img {
+        
+        max-width: 30%;   /* never overflow its parent */
+        height: auto;  
+        display: block;
+        object-fit: contain;
+        align-self: flex-start;
+
+    }
+@media (max-width: 1100px){
+    #name-card {
+        flex-wrap: wrap;
+    }
+    #name-card img {
+        max-width: 60%;
+    }
+}
     #links {
         display: flex;
         flex-wrap: wrap;
-        gap:0.75rem;
+        gap:0.5rem;
         width: auto;
         text-align: center;
     }
@@ -88,7 +124,12 @@ title: "Academic Webpage"
         max-width: 700px;
 
         position: relative;
+
+        font-family: monospace;
+        list-style-type: none;
+        margin-top: 1rem;
     }
+
 
     #bio-header {
         display: flex;
@@ -113,6 +154,7 @@ title: "Academic Webpage"
     .tab {
         background: transparent;
         border: none;
+        color: black;
         padding: 0.3rem 0.8rem;
         border-radius: 9999px;
         cursor: pointer;
@@ -138,11 +180,11 @@ title: "Academic Webpage"
         
         
     }
-    .bio p {
+    #bio-card p {
         font-size: 0.97rem;
         line-height: 1.4rem;
     }
-    .bio a {
+    #bio-card a {
         color:teal;
     }
     .bio.active {
@@ -227,8 +269,8 @@ title: "Academic Webpage"
   z-index: -1;
 }
 .quadrant-map::before {
-  top: 50%; left: 0;
-  width: 100%; height: 1px; /* horizontal */
+  top: 50%; left: 2%;
+  width: 95%; height: 1px; /* horizontal */
 }
 .quadrant-map::after {
   left: 50%; top: 0;
@@ -243,8 +285,8 @@ title: "Academic Webpage"
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-style: italic;
 }
-.x-left   { left: 0; top: 50%; transform: translate(-120%, -50%); }
-.x-right  { right: 0; top: 50%; transform: translate(120%, -50%); }
+.x-left   { left: 4%; top: 50%; transform: translate(-120%, -50%); }
+.x-right  { right: 4%; top: 50%; transform: translate(120%, -50%); }
 .y-top    { top: 0; left: 50%; transform: translate(-50%, -150%); }
 .y-bottom { bottom: 0; left: 50%; transform: translate(-50%, 150%); }
 
@@ -287,6 +329,14 @@ title: "Academic Webpage"
     flex-direction: column;
     align-items:center;
 }
+
+section {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+
+}
+
+
 @media (max-width: 1120px) {
     #matrix-container {
         transform: scale(0.9);
@@ -308,12 +358,18 @@ title: "Academic Webpage"
     #body-wrapper {
         flex-direction: column;
     }
-    #left-bar, #body {
-        width: auto;
-        max-width: none;
-    }
     #left-bar {
+        width: 100%;
+        max-width: none;
         padding-top: 2rem;
+        margin: auto;
+        height: fit-content;
+        position: static;
+    }
+
+    .ac-content {
+        margin-left: auto;
+       
     }
     #bio-card {
         min-width:auto;
@@ -323,6 +379,7 @@ title: "Academic Webpage"
 
     #name-card {
         width: auto;
+        flex-wrap: nowrap;
     }
 
     .image-col-academic {
@@ -349,10 +406,10 @@ title: "Academic Webpage"
 
     <!--The NAME CARD -->
         <div class="shadow-box" id="name-card">
-            <img src="/assets/img/pink-profile.png" alt="a dithered photo of me" height="190px" style="border-radius: 6px;">
+            <img src="/assets/img/pink-profile.png" alt="a dithered photo of me"  style="border-radius: 6px;">
 
             <div id="text-stuff">
-                <h2 style="font-size: 1.8rem; font-family: Georgia, 'Times New Roman', Times, serif; font-style: italic;">Ailani Sato-Lim</h2>
+                <h2 style="font-size: 1.5rem; font-family: Georgia, 'Times New Roman', Times, serif; font-style: italic;">Ailani Sato-Lim</h2>
                 <p>BA Cognitive Science, UC Berkeley</p>            
                 <div id="links" style="margin-top: 2rem; font-family: Georgia, 'Times New Roman', Times, serif;">
                     <a href="/assets/files/Sato-Lim_CV2025-3.pdf">CV</a> 
@@ -367,7 +424,8 @@ title: "Academic Webpage"
 
 
 <!--The BIO CARDm -->
-<div id="body">
+
+    <div class="ac-content">
     <div id="bio-block">
         <div id="bio-header">
             <h2 style="padding-left: 1rem;">  BIO</h2>
@@ -479,7 +537,26 @@ title: "Academic Webpage"
 
         </div>
     </div>
-</div> <!-- End body div -->
+
+<section id="research" >
+    <h2 style="padding-left: 1rem;"> RESEARCH</h2>
+    <div id="bio-card" class="shadow-box" style="padding: 1rem;">
+        <p>All my questions begin with this kernel: why do we separate the subjective, internal world “in” our minds, and the objective, external world “out there”?</p>
+        <br>
+        <br>
+        <p>Our concepts are maps (that are more like collages) for navigating the chaos of existence, mapping our internal and external worlds alike. This is why ideas and stories hold so much purchase in shaping human life and history. </p>
+        <br>
+        <br>
+        <p>These maps are embedded in and shaped by our individual experience, as well as broader cultural contexts. They depend on cultural transmission, which is crystallized in our <b>cultural technology</b>.</p>
+        <br>
+        <br>
+        <p>I think the framework of technology/tools is incredibly fascinating. From our own bodies (hands for intersubjectively understandable gestures) to the subject-object hybrids we build (the hammer, the microscope, the laboratory).</p>
+    </div>
+    
+</section>
+
+
+</div> <!-- End main-content div -->
 
     
 
