@@ -9,9 +9,18 @@ title: "Academic Webpage"
   {%- include head.html -%}
 
 <style>
+    .top-bar {
+        height: 3%;
+        border-bottom: 1px solid lightgrey ;
+        background-color: white;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+    }
     #body-wrapper {
         display: flex; 
         flex-wrap: wrap;
+        z-index: 2;
     }
     #left-bar {
         display: flex;
@@ -48,6 +57,7 @@ title: "Academic Webpage"
         
         
     }
+
 
     .shadow-box {
         border: 1px solid lightgray;
@@ -200,6 +210,10 @@ title: "Academic Webpage"
         justify-content: space-between;
 
     }
+
+    .image-col {
+        max-width: 700px;
+    }
     .image-col-academic {
         width: fit-content;
 
@@ -336,6 +350,34 @@ section {
 
 }
 
+/* BOOKS */
+.book-line {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 3rem;
+
+    margin-top: 4rem;
+
+}
+
+.book {
+    display: flex;
+    flex-direction: column;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    width: 125px;
+
+    padding: 0.5rem;
+    gap: 0.5rem;
+
+    font-size: 0.8rem;
+}
+.book img {
+    border-radius: 3px;
+}
 
 @media (max-width: 1120px) {
     #matrix-container {
@@ -400,6 +442,7 @@ section {
 </style>
 
 <body>
+<div class="top-bar"></div>
 <div id="body-wrapper">
     <div id="left-bar">
 
@@ -425,7 +468,8 @@ section {
 
 <!--The BIO CARDm -->
 
-    <div class="ac-content">
+<div class="ac-content">
+    <section class="bio-section">
     <div id="bio-block">
         <div id="bio-header">
             <h2 style="padding-left: 1rem;">  BIO</h2>
@@ -450,7 +494,7 @@ section {
                         I also did some lab and research apprenticeships during my time at Berkeley. 
                         With the <a href="https://metanet.arts.ubc.ca/">MetaNet Project</a> , I studied how far-right groups 
                         reasoned about climate change through religious metaphor (e.g., altar of climate, St. Greta) with 
-                        <a href="https://linguistics.berkeley.edu/~sweetser/">Eve Sweetser</a> and Kim Grogan (UBC). I also helped out at Berkeley's 
+                        <a href="https://linguistics.berkeley.edu/~sweetser/">Eve Sweetser</a> and Elise Stick (UBC). I also helped out at Berkeley's 
                         <a href="https://lcdlab.berkeley.edu/">Language and Cognitive Development Lab</a>, 
                         where we looked at how children determine group belonging based on language cues and how Hindu and Muslim 
                         children in Gujarat, India thought about norms, violations, and loopholes of religious groups (their own and others).</p>
@@ -530,25 +574,41 @@ section {
                         <b>Auditory</b>: I find joy in a huge variety of <a href="{{ '/music/' | relative_url }}">genres</a>, but my favorites are 70s <a href="{{ '/articles/soul/' | relative_url }}">soul</a> and <a href="{{ '/articles/funk/' | relative_url }}">funk</a>, <a href="{{ '/articles/nu-rnb/' | relative_url }}">RnB</a>, hip hop, 60s folk revival, Hawaiian, and latin indie.
                         </p>
                     </div>
-                <div class="image-col">
-
+                    <div class="image-col">
+                        <!--bookshelf-->
+                        <div class="book-line" style="">
+                            {% assign recent_books = site.books | where_exp: "book", "book.image" | sort: 'date_finished' | reverse %}
+                                {% for book in recent_books limit: 8 %}
+                                {% if book.image %}
+                                <div class="book">
+                                    <img src="{{ book.image }}" alt="{{ book.title }}" >
+                                    <a href="{{ book.url }}" style="text-decoration: none; ">
+                                        <span  style="font-weight: 600; ">
+                                            {{ book.title }} </span> {{ book.author }}</a>
+                                        
+                                </div>
+                                {% endif %}
+                                {% endfor %}
+                        </div>
+                        <!--end bookshelf-->
+                    </div>
                 </div>
-            </div>
 
-        </div>
+            </div>
     </div>
+    </section>
 
 <section id="research" >
     <h2 style="padding-left: 1rem;"> RESEARCH</h2>
     <div id="bio-card" class="shadow-box" style="padding: 1rem;">
-        <p>All my questions begin with this kernel: why do we separate the subjective, internal world “in” our minds, and the objective, external world “out there”?</p>
+        <p>All my questions begin with this kernel: the pervasive separation between the subjective, internal world “in” our minds, and the objective, external world “out there.”</p>
         <br>
-        <br>
-        <p>Our concepts are maps (that are more like collages) for navigating the chaos of existence, mapping our internal and external worlds alike. This is why ideas and stories hold so much purchase in shaping human life and history. </p>
-        <br>
+        
+        <p>Our concepts are maps (that are more like <a href="https://d1wqtxts1xzle7.cloudfront.net/3882889/tversky-cosit93-libre.pdf?1390835219=&response-content-disposition=inline%3B+filename%3DCognitive_maps_cognitive_collages_and_sp.pdf&Expires=1758483037&Signature=VbfTeu5UMg9S70cMAVxlpMej5xd5niZuokbKFEMT~tlM2k6djxR0V0Dchd~JrfWVKtqSY4zLiVdN5dHSS4~aLCcYTcqRKTwJ-SMQmjqJJCtEK163D7-cTO2zQopvRJzvg~9wT6z4DPbaXKJqn3~f42rsheDgJvuNrD-9E5q55IyfLSJ~RUuae9b-4yQS2R~-JrrW3BSiA414kBFBEnzgH3uQYgY3jvxQKkMSPYoTigolE8BU0YS~7QqiryCaaR6dzY9LkKFxPlPqoSrGFnlLeWSnIyE~CskzKzYHw~tzNEvjg7KTegwJIxDHWXD38EGx9F1NqkEoSaItFF2-to7koQ__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA">collages</a>) for navigating the chaos of existence, mapping our internal and external worlds alike. This is why ideas and stories hold so much purchase in shaping human life and history. </p>
+        
         <br>
         <p>These maps are embedded in and shaped by our individual experience, as well as broader cultural contexts. They depend on cultural transmission, which is crystallized in our <b>cultural technology</b>.</p>
-        <br>
+        
         <br>
         <p>I think the framework of technology/tools is incredibly fascinating. From our own bodies (hands for intersubjectively understandable gestures) to the subject-object hybrids we build (the hammer, the microscope, the laboratory).</p>
     </div>
