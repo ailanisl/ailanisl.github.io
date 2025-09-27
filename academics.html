@@ -213,6 +213,9 @@ title: "Academic Webpage"
 
     .image-col {
         max-width: 700px;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
     }
     .image-col-academic {
         width: fit-content;
@@ -358,8 +361,6 @@ section {
 
     gap: 3rem;
 
-    margin-top: 4rem;
-
 }
 
 .book {
@@ -486,7 +487,7 @@ section {
                 <div id="bio-matrix">
                     <div class="shadow-box" id="bio-card" style="padding: 1rem;">
                         <p>
-                        I graduated from UC Berkeley with a bachelor's in <b>cognitive science</b> and a minor in <b>Buddhist studies</b>. 
+                        I graduated from UC Berkeley with a bachelor's in <b>Cognitive Science</b> and a minor in <b>Buddhist studies</b>. 
                         There, I did some independent (idiosyncratic) research on how conceptual metaphor may have accounted 
                         for the distinctly modern and individualistic model of mind in American Buddhism, which pervades 
                         current mindfulness movements and neuroscience research of meditation. <br><br>
@@ -549,7 +550,7 @@ section {
                         (<a href="https://www.nichibei.org/2011/03/connecting-over-coffee-shin-issei-and-shin-nisei-discuss-cultural-nuances/"><i>shin-nisei</i></a>, meaning Japanese immigrants who came after the internment camps of WW2).
                         <br>
                         <br> 
-                        My parents met at school in Hawai'i, which is why I got my Hawaiian name. But I was born and raised in Los Angeles, California, specifically the San Gabriel Valley. I love the culture in SoCal, from the <i>bandas</i> that play late into the night, the unassuming strip malls with the <i>best</i> fusion cuisines, even to the squawking bright green parrots on the powerlines.  
+                        My parents met at school in Hawai'i, which is why I got my Hawaiian name. But I was born and raised in Los Angeles, California, specifically the San Gabriel Valley. I love the culture in SoCal, from the <i>bandas</i> that play late into the night, the unassuming strip malls with the <i>best</i> fusion cuisines, to the bright green parrots squawking on the powerlines.  
                         </p>
                     </div>
                 <div class="image-col" style="width: 100%;">
@@ -574,11 +575,12 @@ section {
                         <b>Auditory</b>: I find joy in a huge variety of <a href="{{ '/music/' | relative_url }}">genres</a>, but my favorites are 70s <a href="{{ '/articles/soul/' | relative_url }}">soul</a> and <a href="{{ '/articles/funk/' | relative_url }}">funk</a>, <a href="{{ '/articles/nu-rnb/' | relative_url }}">RnB</a>, hip hop, 60s folk revival, Hawaiian, and latin indie.
                         </p>
                     </div>
-                    <div class="image-col">
+                    <div class="image-col" style="margin-top: 3rem;">
                         <!--bookshelf-->
+                        <h3 style="font-family: sans-serif;">Recent reads</h3>
                         <div class="book-line" style="">
                             {% assign recent_books = site.books | where_exp: "book", "book.image" | sort: 'date_finished' | reverse %}
-                                {% for book in recent_books limit: 8 %}
+                                {% for book in recent_books limit: 4 %}
                                 {% if book.image %}
                                 <div class="book">
                                     <img src="{{ book.image }}" alt="{{ book.title }}" >
@@ -591,7 +593,8 @@ section {
                                 {% endfor %}
                         </div>
                         <!--end bookshelf-->
-                    </div>
+                        <h3 style="font-family: sans-serif;">Life soundtrack</h3>
+                            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4iW6KDdwJxLyJ7NSDFjoSl?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>                    </div>
                 </div>
 
             </div>
@@ -610,7 +613,9 @@ section {
         <p>These maps are embedded in and shaped by our individual experience, as well as broader cultural contexts. They depend on cultural transmission, which is crystallized in our <b>cultural technology</b>.</p>
         
         <br>
-        <p>I think the framework of technology/tools is incredibly fascinating. From our own bodies (hands for intersubjectively understandable gestures) to the subject-object hybrids we build (the hammer, the microscope, the laboratory).</p>
+        <p>I think the framework of technology/tools is incredibly fascinating. From our own bodies (hands for intersubjectively understandable gestures) to the subject-object hybrids we build (the hammer, the microscope, the laboratory). </p>
+        <br>
+        <p>But often, those tools become imperceptible to us (which is a testament to their quality). </p>
     </div>
     
 </section>
