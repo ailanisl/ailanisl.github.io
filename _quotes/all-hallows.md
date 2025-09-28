@@ -3,9 +3,9 @@ layout: quote
 quote: |
     Even now this landscape is assembling.        
     The hills darken. 
-    The oxensleep in their blue yoke,
-    the fields having beenpicked clean, 
-    the sheavesbound evenly and piled at the roadside  
+    The oxen sleep in their blue yoke,
+    the fields having been picked clean, 
+    the sheaves bound evenly and piled at the roadside  
     among cinquefoil, as the toothed moon rises:  
 
     This is the barrenness of harvest or pestilence.     
