@@ -487,49 +487,15 @@ section {
                 <div id="bio-matrix">
                     <div class="shadow-box" id="bio-card" style="padding: 1.8rem;">
                         <p>
-                        I graduated from UC Berkeley with a bachelor's in <b>Cognitive Science</b> and a minor in <b>Buddhist studies</b>. 
-                        There, I did some independent (idiosyncratic) research on how conceptual metaphor may have accounted 
-                        for the distinctly modern and individualistic model of mind in American Buddhism, which pervades 
-                        current mindfulness movements and neuroscience research of meditation. <br><br>
-
-                        I also did some lab and research apprenticeships during my time at Berkeley. 
-                        With the <a href="https://metanet.arts.ubc.ca/">MetaNet Project</a> , I studied how far-right groups 
-                        reasoned about climate change through religious metaphor (e.g., altar of climate, St. Greta) with 
-                        <a href="https://linguistics.berkeley.edu/~sweetser/">Eve Sweetser</a> and Elise Stickles (UBC). I also helped out at Berkeley's 
-                        <a href="https://lcdlab.berkeley.edu/">Language and Cognitive Development Lab</a>, 
-                        where we looked at how children determine group belonging based on language cues and how Hindu and Muslim 
-                        children in Gujarat, India thought about norms, violations, and loopholes of religious groups (their own and others).</p>
+                        I'm a PhD student in Cognitive Psychology and Language Science, working with Emiko Muraki at Penn State University. 
+                        Iim interested in cognitive semantics (the cognitive science of meaning), and how cognition and language are like 
+                        symbiotic parasites on our bodily, emotional, cultural, and environmental systems. 
+                        <br> Currently, I'm interested in looking at the interaction of vocal iconicity (the resemblance 
+                        between sound and meaning), crossmodal imagery, and multisensory integration.  
+                        
                     </div>
                     <div class="image-col-academic" >
-                        <div id="matrix-container">
-                            <div class="quadrant-map">
-                            <!-- Axis Labels -->
-                            <div class="label x-left">Arts</div>
-                            <div class="label x-right">Sciences</div>
-                            <div class="label y-top">Intersubjective</div>
-                            <div class="label y-bottom">Subjective</div>
 
-                            <!-- Concepts -->
-                            <div class="item" style="top: 72%; left: 12%;"><a href="https://www.gutenberg.org/cache/epub/621/pg621-images.html">Spiritual Experience</a></div>
-                            <div class="item" style="top: 60%; left: 5%;"><a href="{{ '/tag/modernism/' | relative_url }}">Modernist art</a></div>
-                            <div class="item" style="top: 40%; left: 40%;"><a href="https://oecs.mit.edu/pub/k7xz3u08/release/1?readingCollection=9dd2a47d">Folk theories</a></div>
-                            <div class="item" style="top: 47%; left: 45%;">Creativity</div>
-                            <div class="item" style="top:32%; left: 36%;">Conceptual Metaphor</div>
-                            <div class="item" style="top: 40%; left: 82%;"><a href="{{ '/articles/science-studies/' | relative_url }}">Sociology of Science</a></div>
-
-                            <!-- Clusters -->
-                            <div class="cluster" style="top: 15%; left: 60%; width: 220px; height: 120px; font-size: 1rem;">
-                                <br><strong>Cultural technologies</strong><br>
-                                <a href="/assets/files/tomasello-COHC-ch1.pdf">Language</a> · Writing · <a href="https://henryfarrell.net/wp-content/uploads/2025/03/Science-Accepted-Version.pdf">AI</a>
-                            </div>
-                            <div class="cluster" style="top: 35%; left: 55%; width: 200px; height: 100px; font-size: 1rem;">
-                                <strong><a href="https://en.wikipedia.org/wiki/Embodied_cognition" style="text-decoration: underline;">Cognitive Science</a></strong><br>
-                                
-                                
-                                
-                            </div>
-                            </div>
-                        </div>
                     </div>
                     
                 </div>
@@ -555,7 +521,7 @@ section {
                     </div>
                 <div class="image-col" style="width: 100%;">
                     <div id="familiy-photos" style="display: flex; flex-direction: column; max-width: 700px; margin-bottom: 4rem;">
-                        <div id="gpa-photo" class="family-pic"><img src="/assets/img/cliff.png" alt="photo of grandpa WW2" width="160px">My grandfather (left) in WW2</div>
+                        <div id="gpa-photo" class="family-pic"><img src="/assets/img/cliff.png" alt="photo of grandpa WW2" width="160px">My grandfather (left)</div>
                         <div id="hawaii-photo" class="family-pic"><img src="/assets/img/hawaii.png" alt="photo of early days in hawaii" >Early days in Hawai'i</div>
                     </div>
                 </div>
@@ -578,7 +544,7 @@ section {
                     <div class="image-col" style="margin-top: 3rem;">
                         <!--bookshelf-->
                         <h3 style="font-family: sans-serif;">Recent reads</h3>
-                        <div class="book-line" style="">
+                        <div class="book-line">
                             {% assign recent_books = site.books | where_exp: "book", "book.image" | sort: 'date_finished' | reverse %}
                                 {% for book in recent_books limit: 4 %}
                                 {% if book.image %}
@@ -605,7 +571,15 @@ section {
     <h2 style="padding-left: 1rem;"> RESEARCH</h2>
     <div id="bio-card" class="shadow-box" style="padding: 1.8rem;">
 
-        <p>[Under Construction]</p>
+        <p>I'm excited by some big questions that straddle the disciplines of cognitive science:
+            <ol>
+            <li>What aspects and combinations of sensory & bodily experiences become meaningful to humans? </li>
+            <li> Why do certain sounds, gestures, and movements become signals, signs, and words (and eventually abstract concepts) in the cognitive system? </li>
+            <li> How does this interplay with our embeddedness in a social, cultural, and ecological world? </li>
+            <li> How do differences in subjective and linguistic experiences change our cognition? </li>
+            <li>What impact does play and ludic activities have in language use, development, and/or evolution?</li>
+            </ol>
+        </p>
     </div>
     
 </section>
@@ -632,7 +606,37 @@ section {
 
 </div>
 
+<!--
+                        <div id="matrix-container">
+                            <div class="quadrant-map">
+                            
+                            <div class="label x-left">Arts</div>
+                            <div class="label x-right">Sciences</div>
+                            <div class="label y-top">Intersubjective</div>
+                            <div class="label y-bottom">Subjective</div>
 
+                            
+                            <div class="item" style="top: 72%; left: 12%;"><a href="https://www.gutenberg.org/cache/epub/621/pg621-images.html">Spiritual Experience</a></div>
+                            <div class="item" style="top: 60%; left: 5%;"><a href="{{ '/tag/modernism/' | relative_url }}">Modernist art</a></div>
+                            <div class="item" style="top: 40%; left: 40%;"><a href="https://oecs.mit.edu/pub/k7xz3u08/release/1?readingCollection=9dd2a47d">Folk theories</a></div>
+                            <div class="item" style="top: 47%; left: 45%;">Creativity</div>
+                            <div class="item" style="top:32%; left: 36%;">Conceptual Metaphor</div>
+                            <div class="item" style="top: 40%; left: 82%;"><a href="{{ '/articles/science-studies/' | relative_url }}">Sociology of Science</a></div>
+
+                            
+                            <div class="cluster" style="top: 15%; left: 60%; width: 220px; height: 120px; font-size: 1rem;">
+                                <br><strong>Cultural technologies</strong><br>
+                                <a href="/assets/files/tomasello-COHC-ch1.pdf">Language</a> · Writing · <a href="https://henryfarrell.net/wp-content/uploads/2025/03/Science-Accepted-Version.pdf">AI</a>
+                            </div>
+                            <div class="cluster" style="top: 35%; left: 55%; width: 200px; height: 100px; font-size: 1rem;">
+                                <strong><a href="https://en.wikipedia.org/wiki/Embodied_cognition" style="text-decoration: underline;">Cognitive Science</a></strong><br>
+                                
+                                
+                                
+                            </div>
+                            </div>
+                        </div>
+-->
 
 
 
