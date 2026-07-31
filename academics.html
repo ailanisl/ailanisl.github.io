@@ -9,6 +9,10 @@ title: "Academic Webpage"
   {%- include head.html -%}
 
 <style>
+    ol {
+        padding-left:3rem;
+        color:#857970;
+    }
     .top-bar {
         height: 3%;
         border-bottom: 1px solid lightgrey ;
@@ -336,8 +340,8 @@ section {
     --bg: transparent;
     --node-fill: #6c8ebf;
     --node-stroke: #ffffff;
-    --edge: #A5DEF7;
-    --edge-highlight: #4C4C9D;
+    --edge: #eeeae8;
+    --edge-highlight: #857970;
     --text: #5C524A;
     --text-dim: #857970;
   }
@@ -487,13 +491,22 @@ section {
                 <div class="flex-row">
                     <div class="shadow-box" id="bio-card" style="padding: 1.8rem;">
                         <p>
-                        <b>Kinesthetic</b>: I love to move my body by any means possible, and I'm particularly enamored by mobility and flexibility... I love stretching & yoga; martial arts like muay thai; the occasional bouldering session; and dancing to afrobeats, dancehall, hip-hop or amapiano.
+                        <b>Kinesthetic</b>: I love to move my body by any means possible, and I'm particularly enamored by mobility and flexibility. 
+                            I love stretching & yoga; martial arts like muay thai; the occasional bouldering session; and dancing to afrobeats, 
+                            dancehall, hip-hop or amapiano.
                         <br>
                         <br>
-                        <b>Mental</b>: To move my mind, I read lots of <a href="{{ '/perusals/' | relative_url }}">fiction</a> (I think fiction is more “real” than nonfiction). I like the pretentious stuff that plays with language in crazy ways – so lots of modernism, but really anything written in 20th century or in America. My favorite writers though, for some reason,  write in Romance languages: <a href="{{ '/articles/clarice-lispector/' | relative_url }}">Clarice Lispector (Brazil)</a>, <a href="{{ '/articles/fernando-pessoa/' | relative_url }}">Fernando Pessoa (Portugal)</a>, and Borges (Argentina). 
+                        <b>Mental</b>: To move my mind, I read lots of <a href="{{ '/perusals/' | relative_url }}">fiction</a> 
+                        (fiction is just as real as nonfiction). I like the pretentious stuff that plays with language in crazy ways – 
+                        so lots of modernism, but really anything written in 20th century or in America. My favorite writers though,
+                         for some reason,  write in Romance languages: <a href="{{ '/articles/clarice-lispector/' | relative_url }}">Clarice Lispector (Brazil)</a>,
+                          <a href="{{ '/articles/fernando-pessoa/' | relative_url }}">Fernando Pessoa (Portugal)</a>, and Borges (Argentina). 
                         <br>
                         <br>
-                        <b>Auditory</b>: I find joy in a huge variety of <a href="{{ '/music/' | relative_url }}">genres</a>, but my favorites are 70s <a href="{{ '/articles/soul/' | relative_url }}">soul</a> and <a href="{{ '/articles/funk/' | relative_url }}">funk</a>, <a href="{{ '/articles/nu-rnb/' | relative_url }}">RnB</a>, hip hop, 60s folk revival, Hawaiian, and latin indie.
+                        <b>Auditory</b>: I find joy in a huge variety of <a href="{{ '/music/' | relative_url }}">genres</a>, 
+                        but my favorites are 70s <a href="{{ '/articles/soul/' | relative_url }}">soul</a> and
+                         <a href="{{ '/articles/funk/' | relative_url }}">funk</a>, <a href="{{ '/articles/nu-rnb/' | relative_url }}">RnB</a>, 
+                         hip hop, 60s folk revival, Hawaiian, and latin indie.
                         </p>
                     </div>
                     <div class="image-col" style="margin-top: 3rem;">
@@ -521,14 +534,16 @@ section {
             </div>
     </div>
     </section>
-    <div id="graph-container" >
-        <!-- Semantic Network here -->
-        <svg></svg>
-        <div id="tooltip"></div>
-        <div id="legend"></div>
 
+<!-- SEMANTIC NETWORK -->
 
-    </div>
+<div id="graph-container" >
+    <svg></svg>
+    <div id="tooltip"></div>
+    <div id="legend"></div>
+</div>
+<!-- END SEMANTIC NETWORK -->
+
 <section id="research" style="margin-top: 0rem;" >
 
     <h2 style="padding-left: 1rem;"> RESEARCH</h2>
@@ -540,7 +555,7 @@ section {
                 <li> Why do certain sounds, gestures, and movements become signals, signs, and words (and eventually abstract concepts) in the cognitive system? </li>
                 <li> How does this interplay with our embeddedness in a social, cultural, and ecological world? </li>
                 <li> How do differences in subjective and linguistic experiences change our cognition? </li>
-                <li>What impact does play and ludic activities have in language use, development, and/or evolution?</li>
+                <li> What impact does play and ludic activities have in language use, development, and/or evolution?</li>
             </ol>
         </p>
     </div>
@@ -549,60 +564,6 @@ section {
 
 
 </div> <!-- End main-content div -->
-
-    
-
-
-
-<!--
-    <div id="personal-site-button">
-        <a href="{{ '/' | relative_url }}" style="text-decoration: none;">
-        <div id="window">
-            <div class="pane"></div>
-            <div class="pane"></div>
-            <div class="pane"></div>
-            <div class="pane"></div>
-        </div>
-        <p>Another world of poetry, music, and art &rarr; </p></a>
-        <img src="/assets/img/window-shadow.png">
-    </div>-->
-
-</div>
-
-<!--
-                        <div id="matrix-container">
-                            <div class="quadrant-map">
-                            
-                            <div class="label x-left">Arts</div>
-                            <div class="label x-right">Sciences</div>
-                            <div class="label y-top">Intersubjective</div>
-                            <div class="label y-bottom">Subjective</div>
-
-                            
-                            <div class="item" style="top: 72%; left: 12%;"><a href="https://www.gutenberg.org/cache/epub/621/pg621-images.html">Spiritual Experience</a></div>
-                            <div class="item" style="top: 60%; left: 5%;"><a href="{{ '/tag/modernism/' | relative_url }}">Modernist art</a></div>
-                            <div class="item" style="top: 40%; left: 40%;"><a href="https://oecs.mit.edu/pub/k7xz3u08/release/1?readingCollection=9dd2a47d">Folk theories</a></div>
-                            <div class="item" style="top: 47%; left: 45%;">Creativity</div>
-                            <div class="item" style="top:32%; left: 36%;">Conceptual Metaphor</div>
-                            <div class="item" style="top: 40%; left: 82%;"><a href="{{ '/articles/science-studies/' | relative_url }}">Sociology of Science</a></div>
-
-                            
-                            <div class="cluster" style="top: 15%; left: 60%; width: 220px; height: 120px; font-size: 1rem;">
-                                <br><strong>Cultural technologies</strong><br>
-                                <a href="/assets/files/tomasello-COHC-ch1.pdf">Language</a> · Writing · <a href="https://henryfarrell.net/wp-content/uploads/2025/03/Science-Accepted-Version.pdf">AI</a>
-                            </div>
-                            <div class="cluster" style="top: 35%; left: 55%; width: 200px; height: 100px; font-size: 1rem;">
-                                <strong><a href="https://en.wikipedia.org/wiki/Embodied_cognition" style="text-decoration: underline;">Cognitive Science</a></strong><br>
-                                
-                                
-                                
-                            </div>
-                            </div>
-                        </div>
--->
-
-
-
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
@@ -614,6 +575,7 @@ section {
    source + target matching node ids, referring to the concepts the
    nodes represent (this is the "semantic" part -- edges = relationships).
 ==================================================================== */
+
 // Helper: linksFrom("cognition", ["language", "memory"]) expands to
 // [{source:"cognition", target:"language"}, {source:"cognition", target:"memory"}]
 function linksFrom(source, targets) {
@@ -623,7 +585,7 @@ function linksFrom(source, targets) {
 
 const graphData = {
     nodes: [
-        {id: "language",        label: "Language",                  group: "ling",      info: ""},
+        {id: "language",        label: "Language",                  group: "ling",      info: "and communicative practice"},
         {id: "semantics",       label: "Semantics",                 group: "ling",      info: "The study of meaning"},
         {id: "metaphor",        label: "Metaphor",                  group: "ling",      info: "The mapping of one concept in terms of another"},
         {id: "analogy",         label: "Analogy",                   group: "cogsci",    info: "Relational similarity mapping"},
@@ -636,7 +598,7 @@ const graphData = {
         {id: "neuro",           label:"Neuroscience",               group: "neuro"}, 
         {id: "imitation",       label: "Vocal Imitation",           group: "neuro",     info: "Ability to replicate vocal sounds produced by others"},        
         {id: "senses",           label: "Sensory System",           group: "neuro"},
-        {id: "multisensory-int", label: "Multisensory Integration", group: "neuro",     info: "Combination of unisensory signals"},
+        {id: "multisensory-int", label: "Multisensory Integration", group: "neuro",     info: "Integrating unisensory signals"},
         {id: "interoception",    label: "Interoception",            group: "neuro",     info: "Senses related to internal, bodily signals"},
         {id: "bayesian",         label: "Bayesian Models",          group: "neuro"},
         
@@ -668,9 +630,12 @@ const graphData = {
         { source: "iconicity", target: "sound-symbolism" },
         { source: "imitation", target: "sound-symbolism" },
         { source: "sound-symbolism", target: "language-evolution" },
+        { source: "senses", target: "multisensory-int" },
+
         { source: "multisensory-int", target: "iconicity" },
         { source: "interoception", target: "emotion" },
         { source: "categorization", target: "emotion" },
+        { source: "categorization", target: "language" },
 
         { source: "metaphor", target: "mental-simulation" },
         { source: "enactivism", target: "mental-simulation"}, 
@@ -678,7 +643,8 @@ const graphData = {
         { source: "imitation", target: "empathy" },
         { source: "imitation", target: "play" },
         { source: "imitation", target: "ritual" },
-        { source: "ritual", target: "religion" }
+        { source: "ritual", target: "religion" },
+        { source: "philosophy", target: "religion" }
     ]           
 };
 
@@ -687,8 +653,8 @@ const groupColors = {
   ling:     "#E5F0C0",
   neuro:    "#F5CCBB",
   cogsci:   "#BBD8E7",
-  culture:   "#BBE7DD",
-  philo: "#FFE2FE"
+  culture:  "#BBE7DD",
+  philo:    "#FFE2FE"
 };
 // Hardcode which nodes are "discipline" nodes by id, and size them bigger.
 const disciplineNodeIds = new Set(["philosophy", "cognition", "culture", "language", "neuro"]);
@@ -701,6 +667,26 @@ const defaultNodeSize = 7;
  
 const container = document.getElementById("graph-container");
 const svg = d3.select("svg");
+
+const defs = svg.append("defs");
+
+// Regular glow (equivalent to blur(5px))
+defs.append("filter")
+  .attr("id", "glow-regular")
+  .attr("x", "-100%").attr("y", "-100%")
+  .attr("width", "300%").attr("height", "300%")
+  .append("feGaussianBlur")
+  .attr("stdDeviation", 2.5);
+
+// Discipline glow (equivalent to blur(15px))
+defs.append("filter")
+  .attr("id", "glow-discipline")
+  .attr("x", "-100%").attr("y", "-100%")
+  .attr("width", "300%").attr("height", "300%")
+  .append("feGaussianBlur")
+  .attr("stdDeviation", 7.5);
+
+
 const tooltip = d3.select("#tooltip");
  
 let width = container.clientWidth;
@@ -760,11 +746,8 @@ node.append("circle")
   .attr("class", "node-glow")
   .attr("r", d => (disciplineNodeIds.has(d.id) ? disciplineSize : defaultNodeSize) * 1.4)
   .attr("fill", d => groupColors[d.group] || "#8888aa")
-  .style("filter", d => disciplineNodeIds.has(d.id) ?  "blur(15px)": "blur(5px)")
+  .attr("filter", d => disciplineNodeIds.has(d.id) ? "url(#glow-discipline)" : "url(#glow-regular)")
   .attr("fill-opacity", d => disciplineNodeIds.has(d.id) ? 0.7 : 1);
-
-
-
 
 node.append("text")
   .attr("dx", 12)
