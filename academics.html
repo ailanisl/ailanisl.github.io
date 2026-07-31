@@ -41,10 +41,6 @@ title: "Academic Webpage"
         box-sizing: border-box;
 
         border-right: 1px solid lightgray;
-
-        
-
-        
     }
 
 
@@ -222,113 +218,6 @@ title: "Academic Webpage"
 
     }
 
-/*    #personal-site-button {
-        display: flex;
-        flex-direction: column;
-        align-items:end;
-        height: fit-content;
-
-        position: absolute;
-        top:2rem;
-        right: 2rem; }
-        
-      
-    
-    #personal-site-button a {
-        display: flex;
-        flex-direction: column;
-        align-items: end;
-        width: 102px;
-        margin-bottom: 1.5rem;
-    }
-
-    #personal-site-button a:hover .pane {
-        background: linear-gradient(180deg, #d7e6ee 0%, #f6e9e6 100%);
-        transition: all 0.3s ease;
-    }
-
-    #personal-site-button p {
-        font-size: 0.9rem;
-    }
-    #window {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        gap: 6px;
-        width: 100px;
-        height: 100px;
-    }
-    .pane {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: linear-gradient(180deg, #E4E4E4 0%, #F2F2F2 100%);
-        transition: all 0.3s ease;
-    }
-*/
-
-.quadrant-map {
-  position: relative;
-  width: 640px;
-  height: 400px;
-  margin: 2rem auto;
-  border: 1px solid transparent;
-  font-family: "Helvetica Neue", sans-serif;
-  color: #111;
-}
-
-/* Axes */
-.quadrant-map::before,
-.quadrant-map::after {
-  content: "";
-  position: absolute;
-  background: lightgray;
-  z-index: -1;
-}
-.quadrant-map::before {
-  top: 50%; left: 2%;
-  width: 95%; height: 1px; /* horizontal */
-}
-.quadrant-map::after {
-  left: 50%; top: 0;
-  width: 1px; height: 100%; /* vertical */
-}
-
-/* Labels */
-.label {
-  position: absolute;
-  font-weight: bold;
-  font-size: 1.2rem;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-style: italic;
-}
-.x-left   { left: 4%; top: 50%; transform: translate(-120%, -50%); }
-.x-right  { right: 4%; top: 50%; transform: translate(120%, -50%); }
-.y-top    { top: 0; left: 50%; transform: translate(-50%, -150%); }
-.y-bottom { bottom: 0; left: 50%; transform: translate(-50%, 150%); }
-
-/* Items */
-.item {
-  position: absolute;
-  font-size: 1rem;
-  white-space: nowrap;
-  text-align: center;
-}
-#matrix-container a, .item a {
-    color: teal;
-
-
-}
-
-/* Clusters (dashed ellipses) */
-.cluster {
-  position: absolute;
-  border: 1px dashed #aaa;
-  border-radius: 50%;
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-}
 
 #gpa-photo {
     width: 160px;
@@ -350,6 +239,7 @@ title: "Academic Webpage"
 section {
     margin-top: 5rem;
     margin-bottom: 5rem;
+    background-color: transparent;
 
 }
 
@@ -440,6 +330,71 @@ section {
     
     }
 }
+
+/* Semantic network styling */
+  :root {
+    --bg: transparent;
+    --node-fill: #6c8ebf;
+    --node-stroke: #ffffff;
+    --edge: #A5DEF7;
+    --edge-highlight: #4C4C9D;
+    --text: #5C524A;
+    --text-dim: #857970;
+  }
+
+  #graph-container {
+    width: 100%;
+    height: 50vh;
+    position: relative;
+  }
+
+  svg { width: 100%; height: 100%; display: block; }
+  
+  .link {
+    stroke: var(--edge);
+    stroke-width: 1px;
+  }
+  .link.highlighted {
+    stroke: var(--edge-highlight);
+    stroke-width: 1.6px;
+  }
+  .node circle {
+    
+    cursor: pointer;
+  }
+  .node text {
+    fill: var(--text);
+    font-size: 11px;
+    pointer-events: none;
+    opacity: 0.8;
+    transition: opacity 0.15s ease;
+  }
+  .node.active text,
+  .node.neighbor text {
+    opacity: 1;
+  }
+  .node.dimmed circle { opacity: 0.25; }
+  .node.dimmed text { opacity: 0 !important; }
+  .link.dimmed { opacity: 0.08; }
+
+  #tooltip {
+    position: absolute;
+    pointer-events: none;
+    background: #e5d6d6 ;
+    /*backdrop-filter: blur(1px);*/
+    border: 1px solid #E5D6D6;
+    border-radius: 6px;
+    padding: 8px 10px;
+    max-width: 240px;
+    font-size: 12px;
+    line-height: 1.4;
+    color: #322D2A;
+    display: none;
+  }
+  #tooltip strong { color: #322D2A; display: block; margin-bottom: 3px; font-size: 13px; }
+  #tooltip span { color: var(--text-dim); }
+
+
 </style>
 
 <body>
@@ -470,7 +425,7 @@ section {
 <!--The BIO CARDm -->
 
 <div class="ac-content">
-    <section class="bio-section">
+    <section class="bio-section" style="margin-bottom: 0rem;">
     <div id="bio-block">
         <div id="bio-header">
             <h2 style="padding-left: 1.8rem;">  BIO</h2>
@@ -487,16 +442,16 @@ section {
                 <div id="bio-matrix">
                     <div class="shadow-box" id="bio-card" style="padding: 1.8rem;">
                         <p>
-                        I'm a PhD student in Cognitive Psychology and Language Science, working with Emiko Muraki at Penn State University. 
-                        Iim interested in cognitive semantics (the cognitive science of meaning), and how cognition and language are like 
+                        I'm a PhD student in Cognitive Psychology and Language Science, working with Dr. Emiko Muraki at Penn State University. 
+                        I'm interested in cognitive semantics (the cognitive science of meaning), and how cognition and language are like 
                         symbiotic parasites on our bodily, emotional, cultural, and environmental systems. 
-                        <br> Currently, I'm interested in looking at the interaction of vocal iconicity (the resemblance 
+                        <br> 
+                        <br>
+                        Currently, I'm interested in looking at the interaction of vocal iconicity (the resemblance 
                         between sound and meaning), crossmodal imagery, and multisensory integration.  
                         
                     </div>
-                    <div class="image-col-academic" >
 
-                    </div>
                     
                 </div>
             </div>
@@ -566,18 +521,26 @@ section {
             </div>
     </div>
     </section>
+    <div id="graph-container" >
+        <!-- Semantic Network here -->
+        <svg></svg>
+        <div id="tooltip"></div>
+        <div id="legend"></div>
 
-<section id="research" >
+
+    </div>
+<section id="research" style="margin-top: 0rem;" >
+
     <h2 style="padding-left: 1rem;"> RESEARCH</h2>
     <div id="bio-card" class="shadow-box" style="padding: 1.8rem;">
 
         <p>I'm excited by some big questions that straddle the disciplines of cognitive science:
             <ol>
-            <li>What aspects and combinations of sensory & bodily experiences become meaningful to humans? </li>
-            <li> Why do certain sounds, gestures, and movements become signals, signs, and words (and eventually abstract concepts) in the cognitive system? </li>
-            <li> How does this interplay with our embeddedness in a social, cultural, and ecological world? </li>
-            <li> How do differences in subjective and linguistic experiences change our cognition? </li>
-            <li>What impact does play and ludic activities have in language use, development, and/or evolution?</li>
+                <li> What aspects and combinations of sensory & bodily experiences become meaningful to humans? </li>
+                <li> Why do certain sounds, gestures, and movements become signals, signs, and words (and eventually abstract concepts) in the cognitive system? </li>
+                <li> How does this interplay with our embeddedness in a social, cultural, and ecological world? </li>
+                <li> How do differences in subjective and linguistic experiences change our cognition? </li>
+                <li>What impact does play and ludic activities have in language use, development, and/or evolution?</li>
             </ol>
         </p>
     </div>
@@ -642,9 +605,253 @@ section {
 
 
 
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script>
+/* ====================================================================
+   1. my DATA
+   Each node needs: id (unique), label, group (for coloring), and an
+   optional "info" string shown in the tooltip. Each link needs
+   source + target matching node ids, referring to the concepts the
+   nodes represent (this is the "semantic" part -- edges = relationships).
+==================================================================== */
+// Helper: linksFrom("cognition", ["language", "memory"]) expands to
+// [{source:"cognition", target:"language"}, {source:"cognition", target:"memory"}]
+function linksFrom(source, targets) {
+  return targets.map(target => ({ source, target }));
+}
+
+
+const graphData = {
+    nodes: [
+        {id: "language",        label: "Language",                  group: "ling",      info: ""},
+        {id: "semantics",       label: "Semantics",                 group: "ling",      info: "The study of meaning"},
+        {id: "metaphor",        label: "Metaphor",                  group: "ling",      info: "The mapping of one concept in terms of another"},
+        {id: "analogy",         label: "Analogy",                   group: "cogsci",    info: "Relational similarity mapping"},
+        {id: "iconicity",       label: "Iconicity",                 group: "ling",      info: "Sense of resemblance between form and meaning"},
+        {id: "sound-symbolism", label: "Sound Symbolism",           group: "ling",      info: "Nonarbitrary association between sound and meaning"}, 
+        {id: "language-evolution",label: "Language Evolution",      group: "ling",      info: "Biological emergence of human language"},
+        {id: "mental-simulation", label: "Mental Simulation",       group: "cogsci",    info: "Partial reactivation of sensorimotor system"},
+        {id: "mental-imagery",   label: "Mental Imagery",           group: "cogsci",    info: "Representation of phenomena without sensory simulation"}, 
+
+        {id: "neuro",           label:"Neuroscience",               group: "neuro"}, 
+        {id: "imitation",       label: "Vocal Imitation",           group: "neuro",     info: "Ability to replicate vocal sounds produced by others"},        
+        {id: "senses",           label: "Sensory System",           group: "neuro"},
+        {id: "multisensory-int", label: "Multisensory Integration", group: "neuro",     info: "Combination of unisensory signals"},
+        {id: "interoception",    label: "Interoception",            group: "neuro",     info: "Senses related to internal, bodily signals"},
+        {id: "bayesian",         label: "Bayesian Models",          group: "neuro"},
+        
+        {id: "cognition",        label: "Cognition",                group: "cogsci",    info: "Especially embodied cognition"},
+        {id: "emotion",          label: "Emotion",                  group: "cogsci"},
+        {id: "empathy",          label: "Empathy",                  group: "cogsci"},
+        
+        {id: "philosophy",      label: "Philosophy",                group: "philo"},
+        {id: "pragamatism",     label: "Pragmatism",                group: "philo",     info:"Entwining theory and practice"},
+        {id: "enactivism",      label: "Enactivism",                group: "philo",     info: "Cognition via the active organism in environment"},
+        {id: "philo-sci",       label: "Philosophy of Science",     group: "philo"},
+        {id: "tom",             label: "Theory of Mind",            group: "cogsci" },
+        
+        {id:"culture",          label: "Culture",                   group: "culture"},        
+        {id: "religion",        label: "Religion & Belief",         group: "culture"},
+        {id: "categorization",  label: "Categorization",            group: "cogsci"},
+        {id: "ritual",          label: "Ritual",                    group: "culture"},
+        {id: "play",            label: "Play",                      group: "culture"}
+    ],
+    links: [
+        ...linksFrom("language", ["semantics", "metaphor", "iconicity", "sound-symbolism", 
+            "language-evolution"]),
+        ...linksFrom("cognition", ["analogy","mental-simulation","mental-imagery","emotion","empathy","categorization", "tom"]),
+        ...linksFrom("neuro", ["imitation", "senses", "multisensory-int", "interoception", "bayesian"]),
+        ...linksFrom("philosophy", ["pragamatism","pragamatism", "enactivism", "philo-sci"]),
+        ...linksFrom("culture", ["religion", "ritual", "play"]),
+
+        { source: "analogy", target: "metaphor" },
+        { source: "iconicity", target: "sound-symbolism" },
+        { source: "imitation", target: "sound-symbolism" },
+        { source: "sound-symbolism", target: "language-evolution" },
+        { source: "multisensory-int", target: "iconicity" },
+        { source: "interoception", target: "emotion" },
+        { source: "categorization", target: "emotion" },
+
+        { source: "metaphor", target: "mental-simulation" },
+        { source: "enactivism", target: "mental-simulation"}, 
+        { source: "tom", target: "empathy" },
+        { source: "imitation", target: "empathy" },
+        { source: "imitation", target: "play" },
+        { source: "imitation", target: "ritual" },
+        { source: "ritual", target: "religion" }
+    ]           
+};
+
+// Group -> color. Edit freely to match your site's palette.
+const groupColors = {
+  ling:     "#E5F0C0",
+  neuro:    "#F5CCBB",
+  cogsci:   "#BBD8E7",
+  culture:   "#BBE7DD",
+  philo: "#FFE2FE"
+};
+// Hardcode which nodes are "discipline" nodes by id, and size them bigger.
+const disciplineNodeIds = new Set(["philosophy", "cognition", "culture", "language", "neuro"]);
+const disciplineSize = 30;
+const defaultNodeSize = 7;
+
+/* ====================================================================
+   2. SETUP
+==================================================================== */
+ 
+const container = document.getElementById("graph-container");
+const svg = d3.select("svg");
+const tooltip = d3.select("#tooltip");
+ 
+let width = container.clientWidth;
+let height = container.clientHeight;
+ 
+const zoomLayer = svg.append("g");
+ 
+const linkGroup = zoomLayer.append("g").attr("class", "links");
+const nodeGroup = zoomLayer.append("g").attr("class", "nodes");
+ 
+//temp code here
+
+const nodeIds = new Set(graphData.nodes.map(n => n.id));
+graphData.links.forEach(l => {
+  if (!nodeIds.has(l.source)) console.error("Bad source id:", l.source);
+  if (!nodeIds.has(l.target)) console.error("Bad target id:", l.target);
+}); 
+
+
+// Build adjacency for hover highlighting
+const neighborMap = new Map();
+
+graphData.nodes.forEach(n => neighborMap.set(n.id, new Set()));
+graphData.links.forEach(l => {
+  neighborMap.get(l.source).add(l.target);
+  neighborMap.get(l.target).add(l.source);
+});
+ 
+/* ====================================================================
+   3. FORCE SIMULATION
+==================================================================== */
+
+const simulation = d3.forceSimulation(graphData.nodes)
+  .force("link", d3.forceLink(graphData.links).id(d => d.id).distance(70).strength(0.6))
+  .force("charge", d3.forceManyBody().strength(-220))
+  .force("center", d3.forceCenter(width / 2, height / 2))
+  .force("collide", d3.forceCollide().radius(28));
+ 
+const link = linkGroup.selectAll("line")
+  .data(graphData.links)
+  .join("line")
+  .attr("class", "link");
+ 
+const node = nodeGroup.selectAll("g")
+  .data(graphData.nodes)
+  .join("g")
+  .attr("class", "node")
+  .call(drag(simulation));
+
+
+node.append("circle")
+  .attr("class", "node-core")
+  .attr("r", defaultNodeSize * 0.4) 
+  .attr("fill", "var(--edge)")
+ 
+node.append("circle")
+  .attr("class", "node-glow")
+  .attr("r", d => (disciplineNodeIds.has(d.id) ? disciplineSize : defaultNodeSize) * 1.4)
+  .attr("fill", d => groupColors[d.group] || "#8888aa")
+  .style("filter", d => disciplineNodeIds.has(d.id) ?  "blur(15px)": "blur(5px)")
+  .attr("fill-opacity", d => disciplineNodeIds.has(d.id) ? 0.7 : 1);
+
+
+
+
+node.append("text")
+  .attr("dx", 12)
+  .attr("dy", 4)
+  .style("font-weight", d => disciplineNodeIds.has(d.id) ? "700" : "400")
+  .text(d => d.label);
+ 
+simulation.on("tick", () => {
+  link
+    .attr("x1", d => d.source.x)
+    .attr("y1", d => d.source.y)
+    .attr("x2", d => d.target.x)
+    .attr("y2", d => d.target.y);
+ 
+  node.attr("transform", d => `translate(${d.x},${d.y})`);
+});
+
+/* ====================================================================
+   4. INTERACTION: hover highlighting, tooltip, zoom/pan, drag
+==================================================================== */
+ 
+node
+  .on("mouseenter", (event, d) => {
+    const neighbors = neighborMap.get(d.id);
+ 
+    node.classed("dimmed", n => n.id !== d.id && !neighbors.has(n.id));
+    node.classed("active", n => n.id === d.id);
+    node.classed("neighbor", n => neighbors.has(n.id));
+ 
+    link
+      .classed("highlighted", l => l.source.id === d.id || l.target.id === d.id)
+      .classed("dimmed", l => l.source.id !== d.id && l.target.id !== d.id);
+ 
+    tooltip
+      .style("display", "block")
+      .html(`<strong>${d.label}</strong><span>${d.info || ""}</span>`);
+  })
+  .on("mousemove", (event) => {
+    tooltip
+      .style("left", (event.offsetX + 16) + "px")
+      .style("top", (event.offsetY + 12) + "px");
+  })
+  .on("mouseleave", () => {
+    node.classed("dimmed", false).classed("active", false).classed("neighbor", false);
+    link.classed("highlighted", false).classed("dimmed", false);
+    tooltip.style("display", "none");
+  });
+ 
+svg.call(
+  d3.zoom()
+    .scaleExtent([0.3, 4])
+    .on("zoom", (event) => {
+      zoomLayer.attr("transform", event.transform);
+    })
+);
+ 
+function drag(sim) {
+  function dragstarted(event, d) {
+    if (!event.active) sim.alphaTarget(0.15).restart();
+    d.fx = d.x;
+    d.fy = d.y;
+  }
+  function dragged(event, d) {
+    d.fx = event.x;
+    d.fy = event.y;
+  }
+  function dragended(event, d) {
+    if (!event.active) sim.alphaTarget(0);
+    d.fx = null;
+    d.fy = null;
+  }
+  return d3.drag()
+    .on("start", dragstarted)
+    .on("drag", dragged)
+    .on("end", dragended);
+}
+ 
+// Responsive resize
+window.addEventListener("resize", () => {
+  width = container.clientWidth;
+  height = container.clientHeight;
+  simulation.force("center", d3.forceCenter(width / 2, height / 2));
+  simulation.alpha(0.3).restart();
+});
+ 
+// END SET UP FOR GRAPH
+
 function showBio(type, el) {
   // hide all bios
   document.querySelectorAll('.bio').forEach(b => b.classList.remove('active'));
@@ -654,6 +861,7 @@ function showBio(type, el) {
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
   el.classList.add('active');
 }
+
 </script>
 
 </body>
