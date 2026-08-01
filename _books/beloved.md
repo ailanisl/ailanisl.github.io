@@ -14,4 +14,5 @@ reread: false
 audio: false
 
 tags: [black art]
+image: /assets/img/books/beloved.png
 ---
