@@ -9,9 +9,29 @@ title: "Academic Webpage"
   {%- include head.html -%}
 
 <style>
+    :root {
+        --text: #44382E;
+        --grey-back: #F8F8F8;
+
+        --primary-pink: #FFE2FE;
+        --primary-orange: #F5CCBB;
+        --primary-teal: #BBE7DD;
+        --primary-blue: #BBD8E7;
+        --primary-green: #E5F0C0;
+        --text-dim: #857970;
+        --font-mono: monospace;
+
+        --border-stroke: lightgrey; 
+
+    }
+    body {
+        color: var(--text);
+    }
+
+
     ol {
         padding-left:3rem;
-        color:#857970;
+        color: var(--text-dim);
     }
     .top-bar {
         height: 3%;
@@ -53,9 +73,7 @@ title: "Academic Webpage"
         flex: 1;
         display: flex;
         flex-direction: column;
-        padding: 2rem;
-        
-        
+        padding: 2rem;       
     }
 
 
@@ -106,14 +124,14 @@ title: "Academic Webpage"
         align-self: flex-start;
 
     }
-@media (max-width: 1100px){
-    #name-card {
-        flex-wrap: wrap;
+    @media (max-width: 1100px){
+        #name-card {
+            flex-wrap: wrap;
+        }
+        #name-card img {
+            max-width: 60%;
+        }
     }
-    #name-card img {
-        max-width: 60%;
-    }
-}
     #links {
         display: flex;
         flex-wrap: wrap;
@@ -164,7 +182,7 @@ title: "Academic Webpage"
     .tab {
         background: transparent;
         border: none;
-        color: black;
+        color: var(--text);
         padding: 0.3rem 0.8rem;
         border-radius: 9999px;
         cursor: pointer;
@@ -177,7 +195,7 @@ title: "Academic Webpage"
     }
 
     .tab.active {
-        background: #EAEAEA;
+        background: var(--grey-back);
         color: olive;
     }
 
@@ -223,38 +241,115 @@ title: "Academic Webpage"
     }
 
 
-#gpa-photo {
-    width: 160px;
-    position: relative; 
-    left: 50%;
-}
-#hawaii-photo {
-    width: 255px;
-    position: relative; left: 10%; top: 4rem;
-    
+    #gpa-photo {
+        width: 160px;
+        position: relative; 
+        left: 50%;
+    }
+    #hawaii-photo {
+        width: 255px;
+        position: relative; left: 10%; top: 4rem;
+        
 
-}
-.family-pic {
-    display: flex; 
-    flex-direction: column;
-    align-items:center;
-}
+    }
+    .family-pic {
+        display: flex; 
+        flex-direction: column;
+        align-items:center;
+    }
 
-section {
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-    background-color: transparent;
+    section {
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+        background-color: transparent;
 
-}
+    }
 
-/* BOOKS */
+/* ========== CARD FLEX-GRID GALLERY ====== */
+    .gallery {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+
+        height: fit-content;
+        max-width: 930px;
+        min-width: 400px;
+        
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .resource-card {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        justify-content: flex-start;
+        max-width: 300px;
+        height: fit-content;
+
+        background-color: rgb(from var(--grey-back) r g b / 50%);
+        border-radius: 10px;
+        padding: 2rem;
+    }
+    .orb-box {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 1rem;
+    }
+    .orb {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        filter: blur(5px);
+    }
+
+    .solid-line {
+        border: none;
+        height: 1px;
+        background-color: var(--text-dim);
+        width: 100%;
+
+    }    
+    .button-flex {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: inherit;
+        gap: 0.5rem;
+    }
+    .resource-button {
+        display: flex;
+        padding: 5px;
+        background-color: var(--text);
+        color: white;
+        border-radius: 5px;
+        transition: border-radius 1s;
+
+    }
+    .button-flex a {
+        text-decoration: none;
+    }
+    .button-flex a:hover {
+        color: var(--primary-orange);
+    }
+    .resource-button:hover {
+        background-color: var(--text-dim);
+        border-radius: 20px;
+    }
+
+
+
+
+
+/* ============== BOOKS ================= */
 .book-line {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 
     gap: 3rem;
-
 }
 
 .book {
@@ -335,19 +430,21 @@ section {
     }
 }
 
-/* Semantic network styling */
+/* ===================== Semantic network styling ======================= */
+/*                                                                        */
+
   :root {
+    /* graph styling */
     --bg: transparent;
     --node-fill: #6c8ebf;
     --node-stroke: #ffffff;
     --edge: #eeeae8;
     --edge-highlight: #857970;
     --text: #5C524A;
-    --text-dim: #857970;
   }
 
   #graph-container {
-    width: 100%;
+    max-width: 930px;
     height: 50vh;
     position: relative;
   }
@@ -397,6 +494,10 @@ section {
   }
   #tooltip strong { color: #322D2A; display: block; margin-bottom: 3px; font-size: 13px; }
   #tooltip span { color: var(--text-dim); }
+/* =====================================================================  */
+
+
+
 
 
 </style>
@@ -407,26 +508,24 @@ section {
     <div id="left-bar">
 
 
-    <!--The NAME CARD -->
+    <!--===================The NAME CARD ======================== -->
         <div class="shadow-box" id="name-card">
             <img src="/assets/img/pink-profile.png" alt="a dithered photo of me"  style="border-radius: 6px;">
 
             <div id="text-stuff">
                 <h2 style="font-size: 1.5rem; font-family: Georgia, 'Times New Roman', Times, serif; font-style: italic;">Ailani Sato-Lim</h2>
-                <p>BA Cognitive Science, UC Berkeley</p>            
+                <p>Penn State University</p>            
                 <div id="links" style="margin-top: 2rem; font-family: Georgia, 'Times New Roman', Times, serif;">
-                    <a href="/assets/files/Sato-Lim_CV_Nov_2025-2.pdf">CV</a> 
+                    <a href="/assets/files/Sato-Lim_CV_Nov_2025-2.pdf">CV </a> (Nov 2025)
                     •
                     <i><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></i>
-                    •
-                    <a href="{{ '/' | relative_url }}">personal site</a>
                 </div>
             </div>
         </div>
     </div> <!--left-bar END-->
 
 
-<!--The BIO CARDm -->
+<!--======================= The BIO CARD ========================= -->
 
 <div class="ac-content">
     <section class="bio-section" style="margin-bottom: 0rem;">
@@ -461,10 +560,10 @@ section {
             </div>
 
             <div class="bio" id="intergenerational">
-                <div class="flex-row">
+                <div class="flex-row" id="bio-matrix">
                     <div class="shadow-box" id="bio-card" style="padding: 1.8rem; margin-bottom: 2rem;">
                         <p>
-                        My nearest ancestors were an eclectic bunch of 
+                    <!--   My nearest ancestors were an eclectic bunch of 
                         <a href="https://sites.bu.edu/koreandiaspora/issues/history-of-korean-immigration-to-america-from-1903-to-present/">plantation workers</a>,
                          coal miners, <a href="https://en.wikipedia.org/wiki/Picture_bride">immigrants</a>, laundromat owners, 
                          <a href="https://www.sfgate.com/sf-culture/article/San-Francisco-burlesque-Coby-Yee-Forbidden-City-16431762.php">burlesque dancers</a>,
@@ -475,12 +574,12 @@ section {
                         (<a href="https://www.nichibei.org/2011/03/connecting-over-coffee-shin-issei-and-shin-nisei-discuss-cultural-nuances/"><i>shin-nisei</i></a>, meaning Japanese immigrants who came after the internment camps of WW2).
                         <br>
                         <br> 
-                        My parents met at school in Hawai'i, which is why I got my Hawaiian name. But I was born and raised in Los Angeles, California, specifically the San Gabriel Valley. I love the culture in SoCal, from the <i>bandas</i> that play late into the night, the unassuming strip malls with the <i>best</i> fusion cuisines, to the bright green parrots squawking on the powerlines.  
+                        My parents met at school in Hawai'i, which is why I got my Hawaiian name. But --> I was born and raised in Los Angeles, California, specifically the San Gabriel Valley. I love the culture in SoCal, from the <i>bandas</i> that play late into the night, the unassuming strip malls with the <i>best</i> fusion cuisines, to the bright green parrots squawking on the powerlines.  
                         </p>
                     </div>
                 <div class="image-col" style="width: 100%;">
                     <div id="familiy-photos" style="display: flex; flex-direction: column; max-width: 700px; margin-bottom: 4rem;">
-                        <div id="gpa-photo" class="family-pic"><img src="/assets/img/cliff.png" alt="photo of grandpa WW2" width="160px">My grandfather (left)</div>
+                        <!--<div id="gpa-photo" class="family-pic"><img src="/assets/img/cliff.png" alt="photo of grandpa WW2" width="160px">My grandfather (left)</div>-->
                         <div id="hawaii-photo" class="family-pic"><img src="/assets/img/hawaii.png" alt="photo of early days in hawaii" >Early days in Hawai'i</div>
                     </div>
                 </div>
@@ -488,22 +587,19 @@ section {
             </div>
 
             <div class="bio" id="multimodal">
-                <div class="flex-row">
+                <div class="flex-row" id="bio-matrix">
                     <div class="shadow-box" id="bio-card" style="padding: 1.8rem;">
                         <p>
-                        <b>Kinesthetic</b>: I love to move my body by any means possible, and I'm particularly enamored by mobility and flexibility. 
-                            I love stretching & yoga; martial arts like muay thai; the occasional bouldering session; and dancing to afrobeats, 
+                        <b>Kinesthetic</b>: I love stretching & yoga; martial arts like muay thai; the occasional bouldering session; and dancing to afrobeats, 
                             dancehall, hip-hop or amapiano.
                         <br>
                         <br>
-                        <b>Mental</b>: To move my mind, I read lots of <a href="{{ '/perusals/' | relative_url }}">fiction</a> 
-                        (fiction is just as real as nonfiction). I like the pretentious stuff that plays with language in crazy ways – 
-                        so lots of modernism, but really anything written in 20th century or in America. My favorite writers though,
-                         for some reason,  write in Romance languages: <a href="{{ '/articles/clarice-lispector/' | relative_url }}">Clarice Lispector (Brazil)</a>,
+                        <b>Mental</b>: I read lots of <a href="{{ '/perusals/' | relative_url }}">fiction</a>. I like the pretentious stuff that plays at the limits of language – 
+                        so lots of modernism, but really anything written in 20th century or in America. My favorite writers: <a href="{{ '/articles/clarice-lispector/' | relative_url }}">Clarice Lispector (Brazil)</a>,
                           <a href="{{ '/articles/fernando-pessoa/' | relative_url }}">Fernando Pessoa (Portugal)</a>, and Borges (Argentina). 
                         <br>
                         <br>
-                        <b>Auditory</b>: I find joy in a huge variety of <a href="{{ '/music/' | relative_url }}">genres</a>, 
+                        <b>Auditory</b>: I find joy in a huge variety of genres, 
                         but my favorites are 70s <a href="{{ '/articles/soul/' | relative_url }}">soul</a> and
                          <a href="{{ '/articles/funk/' | relative_url }}">funk</a>, <a href="{{ '/articles/nu-rnb/' | relative_url }}">RnB</a>, 
                          hip hop, 60s folk revival, Hawaiian, and latin indie.
@@ -535,14 +631,14 @@ section {
     </div>
     </section>
 
-<!-- SEMANTIC NETWORK -->
+<!-- ============vvv===== SEMANTIC NETWORK ===============vvv== -->
 
 <div id="graph-container" >
     <svg></svg>
     <div id="tooltip"></div>
     <div id="legend"></div>
 </div>
-<!-- END SEMANTIC NETWORK -->
+<!-- ================= END SEMANTIC NETWORK ================= -->
 
 <section id="research" style="margin-top: 0rem;" >
 
@@ -562,6 +658,75 @@ section {
 <!-- <img src="/assets/img/golgi-olfactory-top.jpg"> --> 
  
 </section>
+
+<section id="resources">
+    <h2 style="padding-left: 1rem;"> RESOURCES </h2>
+    <br>
+    <h3 style="font-family: monospace;">The Language of Uncertainty (Statistics)</h3>
+    <div class="gallery">
+        <div class="resource-card">
+            <div class="orb-box">
+                <div class="orb" style="background-color: var(--primary-orange);"></div>
+            </div>
+            <p style="font-weight: bold; ">Introduction to Statistical Learning, with Applications in R (2e)</p>
+            <hr class="solid-line">
+            <p>James, G. Witten, D., et al.</p>
+            <div style="height: 45px;"></div>
+
+            <div class="button-flex">
+                <a href="https://www.statlearning.com/" target="_blank"  class="resource-button">Website</a>
+                <a href="https://youtube.com/playlist?list=PLoROMvodv4rOzrYsAxzQyHb8n_RWNuS1e&si=HKFm8tGqZNLFlP9I" target="_blank" class="resource-button">Lectures</a>
+            </div>
+            <p>For a great, straightforward introduction into frequentist statistics,
+                starting with the GLM and how all other tests fall out of it. 
+            </p>
+        </div>
+        
+        <div class="resource-card">
+            <div class="orb-box">
+                <div class="orb" style="background-color: var(--primary-green);"></div>
+            </div>
+            <p style="font-weight: bold; ">Statistical Rethinking (2e)</p>
+            <hr class="solid-line">
+            <p>Richard McElreath</p>
+            <div style="height: 45px;"></div>
+            <div class="button-flex">
+                <a href="https://xcelab.net/rm/" target="_blank" class="resource-button">Website</a>
+                <a href="https://github.com/rmcelreath/stat_rethinking_2023" target="_blank" class="resource-button">Github</a>
+                <a href="https://youtube.com/playlist?list=PLDcUM9US4XdPz-KxHM4XHt7uUVGWWVSus&si=jw_4NXqOb_J_w0zv" target="_blank" class="resource-button">Lectures</a>
+                <a href="" class="resource-button">My Notes</a>    
+            </div>
+            <p>  Primer on Bayesian stats and causal reasoning for social scientists. 
+                McElreath's playful use of metaphor and myths to illustrate
+                 statistical concepts completely drew me in. And his philosophical explanation 
+                 helped put the topic into context for me. 
+
+            </p>
+        </div>
+
+        <div class="resource-card">
+            <div class="orb-box">
+                <div class="orb" style="background-color: var(--primary-teal);"></div>
+            </div>
+            <p style="font-weight: bold; ">Statistics for Linguists: An Intro Using R</p>
+            <hr class="solid-line">
+            <p>Bodo Winter</p>
+            <div style="height: 45px;"></div>
+            <div class="button-flex">
+                <a href="https://bodowinter.com/books.html" target="_blank" class="resource-button">Book</a>
+                <a href="https://bodowinter.com/" target="_blank" class="resource-button">Author Website</a>
+                
+            
+            </div>
+            <p> Textbook for linguists who want to use statistical methods and R. Written by Bodo Winter, a constant source of inspiration!
+
+            </p>
+
+        </div>
+
+
+</section>
+
 
 
 </div> <!-- End main-content div -->
