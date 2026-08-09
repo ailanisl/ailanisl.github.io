@@ -130,6 +130,7 @@ title: "Academic Webpage"
         }
         #name-card img {
             max-width: 60%;
+            justify-content: center; 
         }
     }
     #links {
@@ -248,7 +249,7 @@ title: "Academic Webpage"
     }
     #hawaii-photo {
         width: 255px;
-        position: relative; left: 10%; top: 4rem;
+        position: relative; top: 1rem;
         
 
     }
@@ -281,18 +282,21 @@ title: "Academic Webpage"
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
 
+
     .resource-card {
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
-        justify-content: flex-start;
+        justify-content: center;
         max-width: 300px;
         height: fit-content;
 
-        background-color: rgb(from var(--grey-back) r g b / 50%);
+        background-color:var(--grey-back);
         border-radius: 10px;
         padding: 2rem;
     }
+
+
     .orb-box {
         display: flex;
         justify-content: center;
@@ -303,6 +307,19 @@ title: "Academic Webpage"
         height: 30px;
         border-radius: 50%;
         filter: blur(5px);
+        transition: filter 1s ease;
+    }
+    .orb:hover {
+        filter: saturate(200%) blur(5px);
+    }
+    .author-link {
+        text-decoration: none;
+        color: var(--text); 
+        font-size: 16px;
+        transition: text-decoration 1s;
+    }
+    .author-link:hover {
+        text-decoration: dashed;
     }
 
     .solid-line {
@@ -347,7 +364,7 @@ title: "Academic Webpage"
 .book-line {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+   /* justify-content: center;*/
 
     gap: 3rem;
 }
@@ -403,10 +420,11 @@ title: "Academic Webpage"
         margin-left: auto;
        
     }
-    #bio-card {
+    #bio-card, .gallery {
         min-width:auto;
         height: auto;
         margin-right: auto;
+        justify-content: center;
     }
 
     #name-card {
@@ -534,7 +552,7 @@ title: "Academic Webpage"
             <h2 style="padding-left: 1.8rem;">  BIO</h2>
             <div id="bio-filter">
                 <button class="tab active" onclick="showBio('academic', this)">ACADEMIC</button>
-                <button class="tab" onclick="showBio('intergenerational', this)">INTERGENERATIONAL</button>
+                <button class="tab" onclick="showBio('personal', this)">PERSONAL</button>
                 <button class="tab" onclick="showBio('multimodal', this)">MULTIMODAL</button>
             </div>
         </div>
@@ -559,7 +577,7 @@ title: "Academic Webpage"
                 </div>
             </div>
 
-            <div class="bio" id="intergenerational">
+            <div class="bio" id="personal">
                 <div class="flex-row" id="bio-matrix">
                     <div class="shadow-box" id="bio-card" style="padding: 1.8rem; margin-bottom: 2rem;">
                         <p>
@@ -580,7 +598,7 @@ title: "Academic Webpage"
                 <div class="image-col" style="width: 100%;">
                     <div id="familiy-photos" style="display: flex; flex-direction: column; max-width: 700px; margin-bottom: 4rem;">
                         <!--<div id="gpa-photo" class="family-pic"><img src="/assets/img/cliff.png" alt="photo of grandpa WW2" width="160px">My grandfather (left)</div>-->
-                        <div id="hawaii-photo" class="family-pic"><img src="/assets/img/hawaii.png" alt="photo of early days in hawaii" >Early days in Hawai'i</div>
+                        <div id="hawaii-photo" class="family-pic"><img src="/assets/img/hawaii.png" alt="photo of early days in hawaii" >Ancestors' early days in Hawai'i</div>
                     </div>
                 </div>
             </div>
@@ -622,9 +640,9 @@ title: "Academic Webpage"
                                 {% endif %}
                                 {% endfor %}
                         </div>
-                        <!--end bookshelf-->
+                        <!--end bookshelf
                         <h3 style="font-family: sans-serif;">Life soundtrack <span style="font-weight: normal; font-size: 0.97rem;">(Playlist cover is a drawing of my favorite singer, <a href="https://en.wikipedia.org/wiki/Bill_Withers">Bill Withers</a>)</span></h3>
-                            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4iW6KDdwJxLyJ7NSDFjoSl?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>                    </div>
+                            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4iW6KDdwJxLyJ7NSDFjoSl?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>                    </div>-->
                 </div>
 
             </div>
@@ -662,7 +680,7 @@ title: "Academic Webpage"
 <section id="resources">
     <h2 style="padding-left: 1rem;"> RESOURCES </h2>
     <br>
-    <h3 style="font-family: monospace;">The Language of Uncertainty (Statistics)</h3>
+    <h3 style="font-family: monospace;padding-left: 1.8rem;">The Language of Uncertainty (Statistics)</h3>
     <div class="gallery">
         <div class="resource-card">
             <div class="orb-box">
@@ -688,7 +706,8 @@ title: "Academic Webpage"
             </div>
             <p style="font-weight: bold; ">Statistical Rethinking (2e)</p>
             <hr class="solid-line">
-            <p>Richard McElreath</p>
+            <a href="https://elevanth.org/blog/" target="_blank" title="Link to McElreath's blog" 
+            class="author-link">Richard McElreath</a>
             <div style="height: 45px;"></div>
             <div class="button-flex">
                 <a href="https://xcelab.net/rm/" target="_blank" class="resource-button">Website</a>
@@ -710,11 +729,12 @@ title: "Academic Webpage"
             </div>
             <p style="font-weight: bold; ">Statistics for Linguists: An Intro Using R</p>
             <hr class="solid-line">
-            <p>Bodo Winter</p>
+            <a href="https://bodowinter.com/" target="_blank" title="Link to Winter's webpage" 
+                class="author-link">Bodo Winter</a>
             <div style="height: 45px;"></div>
             <div class="button-flex">
                 <a href="https://bodowinter.com/books.html" target="_blank" class="resource-button">Book</a>
-                <a href="https://bodowinter.com/" target="_blank" class="resource-button">Author Website</a>
+                <a href="https://arxiv.org/pdf/1308.5499" target="_blank" class="resource-button">Mini R tutorial</a>
                 
             
             </div>
@@ -763,7 +783,7 @@ const graphData = {
 
         {id: "neuro",           label:"Neuroscience",               group: "neuro"}, 
         {id: "imitation",       label: "Vocal Imitation",           group: "neuro",     info: "Ability to replicate vocal sounds produced by others"},        
-        {id: "senses",           label: "Sensory System",           group: "neuro"},
+        {id: "senses",           label: "Sensory Systems",           group: "neuro"},
         {id: "multisensory-int", label: "Multisensory Integration", group: "neuro",     info: "Integrating unisensory signals"},
         {id: "interoception",    label: "Interoception",            group: "neuro",     info: "Senses related to internal, bodily signals"},
         {id: "bayesian",         label: "Bayesian Models",          group: "neuro"},
